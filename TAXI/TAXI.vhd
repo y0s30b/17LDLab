@@ -80,6 +80,9 @@ architecture Behavioral of TAXI is
     signal isCall : std_logic;
     -- Not Call(='0'), Call(='1')
 begin
+    LCD : LCD_DISPLAY port map (RESET, CLK, LCD_A, LCD_EN, LCD_D, taxiChargeCnt, extraCharge, mileageM, isCall);
+    SEG : SEG_DISPLAY port map (RESET, CLK, DIGIT, SEG_A, SEG_B, SEG_C, SEG_D, SEG_E, SEG_F, SEG_G, SEG_DP, taxiCharge);
+    DATA : DATA_PROCESS port map (RESET, CLK, SW1, SW2, SW3, taxiCharge, taxiChargeCnt, extraCharge, mileageM, isCall);
 end Behavioral;
 
 
