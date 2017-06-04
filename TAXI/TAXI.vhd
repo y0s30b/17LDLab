@@ -52,6 +52,7 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity LCD_DISPLAY is 
+    port ();
 end LCD_DISPLAY;
 
 architecture LCD_Behavioral of LCD_DISPLAY is
@@ -65,6 +66,7 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity SEG_DISPLAY is
+    port ();
 end SEG_DISPLAY;
 
 architecture SEG_Behavioral of SEG_DISPLAY is
@@ -78,6 +80,7 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity DATA_PROCESS is
+    port();
 end DATA_PROCESS;
 
 architecture DATA_Behavioral of DATA_PROCESS is
