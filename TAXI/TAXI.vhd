@@ -30,6 +30,44 @@ entity TAXI is
 end TAXI;
 
 architecture Behavioral of TAXI is
+    -- component of LCD_DISPLAY: taxiCharge 제외한 4가지 정보를 LCD에 출력.
+    component LCD_DISPLAY is
+        port ( RESET, CLK : in std_logic;
+            LCD_A : out std_logic_vector(1 downto 0);
+            LCD_EN : out std_logic;
+            LCD_D : out std_logic_vector(7 downto 0);
+            taxiChargeCnt : in std_logic_vector(15 downto 0);
+            extraCharge : in std_logic_vector(1 downto 0);
+            mileageM : in std_logic_vector(12 downto 0);
+            isCall : in std_logic);
+    end component;
+
+    -- component of SEG_DISPLAY: taxiCharge 정보를 7-segment에 출력.
+    component SEG_DISPlAY is
+        port ( RESET, CLK : in std_logic;
+            DIGIT : out std_logic_vector(6 downto 1);
+            SEG_A : out std_logic;
+            SEG_B : out std_logic;
+            SEG_C : out std_logic;
+            SEG_D : out std_logic;
+            SEG_E : out std_logic;
+            SEG_F : out std_logic;
+            SEG_G : out std_logic;
+            SEG_DP : out std_logic;
+            taxiCharge : in std_logic_vector(15 downto 0));
+    end component;
+
+    -- component of DATA_PROCESS: SW1~3 스위치 입력에 따라 5가지 정보 생성.
+    component DATA_PROCESS is
+        port( RESET, CLK : in std_logic;
+            SW1, SW2, SW3 : in std_logic;
+            taxiCharge : out std_logic_vector(15 downto 0);
+            taxiChargeCnt : out std_logic_vector(15 downto 0);
+            extraCharge : out std_logic_vector(1 downto 0);
+            mileageM : out std_logic_vector(12 downto 0);
+            isCall : out std_logic);
+    end component;
+
     -- < LCD와 7-segment에 표시할 정보들을 담는 내부 signal들 5가지 > --
     signal taxiCharge : std_logic_vector (15 downto 0);
     -- taxiCharge는 3000원부터 시작해 taxi 가격을 보여 준다.
