@@ -51,6 +51,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
+entity LCD_DISPLAY is 
+end LCD_DISPLAY;
 
 -- part 3/4: [7-segment display part] CLK period = 512 ms
 library IEEE;
@@ -58,9 +60,14 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
+entity SEG_DISPLAY is
+end SEG_DISPLAY;
 
 -- part 4/4: [data processing part]
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity DATA_PROCESS is
+end DATA_PROCESS;
