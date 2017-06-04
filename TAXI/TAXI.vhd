@@ -54,6 +54,10 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity LCD_DISPLAY is 
 end LCD_DISPLAY;
 
+architecture LCD_Behavioral of LCD_DISPLAY is
+begin
+end LCD_Behavioral;
+
 -- part 3/4: [7-segment display part] CLK period = 512 ms
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -63,6 +67,10 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity SEG_DISPLAY is
 end SEG_DISPLAY;
 
+architecture SEG_Behavioral of SEG_DISPLAY is
+begin
+end SEG_Behavioral;
+
 -- part 4/4: [data processing part]
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -71,3 +79,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity DATA_PROCESS is
 end DATA_PROCESS;
+
+architecture DATA_Behavioral of DATA_PROCESS is
+begin
+end DATA_Behavioral;
