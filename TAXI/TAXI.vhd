@@ -52,7 +52,15 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity LCD_DISPLAY is 
-    port ();
+    -- taxiCharge를 제외한 4가지의 정보를 LCD로 출력.
+    port ( RESET, CLK : in std_logic;
+            LCD_A : out std_logic_vector(1 downto 0);
+            LCD_EN : out std_logic;
+            LCD_D : out std_logic_vector(7 downto 0);
+            taxiChargeCnt : in std_logic_vector(15 downto 0);
+            extraCharge : in std_logic_vector(1 downto 0);
+            mileageM : in std_logic_vector(12 downto 0);
+            isCall : in std_logic);
 end LCD_DISPLAY;
 
 architecture LCD_Behavioral of LCD_DISPLAY is
@@ -66,7 +74,19 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity SEG_DISPLAY is
-    port ();
+    -- taxiCharge를 7-segment display로 출력.
+    port ( RESET, CLK : in std_logic;
+            DIGIT : out std_logic_vector(6 downto 1);
+            SEG_A : out std_logic;
+            SEG_B : out std_logic;
+            SEG_C : out std_logic;
+            SEG_D : out std_logic;
+            SEG_E : out std_logic;
+            SEG_F : out std_logic;
+            SEG_G : out std_logic;
+            SEG_DP : out std_logic;
+            taxiCharge : in std_logic_vector(15 downto 0)
+    );
 end SEG_DISPLAY;
 
 architecture SEG_Behavioral of SEG_DISPLAY is
@@ -80,7 +100,14 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity DATA_PROCESS is
-    port();
+    -- SW1~3의 스위치 입력을 받아 5가지 정보를 제공하는 내부 signal로 출력.
+    port( RESET, CLK : in std_logic;
+            SW1, SW2, SW3 : in std_logic;
+            taxiCharge : out std_logic_vector(15 downto 0);
+            taxiChargeCnt : out std_logic_vector(15 downto 0);
+            extraCharge : out std_logic_vector(1 downto 0);
+            mileageM : out std_logic_vector(12 downto 0);
+            isCall : out std_logic);
 end DATA_PROCESS;
 
 architecture DATA_Behavioral of DATA_PROCESS is
