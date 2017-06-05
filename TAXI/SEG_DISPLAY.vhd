@@ -21,13 +21,9 @@ entity SEG_DISPLAY is
 end SEG_DISPLAY;
 
 architecture SEG_Behavioral of SEG_DISPLAY is
-    signal SEG_CLK : std_logic;
+ --   signal SEG_CLK : std_logic;
+    signal selReg : std_logic_vector(2 downto 0);   -- 6개의 7-segment 중 어느 것에 출력할 지 결정.
+    signal dataReg : std_logic_vector(3 downto 0);  -- segReg로 보내기 위한 data의 중간 단계.
+    signal segReg : std_logic_vector(7 downto 0);   -- output SEG_X로 보내기 위한 signal.
 begin
-    process(RESET, CLK)
-        variable seg_clk_cnt : integer range 0 to 200;
-    begin
-        if RESET = '0' then
-        elsif CLK = '1' and CLK'event then
-        end if;
-    end process;
 end SEG_Behavioral;
