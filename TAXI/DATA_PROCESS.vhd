@@ -18,7 +18,7 @@ end DATA_PROCESS;
 
 architecture DATA_Behavioral of DATA_PROCESS is
     signal processState : std_logic_vector(1 downto 0);
-    -- "00": 대기, "01": "시작", "10": "정지", "11": "정산" 
+    -- "00": 대기, "01": "시작", "10": "정지"
     signal SW1_flag, SW2_flag, SW3_flag : std_logic;
     signal insSW1, insSW2, insSW3 : std_logic;
 
@@ -107,6 +107,15 @@ begin
 
         elsif CLK = '1' and CLK'event then
             if insSW1 = '1' then
+                -- processState = "00"은 '대기', "01"은 '주행', "10"은 '정지'.
+                -- state가 "10"에서 "00"으로 넘어갈 때 payment display를 위한 isPayment를 set.
+                if processState = "00" or processState = "01" then
+                    processState <= processState + 1;
+                    isPayment_reg <= '0';
+                elsif processState = "10" then
+                    processState <= "00";
+                    isPayment_reg <= '1';
+                end if;
             end if;
 
             if insSW2 = '1' then
@@ -122,7 +131,11 @@ begin
                     extraCharge_reg <= "00";
                 end if;
             end if;
-            
+
         end if;
+    end process;
+
+    process(RESET, CLK)
+    begin
     end process;
 end DATA_Behavioral;
