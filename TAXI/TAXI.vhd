@@ -79,8 +79,10 @@ architecture Behavioral of TAXI is
     -- 최대 0x1FFF m(=8191 m)
     signal isCall : std_logic;
     -- Not Call(='0'), Call(='1')
+    signal isPayment : std_logic;
+    -- isPayment = '1'은 10, 11번 회로 특성인 최종 정산 화면을 띄우는 신호이다.
 begin
-    LCD : LCD_DISPLAY port map (RESET, CLK, LCD_A, LCD_EN, LCD_D, taxiChargeCnt, extraCharge, mileageM, isCall);
+    LCD : LCD_DISPLAY port map (RESET, CLK, LCD_A, LCD_EN, LCD_D, taxiChargeCnt, extraCharge, mileageM, isCall, isPayment);
     SEG : SEG_DISPLAY port map (RESET, CLK, DIGIT, SEG_A, SEG_B, SEG_C, SEG_D, SEG_E, SEG_F, SEG_G, SEG_DP, taxiCharge);
-    DATA : DATA_PROCESS port map (RESET, CLK, SW1, SW2, SW3, taxiCharge, taxiChargeCnt, extraCharge, mileageM, isCall);
+    DATA : DATA_PROCESS port map (RESET, CLK, SW1, SW2, SW3, taxiCharge, taxiChargeCnt, extraCharge, mileageM, isCall, isPayment);
 end Behavioral;

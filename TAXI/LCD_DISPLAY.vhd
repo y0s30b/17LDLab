@@ -13,7 +13,8 @@ entity LCD_DISPLAY is
             taxiChargeCnt : in std_logic_vector(15 downto 0);
             extraCharge : in std_logic_vector(1 downto 0);
             mileageM : in std_logic_vector(12 downto 0);
-            isCall : in std_logic);
+            isCall : in std_logic,
+            isPayment : in std_logic);
 end LCD_DISPLAY;
 
 architecture LCD_Behavioral of LCD_DISPLAY is
