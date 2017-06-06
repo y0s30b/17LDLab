@@ -12,7 +12,7 @@ entity DATA_PROCESS is
             taxiChargeCnt : out std_logic_vector(15 downto 0);
             extraCharge : out std_logic_vector(1 downto 0);
             mileageM : out std_logic_vector(12 downto 0);
-            isCall : out std_logic
+            isCall : out std_logic;
             isPayment : out std_logic);
 end DATA_PROCESS;
 
@@ -148,7 +148,7 @@ begin
 
                 if taxiChargeCnt_reg = x"0" then
                     taxiCharge_reg <= taxiCharge_reg + x"64"; -- 100원 추가
-                    taxiChargeCnt_reg <= x"BB8" -- 첫 30000 이후 3000으로 count down
+                    taxiChargeCnt_reg <= x"BB8"; -- 첫 30000 이후 3000으로 count down
                 elsif taxiChargeCnt_reg > x"0" then
                     if clk_cnt0 = x"FA0" then-- decimal 4000, 1 ms 주기 만들어 주기
                         clk_cnt0 := x"0";
