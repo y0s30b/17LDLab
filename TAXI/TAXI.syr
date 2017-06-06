@@ -4,7 +4,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
@@ -105,12 +105,12 @@ Slice Utilization Ratio Delta      : 5
 *                          HDL Compilation                              *
 =========================================================================
 Compiling vhdl file "D:/0606/17LDLab/TAXI/LCD_DISPLAY.vhd" in Library work.
-Entity <lcd_display> compiled.
-Entity <lcd_display> (Architecture <lcd_behavioral>) compiled.
+Architecture lcd_behavioral of Entity lcd_display is up to date.
 Compiling vhdl file "D:/0606/17LDLab/TAXI/SEG_DISPLAY.vhd" in Library work.
 Architecture seg_behavioral of Entity seg_display is up to date.
 Compiling vhdl file "D:/0606/17LDLab/TAXI/DATA_PROCESS.vhd" in Library work.
-Architecture data_behavioral of Entity data_process is up to date.
+Entity <data_process> compiled.
+Entity <data_process> (Architecture <data_behavioral>) compiled.
 Compiling vhdl file "D:/0606/17LDLab/TAXI/TAXI.vhd" in Library work.
 Architecture behavioral of Entity taxi is up to date.
 
@@ -418,15 +418,16 @@ Synthesizing Unit <DATA_PROCESS>.
     Found 12-bit up counter for signal <clk_cnt1>.
     Found 12-bit up counter for signal <clk_cnt2>.
     Found 2-bit register for signal <extraCharge_reg>.
-    Found 2-bit adder for signal <extraCharge_reg$addsub0000> created at line 147.
+    Found 2-bit adder for signal <extraCharge_reg$addsub0000> created at line 148.
     Found 1-bit register for signal <insSW1>.
     Found 1-bit register for signal <insSW2>.
     Found 1-bit register for signal <insSW3>.
+    Found 1-bit register for signal <isCall_add1000_flag>.
     Found 1-bit register for signal <isCall_reg>.
     Found 1-bit register for signal <isPayment_reg>.
     Found 1-bit 4-to-1 multiplexer for signal <isPayment_reg$mux0000>.
     Found 2-bit register for signal <processState>.
-    Found 2-bit adder for signal <processState$addsub0000> created at line 131.
+    Found 2-bit adder for signal <processState$addsub0000> created at line 132.
     Found 1-bit register for signal <SW1_flag>.
     Found 1-bit register for signal <SW1_flag_rst>.
     Found 1-bit register for signal <SW2_flag>.
@@ -437,11 +438,11 @@ Synthesizing Unit <DATA_PROCESS>.
     Found 16-bit 4-to-1 multiplexer for signal <taxiCharge_reg$mux0000>.
     Found 16-bit adder for signal <taxiCharge_reg$share0000>.
     Found 16-bit register for signal <taxiChargeCnt_reg>.
-    Found 16-bit comparator lessequal for signal <taxiChargeCnt_reg$cmp_le0000> created at line 179.
+    Found 16-bit comparator lessequal for signal <taxiChargeCnt_reg$cmp_le0000> created at line 187.
     Found 16-bit subtractor for signal <taxiChargeCnt_reg$share0000>.
     Summary:
 	inferred   3 Counter(s).
-	inferred  15 D-type flip-flop(s).
+	inferred  16 D-type flip-flop(s).
 	inferred   4 Adder/Subtractor(s).
 	inferred   1 Comparator(s).
 	inferred  17 Multiplexer(s).
@@ -471,8 +472,8 @@ Macro Statistics
  12-bit up counter                                     : 4
  3-bit up counter                                      : 1
  8-bit up counter                                      : 2
-# Registers                                            : 40
- 1-bit register                                        : 13
+# Registers                                            : 41
+ 1-bit register                                        : 14
  16-bit register                                       : 2
  2-bit register                                        : 2
  39-bit register                                       : 1
@@ -549,8 +550,8 @@ Macro Statistics
  12-bit up counter                                     : 4
  3-bit up counter                                      : 1
  8-bit up counter                                      : 2
-# Registers                                            : 244
- Flip-Flops                                            : 244
+# Registers                                            : 245
+ Flip-Flops                                            : 245
 # Latches                                              : 4
  4-bit latch                                           : 1
  6-bit latch                                           : 1
@@ -674,8 +675,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 199
- Flip-Flops                                            : 199
+# Registers                                            : 200
+ Flip-Flops                                            : 200
 
 =========================================================================
 
@@ -704,29 +705,29 @@ Design Statistics
 # IOs                              : 30
 
 Cell Usage :
-# BELS                             : 1207
+# BELS                             : 1210
 #      GND                         : 1
 #      INV                         : 30
 #      LUT1                        : 66
 #      LUT2                        : 86
 #      LUT2_D                      : 11
 #      LUT2_L                      : 17
-#      LUT3                        : 166
+#      LUT3                        : 167
 #      LUT3_D                      : 22
 #      LUT3_L                      : 14
-#      LUT4                        : 415
+#      LUT4                        : 416
 #      LUT4_D                      : 117
 #      LUT4_L                      : 43
 #      MUXCY                       : 96
-#      MUXF5                       : 28
+#      MUXF5                       : 29
 #      VCC                         : 1
 #      XORCY                       : 94
-# FlipFlops/Latches                : 224
+# FlipFlops/Latches                : 225
 #      FD                          : 18
 #      FDC                         : 100
 #      FDCE                        : 33
 #      FDCE_1                      : 3
-#      FDE                         : 24
+#      FDE                         : 25
 #      FDP                         : 9
 #      FDPE                        : 8
 #      FDPE_1                      : 3
@@ -745,9 +746,9 @@ Device utilization summary:
 
 Selected Device : 3s200pq208-4 
 
- Number of Slices:                      524  out of   1920    27%  
- Number of Slice Flip Flops:            203  out of   3840     5%  
- Number of 4 input LUTs:                987  out of   3840    25%  
+ Number of Slices:                      525  out of   1920    27%  
+ Number of Slice Flip Flops:            204  out of   3840     5%  
+ Number of 4 input LUTs:                989  out of   3840    25%  
  Number of IOs:                          30
  Number of bonded IOBs:                  30  out of    141    21%  
     IOB Flip Flops:                      21
@@ -775,7 +776,7 @@ Clock Information:
 Clock Signal                             | Clock buffer(FF name)  | Load  |
 -----------------------------------------+------------------------+-------+
 RESET                                    | IBUF+BUFG              | 8     |
-CLK                                      | BUFGP                  | 144   |
+CLK                                      | BUFGP                  | 145   |
 LCD/clk_501                              | BUFG                   | 39    |
 LCD/clk_100k                             | NONE(LCD/cnt_50_11)    | 13    |
 SEG/seg_reg_or0000(SEG/seg_reg_or00001:O)| NONE(*)(SEG/seg_reg_6) | 7     |
@@ -805,7 +806,7 @@ Timing Summary:
 Speed Grade: -4
 
    Minimum period: 28.892ns (Maximum Frequency: 34.612MHz)
-   Minimum input arrival time before clock: 6.037ns
+   Minimum input arrival time before clock: 6.043ns
    Maximum output required time after clock: 10.340ns
    Maximum combinational path delay: No path found
 
@@ -816,7 +817,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CLK'
   Clock period: 28.892ns (frequency: 34.612MHz)
-  Total number of paths / destination ports: 274106935 / 206
+  Total number of paths / destination ports: 274106995 / 208
 -------------------------------------------------------------------------
 Delay:               28.892ns (Levels of Logic = 19)
   Source:            DATA/taxiCharge_reg_12 (FF)
@@ -830,23 +831,23 @@ Delay:               28.892ns (Levels of Logic = 19)
     ----------------------------------------  ------------
      FDC:C->Q             16   0.720   1.576  DATA/taxiCharge_reg_12 (DATA/taxiCharge_reg_12)
      LUT4_D:I0->O          6   0.551   1.029  SEG/bcd_3_mux00011 (SEG/bcd_3_mux0001)
-     LUT4:I3->O            1   0.551   0.827  SEG/bcd_3_mux000311_SW3 (N641)
+     LUT4:I3->O            1   0.551   0.827  SEG/bcd_3_mux000311_SW3 (N643)
      LUT4_D:I3->O          4   0.551   0.943  SEG/bcd_3_mux000311 (SEG/N511)
      LUT4:I3->O            9   0.551   1.319  SEG/Madd_bcd_7_4_add0001_cy<1>11 (SEG/Madd_bcd_7_4_add0001_cy<1>)
      LUT4_D:I1->O          8   0.551   1.109  SEG/bcd_5_mux00011 (SEG/Madd_bcd_7_4_add0002_lut<2>)
      LUT4:I3->O           11   0.551   1.170  SEG/bcd_5_mux000221 (SEG/N181)
-     LUT4:I3->O            1   0.551   0.827  SEG/bcd_5_mux000321_SW0 (N587)
+     LUT4:I3->O            1   0.551   0.827  SEG/bcd_5_mux000321_SW0 (N589)
      LUT4:I3->O            4   0.551   0.985  SEG/bcd_5_mux000321 (SEG/N191)
      LUT4:I2->O            6   0.551   1.029  SEG/bcd_7_mux000411 (SEG/N44)
      LUT4:I3->O            2   0.551   0.903  SEG/Madd_bcd_7_4_add0005_cy<1>11 (SEG/Madd_bcd_7_4_add0005_cy<1>)
      LUT4_D:I3->O          7   0.551   1.134  SEG/bcd_6_mux0005 (SEG/Madd_bcd_7_4_add0006_lut<3>)
-     LUT4:I2->O            2   0.551   1.216  SEG/Madd_bcd_11_8_add0004_cy<1>11_SW0_SW0 (N897)
-     LUT4:I0->O            1   0.551   0.000  SEG/bcd_10_cmp_gt00041_F (N986)
+     LUT4:I2->O            2   0.551   1.216  SEG/Madd_bcd_11_8_add0004_cy<1>11_SW0_SW0 (N899)
+     LUT4:I0->O            1   0.551   0.000  SEG/bcd_10_cmp_gt00041_F (N988)
      MUXF5:I0->O           3   0.360   0.933  SEG/bcd_10_cmp_gt00041 (SEG/bcd_10_cmp_gt0004)
      LUT4_D:I3->O          4   0.551   1.112  SEG/Madd_bcd_11_8_add0005_cy<1>11 (SEG/Madd_bcd_11_8_add0005_cy<1>)
      LUT3:I1->O            4   0.551   0.943  SEG/bcd_10_mux00051 (SEG/Madd_bcd_11_8_add0006_lut<3>)
-     LUT4:I3->O            1   0.551   0.000  SEG/bcd_11_mux000611_SW2_F (N932)
-     MUXF5:I0->O           1   0.360   0.827  SEG/bcd_11_mux000611_SW2 (N296)
+     LUT4:I3->O            1   0.551   0.000  SEG/bcd_11_mux000611_SW2_F (N934)
+     MUXF5:I0->O           1   0.360   0.827  SEG/bcd_11_mux000611_SW2 (N298)
      LUT4:I3->O            1   0.551   0.000  SEG/bcd_9_mux00061 (SEG/bcd_9_mux0006)
      FD:D                      0.203          SEG/DD_2
     ----------------------------------------
@@ -913,7 +914,7 @@ Delay:               6.361ns (Levels of Logic = 13)
 Timing constraint: Default OFFSET IN BEFORE for Clock 'LCD/clk_501'
   Total number of paths / destination ports: 39 / 39
 -------------------------------------------------------------------------
-Offset:              6.037ns (Levels of Logic = 2)
+Offset:              6.043ns (Levels of Logic = 2)
   Source:            RESET (PAD)
   Destination:       LCD/lcd_state_0 (FF)
   Destination Clock: LCD/clk_501 rising
@@ -922,18 +923,18 @@ Offset:              6.037ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            42   0.821   1.910  RESET_IBUF (RESET_IBUF1)
+     IBUF:I->O            43   0.821   1.916  RESET_IBUF (RESET_IBUF1)
      INV:I->O            154   0.551   2.552  SEG/RESET_inv1_INV_0 (DATA/RESET_inv)
      FDP:D                     0.203          LCD/lcd_state_0
     ----------------------------------------
-    Total                      6.037ns (1.575ns logic, 4.462ns route)
+    Total                      6.043ns (1.575ns logic, 4.468ns route)
                                        (26.1% logic, 73.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK'
-  Total number of paths / destination ports: 24 / 24
+  Total number of paths / destination ports: 25 / 25
 -------------------------------------------------------------------------
-Offset:              5.028ns (Levels of Logic = 2)
+Offset:              5.034ns (Levels of Logic = 2)
   Source:            RESET (PAD)
   Destination:       DATA/clk_cnt1_11 (FF)
   Destination Clock: CLK rising
@@ -942,12 +943,12 @@ Offset:              5.028ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            42   0.821   1.936  RESET_IBUF (RESET_IBUF1)
+     IBUF:I->O            43   0.821   1.942  RESET_IBUF (RESET_IBUF1)
      LUT4:I3->O           12   0.551   1.118  DATA/clk_cnt2_and00001 (DATA/clk_cnt2_and0000)
      FDE:CE                    0.602          DATA/clk_cnt2_0
     ----------------------------------------
-    Total                      5.028ns (1.974ns logic, 3.054ns route)
-                                       (39.3% logic, 60.7% route)
+    Total                      5.034ns (1.974ns logic, 3.060ns route)
+                                       (39.2% logic, 60.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'LCD/clk_100k'
@@ -1049,12 +1050,12 @@ Offset:              7.078ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 23.00 secs
-Total CPU time to Xst completion: 23.21 secs
+Total REAL time to Xst completion: 22.00 secs
+Total CPU time to Xst completion: 22.65 secs
  
 --> 
 
-Total memory usage is 217580 kilobytes
+Total memory usage is 218156 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  111 (   0 filtered)

@@ -28,6 +28,7 @@ architecture DATA_Behavioral of DATA_PROCESS is
     signal isCall_reg, isPayment_reg : std_logic;
 
     signal SW1_flag_rst, SW2_flag_rst, SW3_flag_rst : std_logic;
+	 signal isCall_add1000_flag : std_logic;
 begin
     taxiCharge <= taxiCharge_reg;
     taxiChargeCnt <= taxiChargeCnt_reg;
@@ -158,6 +159,8 @@ begin
         variable clk_cnt0 : std_logic_vector(11 downto 0);  -- �증 0%
         variable clk_cnt1 : std_logic_vector(11 downto 0);  -- �증 20%
         variable clk_cnt2 : std_logic_vector(11 downto 0);  -- �증 40%
+		  
+		  
     begin
         if RESET = '0' then
             clk_cnt0 := "000000000000";
@@ -170,8 +173,13 @@ begin
             if processState = "00" or processState = "10" then
             -- �긕� 모드�서 '�출'버튼 �용 가
                 if isCall_reg = '1' then
-                    taxiCharge_reg <= taxiCharge_reg + "0000001111101000";
-                end if;
+						  if isCall_add1000_flag = '0' then
+							  taxiCharge_reg <= taxiCharge_reg + "0000001111101000";
+							  isCall_add1000_flag <= '1';
+						  end if;
+                elsif isCall_reg = '0' then
+						  isCall_add1000_flag <= '0';
+					 end if;
             elsif processState = "01" then
             -- 주행 모드
                 if taxiChargeCnt_reg = "000000000000" then
