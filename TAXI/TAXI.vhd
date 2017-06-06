@@ -30,7 +30,7 @@ entity TAXI is
 end TAXI;
 
 architecture Behavioral of TAXI is
-    -- component of LCD_DISPLAY: taxiCharge 제외한 4가지 정보를 LCD에 출력.
+    -- component of LCD_DISPLAY: taxiCharge �외4가지 �보�LCD출력.
     component LCD_DISPLAY is
         port ( RESET, CLK : in std_logic;
             LCD_A : out std_logic_vector(1 downto 0);
@@ -39,10 +39,11 @@ architecture Behavioral of TAXI is
             taxiChargeCnt : in std_logic_vector(15 downto 0);
             extraCharge : in std_logic_vector(1 downto 0);
             mileageM : in std_logic_vector(12 downto 0);
-            isCall : in std_logic);
+            isCall : in std_logic;
+				isPayment : in std_logic);
     end component;
 
-    -- component of SEG_DISPLAY: taxiCharge 정보를 7-segment에 출력.
+    -- component of SEG_DISPLAY: taxiCharge �보�7-segment출력.
     component SEG_DISPlAY is
         port ( RESET, CLK : in std_logic;
             DIGIT : out std_logic_vector(6 downto 1);
@@ -57,7 +58,7 @@ architecture Behavioral of TAXI is
             taxiCharge : in std_logic_vector(15 downto 0));
     end component;
 
-    -- component of DATA_PROCESS: SW1~3 스위치 입력에 따라 5가지 정보 생성.
+    -- component of DATA_PROCESS: SW1~3 �위칅력�라 5가지 �보 �성.
     component DATA_PROCESS is
         port( RESET, CLK : in std_logic;
             SW1, SW2, SW3 : in std_logic;
@@ -65,22 +66,23 @@ architecture Behavioral of TAXI is
             taxiChargeCnt : out std_logic_vector(15 downto 0);
             extraCharge : out std_logic_vector(1 downto 0);
             mileageM : out std_logic_vector(12 downto 0);
-            isCall : out std_logic);
+            isCall : out std_logic;
+				isPayment : out std_logic);
     end component;
 
-    -- < LCD와 7-segment에 표시할 정보들을 담는 내부 signal들 5가지 > --
+    -- < LCD� 7-segment�시�보�을 �는 �� signal5가지 > --
     signal taxiCharge : std_logic_vector (15 downto 0);
-    -- taxiCharge는 3000원부터 시작해 taxi 가격을 보여 준다.
+    -- taxiCharge3000��작taxi 가격을 보여 준
     signal taxiChargeCnt : std_logic_vector (15 downto 0);
-    -- taxiChargeCnt가 0이 되는 순간 taxiCharge 증가. 초기 상태에서 30000부터 count down.
+    -- taxiChargeCnt가 0�는 �간 taxiCharge 증�. 초기 �태�서 30000부count down.
     signal extraCharge : std_logic_vector (1 downto 0);
     -- 00%(="00"), 20%(="01"), 40%(="10")
     signal mileageM : std_logic_vector (12 downto 0);
-    -- 최대 0x1FFF m(=8191 m)
+    -- 최� 0x1FFF m(=8191 m)
     signal isCall : std_logic;
     -- Not Call(='0'), Call(='1')
     signal isPayment : std_logic;
-    -- isPayment = '1'은 10, 11번 회로 특성인 최종 정산 화면을 띄우는 신호이다.
+    -- isPayment = '1'� 10, 11벌로 �성최종 �산 �면�우�호�다.
 begin
     LCD : LCD_DISPLAY port map (RESET, CLK, LCD_A, LCD_EN, LCD_D, taxiChargeCnt, extraCharge, mileageM, isCall, isPayment);
     SEG : SEG_DISPLAY port map (RESET, CLK, DIGIT, SEG_A, SEG_B, SEG_C, SEG_D, SEG_E, SEG_F, SEG_G, SEG_DP, taxiCharge);

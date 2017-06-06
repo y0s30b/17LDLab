@@ -5,7 +5,7 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity DATA_PROCESS is
-    -- SW1~3의 스위치 입력을 받아 5가지 정보를 제공하는 내부 signal로 출력.
+    -- SW1~3�위칅력받아 5가지 �보륜공�는 �� signal�출력.
     port( RESET, CLK : in std_logic;
             SW1, SW2, SW3 : in std_logic;
             taxiCharge : out std_logic_vector(15 downto 0);
@@ -18,7 +18,7 @@ end DATA_PROCESS;
 
 architecture DATA_Behavioral of DATA_PROCESS is
     signal processState : std_logic_vector(1 downto 0);
-    -- "00": 대기, "01": "시작", "10": "정지"
+    -- "00": �� "01": "�작", "10": "��"
     signal SW1_flag, SW2_flag, SW3_flag : std_logic;
     signal insSW1, insSW2, insSW3 : std_logic;
 
@@ -35,9 +35,9 @@ begin
     isPayment <= isPayment_reg;
 
     process(SW1, SW2, SW3)
-    -- switch input을 각각의 instruction signal로 바꿔주는 process ...1/2
+    -- switch input각각instruction signal�바꿔주는 process ...1/2
     begin
-        -- 떼는 순간에 발생시키는 것이므로 active-LO로 동작하는 스위치에서는 '1'.
+        -- �는 �간발생�키것이므�active-LO롙작�는 �위치에�는 '1'.
         if SW1 = '1' and SW1'event then
             SW1_flag <= '1';
         end if;
@@ -50,12 +50,12 @@ begin
     end process;
 
     process(CLK)
-    -- switch input을 각각의 instruction signal로 바꿔주는 process ...2/2
+    -- switch input각각instruction signal�바꿔주는 process ...2/2
     begin
         if CLK = '0' and CLK'event then
-        -- clk's falling edge에서 다음 falling edge까지 1 clock period만큼
-        -- instruction signal을 보내주어야 다른 process에서 clk's rising edge일 때
-        -- 제대로 처리할 수 있음.
+        -- clk's falling edge�서 �음 falling edge까� 1 clock period만큼
+        -- instruction signal보내주어�른 process�서 clk's rising edge
+        -- ���처리�음.
             if SW1_flag = '1' then
                 if insSW1 = '0' then 
                     insSW1 <= '1';
@@ -84,7 +84,7 @@ begin
     end process;
 
     process(RESET, CLK)
-    -- SW1~3의 신호에 따라 원하는 회로 동작을 기술하는 process
+    -- SW1~3�호�라 �하�로 �작기술�는 process
     begin
         if RESET = '0' then
             processState <= "00";
@@ -97,18 +97,18 @@ begin
             insSW2 <= '0';
             insSw3 <= '0';
             
-            taxiCharge_reg <= "0000_1011_1011_1000";    -- decimal 3000
-            taxiChargeCnt_reg <= "0111_0101_0011_0000"; -- decimal 30000
+            taxiCharge_reg <= "0000101110111000";    -- decimal 3000
+            taxiChargeCnt_reg <= "0111010100110000"; -- decimal 30000
             
             extraCharge_reg <= "00";
-            mileageM_reg <= "0000_0000_0000";
+            mileageM_reg <= "0000000000000";
             isCall_reg <= '0';
             isPayment_reg <= '0';
 
         elsif CLK = '1' and CLK'event then
             if insSW1 = '1' then
-                -- processState = "00"은 '대기', "01"은 '주행', "10"은 '정지'.
-                -- state가 "10"에서 "00"으로 넘어갈 때 payment display를 위한 isPayment를 set.
+                -- processState = "00"� '��, "01"� '주행', "10"� '��'.
+                -- state가 "10"�서 "00"�로 �어�payment display륄한 isPayment�set.
                 if processState = "00" or processState = "01" then
                     processState <= processState + 1;
                     isPayment_reg <= '0';
@@ -119,45 +119,44 @@ begin
             end if;
 
             if insSW2 = '1' then
-                -- 호출 여부 결정하는 신호.
+                -- �출 �� 결정�는 �호.
                 isCall_reg <= '1';
             end if;
             
             if insSW3 = '1' then
-                -- 할증 % 결정하는 신호.
+                -- �증 % 결정�는 �호.
                 if extraCharge_reg = "00" or extraCharge_reg = "01" then
                     extraCharge_reg <= extraCharge_reg + 1;
                 elsif extraCharge_reg = "10" then
                     extraCharge_reg <= "00";
                 end if;
             end if;
-
         end if;
     end process;
 
     process(RESET, CLK)
-    -- 주행 모드일 때, taxiChargeCnt와 mileageM을 적절한 clk 주기에 따라 변경하고
-    -- taxiChargeCnt가 0으로 떨어지는 순간 taxiCharge를 증가시킴(요금 증가).
+    -- 주행 모드 taxiChargeCnt� mileageM�절clk 주기�라 변경하�
+    -- taxiChargeCnt가 0�로 �어지�간 taxiCharge�증�킴(�금 증�).
         variable clk_cnt0 : std_logic_vector(11 downto 0);
     begin
         if RESET = '0' then
-            clk_cnt0 := x"0";
+            clk_cnt0 := "000000000000";
         elsif CLK = '1' and CLK'event then
             if processState = "01" then
-                -- 주행 모드일 때
+                -- 주행 모드
 
-                if taxiChargeCnt_reg = x"0" then
-                    taxiCharge_reg <= taxiCharge_reg + x"64"; -- 100원 추가
-                    taxiChargeCnt_reg <= x"BB8"; -- 첫 30000 이후 3000으로 count down
-                elsif taxiChargeCnt_reg > x"0" then
-                    if clk_cnt0 = x"FA0" then-- decimal 4000, 1 ms 주기 만들어 주기
-                        clk_cnt0 := x"0";
+                if taxiChargeCnt_reg = "000000000000" then
+                    taxiCharge_reg <= taxiCharge_reg + x"64"; -- 100추�
+                    taxiChargeCnt_reg <= "0001101110111000"; -- �30000 �후 3000�로 count down
+                elsif taxiChargeCnt_reg > "0000000000000000" then
+                    if clk_cnt0 = "11111010000" then-- decimal 4000, 1 ms 주기 만들주기
+                        clk_cnt0 := "000000000000";
                         taxiChargeCnt_reg <= taxiChargeCnt_reg - 1;
-                        -- 1 ms마다 taxiChargeCnt 감소시킴
+                        -- 1 ms마다 taxiChargeCnt 감소�킴
 
-                        -- 주행 거리 mileageM에 관한 부분도 여기에 추가하기
-                        -- 추가추가
-                        -- 추가하세염
+                        -- 주행 거리 mileageM관부분도 �기추�기
+                        -- 추�추�
+                        -- 추�세
                     else
                         clk_cnt0 := clk_cnt0 + 1;
                     end if;
