@@ -25,24 +25,25 @@ architecture SEG_Behavioral of SEG_DISPLAY is
     signal sel_reg : std_logic_vector(2 downto 0);   -- 6개의 7-segment 중 어느 것에 출력할 지 결정.
     signal data_reg : std_logic_vector(3 downto 0);  -- segReg로 보내기 위한 data의 중간 단계.
     signal seg_reg : std_logic_vector(7 downto 0);   -- output SEG_X로 보내기 위한 signal.
+    signal AA, BB, CC, DD, EE, FF : std_logic_vector(3 downto 0);
 begin
-    	process(sel_reg)
+    process(sel_reg)
 	begin
 		case sel_reg is		
 		-- sel은 어느 7-segment에 값을 표시할 지 결정
 		-- 6개의 7-segment가 있고 각 segment는 시, 분, 초를 부분적으로 담당함.
 			when "000" =>	DIGIT <= "000001";
-							data_reg <= hr10_cnt;
+							data_reg <= AA;
 			when "001" =>	DIGIT <= "000010";
-							data_reg <= hr01_cnt;
+							data_reg <= BB;
 			when "010" =>	DIGIT <= "000100";
-							data_reg <= min10_cnt;
+							data_reg <= CC;
 			when "011" =>	DIGIT <= "001000";
-							data_reg <= min01_cnt;
+							data_reg <= DD;
 			when "100" =>	DIGIT <= "010000";
-							data_reg <= sec10_cnt;
+							data_reg <= EE;
 			when "101" =>	DIGIT <= "100000";
-							data_reg <= sec01_cnt;
+							data_reg <= FF;
 			when others => null;
 		end case;
 	end process;
