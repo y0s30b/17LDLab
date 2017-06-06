@@ -136,6 +136,33 @@ begin
     end process;
 
     process(RESET, CLK)
+    -- 주행 모드일 때, taxiChargeCnt와 mileageM을 적절한 clk 주기에 따라 변경하고
+    -- taxiChargeCnt가 0으로 떨어지는 순간 taxiCharge를 증가시킴(요금 증가).
+        variable clk_cnt0 : std_logic_vector(11 downto 0);
     begin
+        if RESET = '0' then
+            clk_cnt0 := x"0";
+        elsif CLK = '1' and CLK'event then
+            if processState = "01" then
+                -- 주행 모드일 때
+
+                if taxiChargeCnt_reg = x"0" then
+                    taxiCharge_reg <= taxiCharge_reg + x"64"; -- 100원 추가
+                    taxiChargeCnt_reg <= x"BB8" -- 첫 30000 이후 3000으로 count down
+                elsif taxiChargeCnt_reg > x"0" then
+                    if clk_cnt0 = x"FA0" then-- decimal 4000, 1 ms 주기 만들어 주기
+                        clk_cnt0 := x"0";
+                        taxiChargeCnt_reg <= taxiChargeCnt_reg - 1;
+                        -- 1 ms마다 taxiChargeCnt 감소시킴
+
+                        -- 주행 거리 mileageM에 관한 부분도 여기에 추가하기
+                        -- 추가추가
+                        -- 추가하세염
+                    else
+                        clk_cnt0 := clk_cnt0 + 1;
+                    end if;
+                end if;
+            end if;
+        end if;
     end process;
 end DATA_Behavioral;
