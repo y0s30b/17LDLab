@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: TAXI.prj
 
@@ -104,20 +104,17 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-Compiling vhdl file "D:/17LDLab/TAXI/LCD_DISPLAY.vhd" in Library work.
-Architecture lcd_behavioral of Entity lcd_display is up to date.
-Compiling vhdl file "D:/17LDLab/TAXI/SEG_DISPLAY.vhd" in Library work.
+Compiling vhdl file "D:/0606/17LDLab/TAXI/SEG_DISPLAY.vhd" in Library work.
 Architecture seg_behavioral of Entity seg_display is up to date.
-Compiling vhdl file "D:/17LDLab/TAXI/DATA_PROCESS.vhd" in Library work.
+Compiling vhdl file "D:/0606/17LDLab/TAXI/DATA_PROCESS.vhd" in Library work.
 Architecture data_behavioral of Entity data_process is up to date.
-Compiling vhdl file "D:/17LDLab/TAXI/TAXI.vhd" in Library work.
-Entity <taxi> compiled.
-Entity <TAXI> (Architecture <Behavioral>) compiled.
+Compiling vhdl file "D:/0606/17LDLab/TAXI/TAXI.vhd" in Library work.
+Architecture behavioral of Entity taxi is up to date.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
 =========================================================================
-Analyzing hierarchy for entity <TAXI> in library <work> (architecture <Behavioral>).
+Analyzing hierarchy for entity <TAXI> in library <work> (architecture <behavioral>).
 
 Analyzing hierarchy for entity <SEG_DISPlAY> in library <work> (architecture <seg_behavioral>).
 
@@ -127,32 +124,16 @@ Analyzing hierarchy for entity <DATA_PROCESS> in library <work> (architecture <d
 =========================================================================
 *                            HDL Analysis                               *
 =========================================================================
-Analyzing Entity <TAXI> in library <work> (Architecture <Behavioral>).
-WARNING:Xst:2211 - "D:/17LDLab/TAXI/TAXI.vhd" line 87: Instantiating black box module <LCD_DISPLAY>.
+Analyzing Entity <TAXI> in library <work> (Architecture <behavioral>).
 Entity <TAXI> analyzed. Unit <TAXI> generated.
 
 Analyzing Entity <SEG_DISPlAY> in library <work> (Architecture <seg_behavioral>).
-WARNING:Xst:819 - "D:/17LDLab/TAXI/SEG_DISPLAY.vhd" line 30: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+WARNING:Xst:819 - "D:/0606/17LDLab/TAXI/SEG_DISPLAY.vhd" line 30: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
    <AA>, <BB>, <CC>, <DD>, <EE>, <FF>
-WARNING:Xst:819 - "D:/17LDLab/TAXI/SEG_DISPLAY.vhd" line 103: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
-   <taxiCharge>
+INFO:Xst:2679 - Register <AA> in unit <SEG_DISPlAY> has a constant value of 0000 during circuit operation. The register is replaced by logic.
 Entity <SEG_DISPlAY> analyzed. Unit <SEG_DISPlAY> generated.
 
 Analyzing Entity <DATA_PROCESS> in library <work> (Architecture <data_behavioral>).
-INFO:Xst:2679 - Register <SW1_flag> in unit <DATA_PROCESS> has a constant value of 1 during circuit operation. The register is replaced by logic.
-INFO:Xst:2679 - Register <SW2_flag> in unit <DATA_PROCESS> has a constant value of 1 during circuit operation. The register is replaced by logic.
-INFO:Xst:2679 - Register <SW3_flag> in unit <DATA_PROCESS> has a constant value of 1 during circuit operation. The register is replaced by logic.
-INFO:Xst:2679 - Register <SW1_flag> in unit <DATA_PROCESS> has a constant value of 0 during circuit operation. The register is replaced by logic.
-INFO:Xst:2679 - Register <SW2_flag> in unit <DATA_PROCESS> has a constant value of 0 during circuit operation. The register is replaced by logic.
-INFO:Xst:2679 - Register <SW3_flag> in unit <DATA_PROCESS> has a constant value of 0 during circuit operation. The register is replaced by logic.
-INFO:Xst:2679 - Register <SW1_flag> in unit <DATA_PROCESS> has a constant value of 0 during circuit operation. The register is replaced by logic.
-INFO:Xst:2679 - Register <SW2_flag> in unit <DATA_PROCESS> has a constant value of 0 during circuit operation. The register is replaced by logic.
-INFO:Xst:2679 - Register <SW3_flag> in unit <DATA_PROCESS> has a constant value of 0 during circuit operation. The register is replaced by logic.
-INFO:Xst:2679 - Register <insSW1> in unit <DATA_PROCESS> has a constant value of 0 during circuit operation. The register is replaced by logic.
-INFO:Xst:2679 - Register <insSW2> in unit <DATA_PROCESS> has a constant value of 0 during circuit operation. The register is replaced by logic.
-INFO:Xst:2679 - Register <insSW3> in unit <DATA_PROCESS> has a constant value of 0 during circuit operation. The register is replaced by logic.
-INFO:Xst:2679 - Register <taxiCharge_reg> in unit <DATA_PROCESS> has a constant value of 0000101110111000 during circuit operation. The register is replaced by logic.
-INFO:Xst:2679 - Register <taxiChargeCnt_reg> in unit <DATA_PROCESS> has a constant value of 0111010100110000 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <mileageM_reg> in unit <DATA_PROCESS> has a constant value of 0000000000000 during circuit operation. The register is replaced by logic.
 Entity <DATA_PROCESS> analyzed. Unit <DATA_PROCESS> generated.
 
@@ -164,9 +145,7 @@ Entity <DATA_PROCESS> analyzed. Unit <DATA_PROCESS> generated.
 Performing bidirectional port resolution...
 
 Synthesizing Unit <SEG_DISPlAY>.
-    Related source file is "D:/17LDLab/TAXI/SEG_DISPLAY.vhd".
-WARNING:Xst:647 - Input <taxiCharge<0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:653 - Signal <AA> is used but never assigned. This sourceless signal will be automatically connected to value 0000.
+    Related source file is "D:/0606/17LDLab/TAXI/SEG_DISPLAY.vhd".
     Found 6x6-bit ROM for signal <DIGIT$mux0000>.
     Found 10x8-bit ROM for signal <seg_reg$mux0000>.
 WARNING:Xst:737 - Found 6-bit latch for signal <DIGIT>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
@@ -175,87 +154,97 @@ WARNING:Xst:737 - Found 4-bit latch for signal <data_reg>. Latches may be genera
 INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
 WARNING:Xst:737 - Found 8-bit latch for signal <seg_reg>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
-    Found 5-bit comparator greater for signal <bcd_10$cmp_gt0000> created at line 120.
-    Found 5-bit comparator greater for signal <bcd_10$cmp_gt0001> created at line 120.
-    Found 5-bit comparator greater for signal <bcd_10$cmp_gt0002> created at line 120.
-    Found 5-bit comparator greater for signal <bcd_10$cmp_gt0003> created at line 120.
-    Found 5-bit comparator greater for signal <bcd_10$cmp_gt0004> created at line 120.
-    Found 5-bit comparator greater for signal <bcd_10$cmp_gt0005> created at line 120.
-    Found 4-bit adder for signal <bcd_11_8$add0000> created at line 121.
-    Found 4-bit adder for signal <bcd_11_8$add0001> created at line 121.
-    Found 4-bit adder for signal <bcd_11_8$add0002> created at line 121.
-    Found 4-bit adder for signal <bcd_11_8$add0003> created at line 121.
-    Found 4-bit adder for signal <bcd_11_8$add0004> created at line 121.
-    Found 4-bit adder for signal <bcd_11_8$add0005> created at line 121.
-    Found 5-bit comparator greater for signal <bcd_15$cmp_gt0000> created at line 124.
-    Found 5-bit comparator greater for signal <bcd_15$cmp_gt0001> created at line 124.
-    Found 5-bit comparator greater for signal <bcd_15$cmp_gt0002> created at line 124.
-    Found 4-bit adder for signal <bcd_15_12$add0000> created at line 125.
-    Found 4-bit adder for signal <bcd_15_12$add0001> created at line 125.
-    Found 4-bit adder for signal <bcd_15_12$add0002> created at line 125.
-    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0000> created at line 112.
-    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0001> created at line 112.
-    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0002> created at line 112.
-    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0003> created at line 112.
-    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0004> created at line 112.
-    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0005> created at line 112.
-    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0006> created at line 112.
-    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0007> created at line 112.
-    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0008> created at line 112.
-    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0009> created at line 112.
-    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0010> created at line 112.
-    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0011> created at line 112.
-    Found 4-bit adder for signal <bcd_3_0$add0000> created at line 113.
-    Found 4-bit adder for signal <bcd_3_0$add0001> created at line 113.
-    Found 4-bit adder for signal <bcd_3_0$add0002> created at line 113.
-    Found 4-bit adder for signal <bcd_3_0$add0003> created at line 113.
-    Found 4-bit adder for signal <bcd_3_0$add0004> created at line 113.
-    Found 4-bit adder for signal <bcd_3_0$add0005> created at line 113.
-    Found 4-bit adder for signal <bcd_3_0$add0006> created at line 113.
-    Found 4-bit adder for signal <bcd_3_0$add0007> created at line 113.
-    Found 4-bit adder for signal <bcd_3_0$add0008> created at line 113.
-    Found 4-bit adder for signal <bcd_3_0$add0009> created at line 113.
-    Found 4-bit adder for signal <bcd_3_0$add0010> created at line 113.
-    Found 4-bit adder for signal <bcd_3_0$add0011> created at line 113.
-    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0000> created at line 116.
-    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0001> created at line 116.
-    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0002> created at line 116.
-    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0003> created at line 116.
-    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0004> created at line 116.
-    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0005> created at line 116.
-    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0006> created at line 116.
-    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0007> created at line 116.
-    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0008> created at line 116.
-    Found 4-bit adder for signal <bcd_7_4$add0000> created at line 117.
-    Found 4-bit adder for signal <bcd_7_4$add0001> created at line 117.
-    Found 4-bit adder for signal <bcd_7_4$add0002> created at line 117.
-    Found 4-bit adder for signal <bcd_7_4$add0003> created at line 117.
-    Found 4-bit adder for signal <bcd_7_4$add0004> created at line 117.
-    Found 4-bit adder for signal <bcd_7_4$add0005> created at line 117.
-    Found 4-bit adder for signal <bcd_7_4$add0006> created at line 117.
-    Found 4-bit adder for signal <bcd_7_4$add0007> created at line 117.
-    Found 4-bit adder for signal <bcd_7_4$add0008> created at line 117.
+    Found 4-bit register for signal <BB>.
+    Found 5-bit comparator greater for signal <bcd_10$cmp_gt0000> created at line 121.
+    Found 5-bit comparator greater for signal <bcd_10$cmp_gt0001> created at line 121.
+    Found 5-bit comparator greater for signal <bcd_10$cmp_gt0002> created at line 121.
+    Found 5-bit comparator greater for signal <bcd_10$cmp_gt0003> created at line 121.
+    Found 5-bit comparator greater for signal <bcd_10$cmp_gt0004> created at line 121.
+    Found 5-bit comparator greater for signal <bcd_10$cmp_gt0005> created at line 121.
+    Found 5-bit comparator greater for signal <bcd_11$cmp_gt0000> created at line 121.
+    Found 4-bit adder for signal <bcd_11_8$add0000> created at line 122.
+    Found 4-bit adder for signal <bcd_11_8$add0001> created at line 122.
+    Found 4-bit adder for signal <bcd_11_8$add0002> created at line 122.
+    Found 4-bit adder for signal <bcd_11_8$add0003> created at line 122.
+    Found 4-bit adder for signal <bcd_11_8$add0004> created at line 122.
+    Found 4-bit adder for signal <bcd_11_8$add0005> created at line 122.
+    Found 4-bit adder for signal <bcd_11_8$add0006> created at line 122.
+    Found 5-bit comparator greater for signal <bcd_15$cmp_gt0000> created at line 125.
+    Found 5-bit comparator greater for signal <bcd_15$cmp_gt0001> created at line 125.
+    Found 5-bit comparator greater for signal <bcd_15$cmp_gt0002> created at line 125.
+    Found 5-bit comparator greater for signal <bcd_15$cmp_gt0003> created at line 125.
+    Found 4-bit adder for signal <bcd_15_12$add0000> created at line 126.
+    Found 4-bit adder for signal <bcd_15_12$add0001> created at line 126.
+    Found 4-bit adder for signal <bcd_15_12$add0002> created at line 126.
+    Found 4-bit adder for signal <bcd_15_12$add0003> created at line 126.
+    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0000> created at line 113.
+    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0001> created at line 113.
+    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0002> created at line 113.
+    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0003> created at line 113.
+    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0004> created at line 113.
+    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0005> created at line 113.
+    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0006> created at line 113.
+    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0007> created at line 113.
+    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0008> created at line 113.
+    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0009> created at line 113.
+    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0010> created at line 113.
+    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0011> created at line 113.
+    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0012> created at line 113.
+    Found 4-bit adder for signal <bcd_3_0$add0000> created at line 114.
+    Found 4-bit adder for signal <bcd_3_0$add0001> created at line 114.
+    Found 4-bit adder for signal <bcd_3_0$add0002> created at line 114.
+    Found 4-bit adder for signal <bcd_3_0$add0003> created at line 114.
+    Found 4-bit adder for signal <bcd_3_0$add0004> created at line 114.
+    Found 4-bit adder for signal <bcd_3_0$add0005> created at line 114.
+    Found 4-bit adder for signal <bcd_3_0$add0006> created at line 114.
+    Found 4-bit adder for signal <bcd_3_0$add0007> created at line 114.
+    Found 4-bit adder for signal <bcd_3_0$add0008> created at line 114.
+    Found 4-bit adder for signal <bcd_3_0$add0009> created at line 114.
+    Found 4-bit adder for signal <bcd_3_0$add0010> created at line 114.
+    Found 4-bit adder for signal <bcd_3_0$add0011> created at line 114.
+    Found 4-bit adder for signal <bcd_3_0$add0012> created at line 114.
+    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0000> created at line 117.
+    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0001> created at line 117.
+    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0002> created at line 117.
+    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0003> created at line 117.
+    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0004> created at line 117.
+    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0005> created at line 117.
+    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0006> created at line 117.
+    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0007> created at line 117.
+    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0008> created at line 117.
+    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0009> created at line 117.
+    Found 4-bit adder for signal <bcd_7_4$add0000> created at line 118.
+    Found 4-bit adder for signal <bcd_7_4$add0001> created at line 118.
+    Found 4-bit adder for signal <bcd_7_4$add0002> created at line 118.
+    Found 4-bit adder for signal <bcd_7_4$add0003> created at line 118.
+    Found 4-bit adder for signal <bcd_7_4$add0004> created at line 118.
+    Found 4-bit adder for signal <bcd_7_4$add0005> created at line 118.
+    Found 4-bit adder for signal <bcd_7_4$add0006> created at line 118.
+    Found 4-bit adder for signal <bcd_7_4$add0007> created at line 118.
+    Found 4-bit adder for signal <bcd_7_4$add0008> created at line 118.
+    Found 4-bit adder for signal <bcd_7_4$add0009> created at line 118.
+    Found 4-bit register for signal <CC>.
     Found 4-bit 6-to-1 multiplexer for signal <data_reg$mux0000>.
+    Found 4-bit register for signal <DD>.
+    Found 4-bit register for signal <EE>.
+    Found 4-bit register for signal <FF>.
     Found 8-bit up counter for signal <seg_clk_cnt>.
     Found 3-bit up counter for signal <sel_reg>.
     Summary:
 	inferred   2 ROM(s).
 	inferred   2 Counter(s).
-	inferred  30 Adder/Subtractor(s).
-	inferred  30 Comparator(s).
+	inferred  20 D-type flip-flop(s).
+	inferred  34 Adder/Subtractor(s).
+	inferred  34 Comparator(s).
 	inferred   4 Multiplexer(s).
 Unit <SEG_DISPlAY> synthesized.
 
 
 Synthesizing Unit <DATA_PROCESS>.
-    Related source file is "D:/17LDLab/TAXI/DATA_PROCESS.vhd".
-WARNING:Xst:647 - Input <SW1> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <SW2> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <SW3> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Related source file is "D:/0606/17LDLab/TAXI/DATA_PROCESS.vhd".
     Found 12-bit up counter for signal <clk_cnt0>.
-    Found 16-bit comparator lessequal for signal <clk_cnt0$cmp_le0000> created at line 150.
     Found 2-bit register for signal <extraCharge_reg>.
-    Found 2-bit adder for signal <extraCharge_reg$addsub0000> created at line 129.
+    Found 2-bit adder for signal <extraCharge_reg$addsub0000> created at line 147.
     Found 1-bit register for signal <insSW1>.
     Found 1-bit register for signal <insSW2>.
     Found 1-bit register for signal <insSW3>.
@@ -263,13 +252,20 @@ WARNING:Xst:647 - Input <SW3> is never used. This port will be preserved and lef
     Found 1-bit register for signal <isPayment_reg>.
     Found 1-bit 4-to-1 multiplexer for signal <isPayment_reg$mux0000>.
     Found 2-bit register for signal <processState>.
-    Found 2-bit adder for signal <processState$addsub0000> created at line 113.
+    Found 2-bit adder for signal <processState$addsub0000> created at line 131.
+    Found 1-bit register for signal <SW1_flag>.
+    Found 1-bit register for signal <SW1_flag_rst>.
+    Found 1-bit register for signal <SW2_flag>.
+    Found 1-bit register for signal <SW2_flag_rst>.
+    Found 1-bit register for signal <SW3_flag>.
+    Found 1-bit register for signal <SW3_flag_rst>.
     Found 16-bit up accumulator for signal <taxiCharge_reg>.
     Found 16-bit down counter for signal <taxiChargeCnt_reg>.
+    Found 16-bit comparator lessequal for signal <taxiChargeCnt_reg$cmp_le0000> created at line 173.
     Summary:
 	inferred   2 Counter(s).
 	inferred   1 Accumulator(s).
-	inferred   9 D-type flip-flop(s).
+	inferred  15 D-type flip-flop(s).
 	inferred   2 Adder/Subtractor(s).
 	inferred   1 Comparator(s).
 	inferred   1 Multiplexer(s).
@@ -277,7 +273,12 @@ Unit <DATA_PROCESS> synthesized.
 
 
 Synthesizing Unit <TAXI>.
-    Related source file is "D:/17LDLab/TAXI/TAXI.vhd".
+    Related source file is "D:/0606/17LDLab/TAXI/TAXI.vhd".
+WARNING:Xst:646 - Signal <taxiChargeCnt> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <mileageM> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <isPayment> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <isCall> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <extraCharge> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 Unit <TAXI> synthesized.
 
 
@@ -288,9 +289,9 @@ Macro Statistics
 # ROMs                                                 : 2
  10x8-bit ROM                                          : 1
  6x6-bit ROM                                           : 1
-# Adders/Subtractors                                   : 32
+# Adders/Subtractors                                   : 36
  2-bit adder                                           : 2
- 4-bit adder                                           : 30
+ 4-bit adder                                           : 34
 # Counters                                             : 4
  12-bit up counter                                     : 1
  16-bit down counter                                   : 1
@@ -298,16 +299,17 @@ Macro Statistics
  8-bit up counter                                      : 1
 # Accumulators                                         : 1
  16-bit up accumulator                                 : 1
-# Registers                                            : 7
- 1-bit register                                        : 5
+# Registers                                            : 18
+ 1-bit register                                        : 11
  2-bit register                                        : 2
+ 4-bit register                                        : 5
 # Latches                                              : 3
  4-bit latch                                           : 1
  6-bit latch                                           : 1
  8-bit latch                                           : 1
-# Comparators                                          : 31
+# Comparators                                          : 35
  16-bit comparator lessequal                           : 1
- 5-bit comparator greater                              : 30
+ 5-bit comparator greater                              : 34
 # Multiplexers                                         : 2
  1-bit 4-to-1 multiplexer                              : 1
  4-bit 6-to-1 multiplexer                              : 1
@@ -326,9 +328,9 @@ Macro Statistics
 # ROMs                                                 : 2
  10x8-bit ROM                                          : 1
  6x6-bit ROM                                           : 1
-# Adders/Subtractors                                   : 32
+# Adders/Subtractors                                   : 36
  2-bit adder                                           : 2
- 4-bit adder                                           : 30
+ 4-bit adder                                           : 34
 # Counters                                             : 4
  12-bit up counter                                     : 1
  16-bit down counter                                   : 1
@@ -336,15 +338,15 @@ Macro Statistics
  8-bit up counter                                      : 1
 # Accumulators                                         : 1
  16-bit up accumulator                                 : 1
-# Registers                                            : 9
- Flip-Flops                                            : 9
+# Registers                                            : 35
+ Flip-Flops                                            : 35
 # Latches                                              : 3
  4-bit latch                                           : 1
  6-bit latch                                           : 1
  8-bit latch                                           : 1
-# Comparators                                          : 31
+# Comparators                                          : 35
  16-bit comparator lessequal                           : 1
- 5-bit comparator greater                              : 30
+ 5-bit comparator greater                              : 34
 # Multiplexers                                         : 1
  4-bit 6-to-1 multiplexer                              : 1
 
@@ -353,43 +355,256 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:1710 - FF/Latch <taxiCharge_reg_0> (without init value) has a constant value of 0 in block <DATA_PROCESS>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <taxiCharge_reg_1> (without init value) has a constant value of 0 in block <DATA_PROCESS>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <seg_reg_7> (without init value) has a constant value of 0 in block <SEG_DISPlAY>. This FF/Latch will be trimmed during the optimization process.
 
-ERROR:Xst:528 - Multi-source in Unit <DATA_PROCESS> on signal <SW1_flag>; this signal is connected to multiple drivers.
-Drivers are: 
-   Signal <DATA/SW1_flag> in Unit <DATA_PROCESS> is assigned to GND
+Optimizing unit <TAXI> ...
 
-ERROR:Xst:528 - Multi-source in Unit <DATA_PROCESS> on signal <insSW1>; this signal is connected to multiple drivers.
-Drivers are: 
-   Output signal of FDE_1 instance <DATA/insSW1>
-   Signal <DATA/insSW1> in Unit <DATA_PROCESS> is assigned to GND
+Optimizing unit <DATA_PROCESS> ...
 
-ERROR:Xst:528 - Multi-source in Unit <DATA_PROCESS> on signal <insSW2>; this signal is connected to multiple drivers.
-Drivers are: 
-   Output signal of FDE_1 instance <DATA/insSW2>
-   Signal <DATA/insSW2> in Unit <DATA_PROCESS> is assigned to GND
+Optimizing unit <SEG_DISPlAY> ...
+WARNING:Xst:1710 - FF/Latch <SEG/FF_0> (without init value) has a constant value of 0 in block <TAXI>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <DATA/isCall_reg> of sequential type is unconnected in block <TAXI>.
+WARNING:Xst:2677 - Node <DATA/isPayment_reg> of sequential type is unconnected in block <TAXI>.
+WARNING:Xst:2677 - Node <DATA/insSW3> of sequential type is unconnected in block <TAXI>.
+WARNING:Xst:2677 - Node <DATA/insSW2> of sequential type is unconnected in block <TAXI>.
+WARNING:Xst:2677 - Node <DATA/SW3_flag> of sequential type is unconnected in block <TAXI>.
+WARNING:Xst:2677 - Node <DATA/SW2_flag> of sequential type is unconnected in block <TAXI>.
+WARNING:Xst:2677 - Node <DATA/SW3_flag_rst> of sequential type is unconnected in block <TAXI>.
+WARNING:Xst:2677 - Node <DATA/extraCharge_reg_1> of sequential type is unconnected in block <TAXI>.
+WARNING:Xst:2677 - Node <DATA/extraCharge_reg_0> of sequential type is unconnected in block <TAXI>.
+WARNING:Xst:2677 - Node <DATA/SW2_flag_rst> of sequential type is unconnected in block <TAXI>.
 
-ERROR:Xst:528 - Multi-source in Unit <DATA_PROCESS> on signal <insSW3>; this signal is connected to multiple drivers.
-Drivers are: 
-   Output signal of FDE_1 instance <DATA/insSW3>
-   Signal <DATA/insSW3> in Unit <DATA_PROCESS> is assigned to GND
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block TAXI, actual ratio is 9.
 
-ERROR:Xst:528 - Multi-source in Unit <DATA_PROCESS> on signal <SW2_flag>; this signal is connected to multiple drivers.
-Drivers are: 
-   Signal <DATA/SW2_flag> in Unit <DATA_PROCESS> is assigned to GND
+Final Macro Processing ...
 
-ERROR:Xst:528 - Multi-source in Unit <DATA_PROCESS> on signal <SW3_flag>; this signal is connected to multiple drivers.
-Drivers are: 
-   Signal <DATA/SW3_flag> in Unit <DATA_PROCESS> is assigned to GND
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 77
+ Flip-Flops                                            : 77
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : TAXI.ngr
+Top Level Output File Name         : TAXI
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 19
+
+Cell Usage :
+# BELS                             : 568
+#      GND                         : 1
+#      INV                         : 23
+#      LUT1                        : 30
+#      LUT2                        : 43
+#      LUT2_D                      : 2
+#      LUT2_L                      : 5
+#      LUT3                        : 77
+#      LUT3_D                      : 14
+#      LUT3_L                      : 8
+#      LUT4                        : 172
+#      LUT4_D                      : 44
+#      LUT4_L                      : 27
+#      MUXCY                       : 50
+#      MUXF5                       : 21
+#      VCC                         : 1
+#      XORCY                       : 50
+# FlipFlops/Latches                : 94
+#      FD                          : 18
+#      FDC                         : 9
+#      FDCE                        : 33
+#      FDCE_1                      : 1
+#      FDPE                        : 14
+#      FDPE_1                      : 1
+#      FDR                         : 1
+#      LD                          : 17
+# Clock Buffers                    : 2
+#      BUFGP                       : 2
+# IO Buffers                       : 15
+#      IBUF                        : 1
+#      OBUF                        : 14
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s200pq208-4 
+
+ Number of Slices:                      233  out of   1920    12%  
+ Number of Slice Flip Flops:             81  out of   3840     2%  
+ Number of 4 input LUTs:                445  out of   3840    11%  
+ Number of IOs:                          19
+ Number of bonded IOBs:                  17  out of    141    12%  
+    IOB Flip Flops:                      13
+ Number of GCLKs:                         2  out of      8    25%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
 
 
-Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 4.90 secs
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------------+------------------------+-------+
+Clock Signal                             | Clock buffer(FF name)  | Load  |
+-----------------------------------------+------------------------+-------+
+CLK                                      | BUFGP                  | 76    |
+SW1                                      | BUFGP                  | 1     |
+SEG/seg_reg_or0000(SEG/seg_reg_or00001:O)| NONE(*)(SEG/seg_reg_6) | 7     |
+SEG/DIGIT_or0000(SEG/DIGIT_or00001:O)    | NONE(*)(SEG/DIGIT_5)   | 10    |
+-----------------------------------------+------------------------+-------+
+(*) These 2 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+--------------------------------------+------------------------+-------+
+Control Signal                        | Buffer(FF name)        | Load  |
+--------------------------------------+------------------------+-------+
+DATA/RESET_inv(SEG/RESET_inv1_INV_0:O)| NONE(DATA/SW1_flag_rst)| 57    |
+DATA/SW1_flag_rst(DATA/SW1_flag_rst:Q)| NONE(DATA/SW1_flag)    | 1     |
+--------------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 30.172ns (Maximum Frequency: 33.143MHz)
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: 7.078ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'CLK'
+  Clock period: 30.172ns (frequency: 33.143MHz)
+  Total number of paths / destination ports: 152002903 / 124
+-------------------------------------------------------------------------
+Delay:               30.172ns (Levels of Logic = 20)
+  Source:            DATA/taxiCharge_reg_15 (FF)
+  Destination:       SEG/EE_1 (FF)
+  Source Clock:      CLK rising
+  Destination Clock: CLK rising
+
+  Data Path: DATA/taxiCharge_reg_15 to SEG/EE_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q            17   0.720   1.684  DATA/taxiCharge_reg_15 (DATA/taxiCharge_reg_15)
+     LUT4:I0->O            1   0.551   0.000  SEG/bcd_3_mux000211_F (N460)
+     MUXF5:I0->O          14   0.360   1.213  SEG/bcd_3_mux000211 (SEG/N50)
+     LUT4:I3->O            1   0.551   0.869  SEG/Madd_bcd_3_0_add0003_cy<1>11_SW0 (N147)
+     LUT4:I2->O           10   0.551   1.329  SEG/bcd_2_mux0003 (SEG/Madd_bcd_3_0_add0004_lut<3>)
+     LUT4:I1->O            9   0.551   1.192  SEG/bcd_2_mux0004 (SEG/Madd_bcd_3_0_add0005_lut<3>)
+     LUT4:I2->O            2   0.551   0.903  SEG/bcd_3_cmp_gt00051 (SEG/bcd_3_cmp_gt0005)
+     LUT4:I3->O           13   0.551   1.365  SEG/bcd_3_mux000611 (SEG/N55)
+     LUT2_L:I1->LO         1   0.551   0.126  SEG/bcd_3_mux000711_SW1 (N340)
+     LUT4:I3->O            9   0.551   1.124  SEG/bcd_3_mux000711 (SEG/N58)
+     MUXF5:S->O           11   0.621   1.339  SEG/bcd_3_mux000811 (SEG/N59)
+     LUT2_L:I1->LO         1   0.551   0.126  SEG/bcd_3_mux000911_SW1 (N403)
+     LUT4:I3->O           16   0.551   1.237  SEG/bcd_3_mux000911 (SEG/N60)
+     MUXF5:S->O            8   0.621   1.151  SEG/bcd_3_mux001011 (SEG/N54)
+     LUT3:I2->O            4   0.551   0.943  SEG/bcd_1_mux001021 (SEG/N301)
+     LUT4:I3->O           12   0.551   1.144  SEG/bcd_3_mux001111 (SEG/N56)
+     LUT4:I3->O            1   0.551   0.827  SEG/Madd_bcd_7_4_add0009_cy<1>1_SW1_SW0_SW0 (N348)
+     LUT4:I3->O            2   0.551   1.072  SEG/Madd_bcd_7_4_add0009_cy<1>1_SW1 (N181)
+     LUT3:I1->O            1   0.551   0.000  SEG/bcd_7_mux000911_SW3_G (N449)
+     MUXF5:I1->O           1   0.360   0.827  SEG/bcd_7_mux000911_SW3 (N394)
+     LUT4:I3->O            1   0.551   0.000  SEG/bcd_4_mux00091 (SEG/bcd_4_mux0009)
+     FD:D                      0.203          SEG/EE_1
+    ----------------------------------------
+    Total                     30.172ns (11.701ns logic, 18.471ns route)
+                                       (38.8% logic, 61.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'SEG/seg_reg_or0000'
+  Total number of paths / destination ports: 7 / 7
+-------------------------------------------------------------------------
+Offset:              7.078ns (Levels of Logic = 1)
+  Source:            SEG/seg_reg_0 (LATCH)
+  Destination:       SEG_A (PAD)
+  Source Clock:      SEG/seg_reg_or0000 falling
+
+  Data Path: SEG/seg_reg_0 to SEG_A
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.633   0.801  SEG/seg_reg_0 (SEG/seg_reg_0)
+     OBUF:I->O                 5.644          SEG_A_OBUF (SEG_A)
+    ----------------------------------------
+    Total                      7.078ns (6.277ns logic, 0.801ns route)
+                                       (88.7% logic, 11.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'SEG/DIGIT_or0000'
+  Total number of paths / destination ports: 6 / 6
+-------------------------------------------------------------------------
+Offset:              7.078ns (Levels of Logic = 1)
+  Source:            SEG/DIGIT_5 (LATCH)
+  Destination:       DIGIT<6> (PAD)
+  Source Clock:      SEG/DIGIT_or0000 falling
+
+  Data Path: SEG/DIGIT_5 to DIGIT<6>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.633   0.801  SEG/DIGIT_5 (SEG/DIGIT_5)
+     OBUF:I->O                 5.644          DIGIT_6_OBUF (DIGIT<6>)
+    ----------------------------------------
+    Total                      7.078ns (6.277ns logic, 0.801ns route)
+                                       (88.7% logic, 11.3% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 11.00 secs
+Total CPU time to Xst completion: 10.99 secs
  
 --> 
 
-Total memory usage is 202156 kilobytes
+Total memory usage is 207852 kilobytes
 
-Number of errors   :    6 (   0 filtered)
-Number of warnings :   11 (   0 filtered)
-Number of infos    :   18 (   0 filtered)
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   23 (   0 filtered)
+Number of infos    :    6 (   0 filtered)
 

@@ -1,4 +1,3 @@
 vhdl work "SEG_DISPLAY.vhd"
-vhdl work "LCD_DISPLAY.vhd"
 vhdl work "DATA_PROCESS.vhd"
 vhdl work "TAXI.vhd"

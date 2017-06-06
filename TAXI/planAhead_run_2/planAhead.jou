@@ -1,0 +1,70 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7
+# Build 321239 by xbuild on Fri Sep 27 19:31:35 MDT 2013
+# Start of session at: Tue Jun 06 16:35:52 2017
+# Process ID: 3552
+# Log file: D:/0606/17LDLab/TAXI/planAhead_run_2/planAhead.log
+# Journal file: D:/0606/17LDLab/TAXI/planAhead_run_2/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source D:/0606/17LDLab/TAXI/pa.fromHdl.tcl
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin P79 [get_ports CLK]
+endgroup
+startgroup
+set_property package_pin P205 [get_ports RESET]
+endgroup
+startgroup
+set_property package_pin P31 [get_ports SEG_A]
+endgroup
+startgroup
+set_property package_pin P33 [get_ports SEG_B]
+endgroup
+startgroup
+set_property package_pin P34 [get_ports SEG_C]
+endgroup
+startgroup
+set_property package_pin P35 [get_ports SEG_D]
+endgroup
+startgroup
+set_property package_pin P36 [get_ports SEG_E]
+endgroup
+startgroup
+set_property package_pin P37 [get_ports SEG_F]
+endgroup
+startgroup
+set_property package_pin P39 [get_ports SEG_G]
+endgroup
+startgroup
+set_property package_pin P48 [get_ports SEG_DP]
+endgroup
+startgroup
+set_property package_pin P102 [get_ports SW1]
+endgroup
+startgroup
+set_property package_pin P101 [get_ports SW2]
+endgroup
+startgroup
+set_property package_pin P100 [get_ports SW3]
+endgroup
+set_property package_pin "" [get_ports [list  {DIGIT[2]}]]
+startgroup
+set_property package_pin P22 [get_ports {DIGIT[1]}]
+endgroup
+startgroup
+set_property package_pin P24 [get_ports {DIGIT[2]}]
+endgroup
+startgroup
+set_property package_pin P26 [get_ports {DIGIT[3]}]
+endgroup
+startgroup
+set_property package_pin P27 [get_ports {DIGIT[4]}]
+endgroup
+startgroup
+set_property package_pin P28 [get_ports {DIGIT[5]}]
+endgroup
+startgroup
+set_property package_pin P29 [get_ports {DIGIT[6]}]
+endgroup
+save_constraints

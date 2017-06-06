@@ -5,3 +5,13 @@ xst -intstyle ise -ifn "D:/17LDLab/TAXI/TAXI.xst" -ofn "D:/17LDLab/TAXI/TAXI.syr
 xst -intstyle ise -ifn "D:/17LDLab/TAXI/TAXI.xst" -ofn "D:/17LDLab/TAXI/TAXI.syr" 
 xst -intstyle ise -ifn "D:/17LDLab/TAXI/TAXI.xst" -ofn "D:/17LDLab/TAXI/TAXI.syr" 
 xst -intstyle ise -ifn "D:/17LDLab/TAXI/TAXI.xst" -ofn "D:/17LDLab/TAXI/TAXI.syr" 
+xst -intstyle ise -ifn "D:/0606/17LDLab/TAXI/TAXI.xst" -ofn "D:/0606/17LDLab/TAXI/TAXI.syr" 
+xst -intstyle ise -ifn "D:/0606/17LDLab/TAXI/TAXI.xst" -ofn "D:/0606/17LDLab/TAXI/TAXI.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc TAXI.ucf -p xc3s200-pq208-4 TAXI.ngc TAXI.ngd  
+map -intstyle ise -p xc3s200-pq208-4 -cm area -ir off -pr off -c 100 -o TAXI_map.ncd TAXI.ngd TAXI.pcf 
+par -w -intstyle ise -ol high -t 1 TAXI_map.ncd TAXI.ncd TAXI.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc TAXI.ucf -p xc3s200-pq208-4 TAXI.ngc TAXI.ngd  
+map -intstyle ise -p xc3s200-pq208-4 -cm area -ir off -pr off -c 100 -o TAXI_map.ncd TAXI.ngd TAXI.pcf 
+par -w -intstyle ise -ol high -t 1 TAXI_map.ncd TAXI.ncd TAXI.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml TAXI.twx TAXI.ncd -o TAXI.twr TAXI.pcf -ucf TAXI.ucf 
+bitgen -intstyle ise -f TAXI.ut TAXI.ncd 

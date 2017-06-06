@@ -1,4 +1,3 @@
-vhdl work "D:\17LDLab\TAXI\SEG_DISPLAY.vhd"
-vhdl work "D:\17LDLab\TAXI\LCD_DISPLAY.vhd"
-vhdl work "D:\17LDLab\TAXI\DATA_PROCESS.vhd"
-vhdl work "D:\17LDLab\TAXI\TAXI.vhd"
+vhdl work "D:\0606\17LDLab\TAXI\SEG_DISPLAY.vhd"
+vhdl work "D:\0606\17LDLab\TAXI\DATA_PROCESS.vhd"
+vhdl work "D:\0606\17LDLab\TAXI\TAXI.vhd"

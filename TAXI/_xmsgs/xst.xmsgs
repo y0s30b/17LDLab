@@ -5,111 +5,92 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="Xst" num="2211" delta="new" >&quot;<arg fmt="%s" index="1">D:/17LDLab/TAXI/TAXI.vhd</arg>&quot; line <arg fmt="%d" index="2">87</arg>: Instantiating black box module &lt;<arg fmt="%s" index="3">LCD_DISPLAY</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="819" delta="new" >&quot;<arg fmt="%s" index="1">D:/17LDLab/TAXI/SEG_DISPLAY.vhd</arg>&quot; line <arg fmt="%d" index="2">30</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+<msg type="warning" file="Xst" num="819" delta="old" >&quot;<arg fmt="%s" index="1">D:/0606/17LDLab/TAXI/SEG_DISPLAY.vhd</arg>&quot; line <arg fmt="%d" index="2">30</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
 <arg fmt="%s" index="3">&lt;AA&gt;, &lt;BB&gt;, &lt;CC&gt;, &lt;DD&gt;, &lt;EE&gt;, &lt;FF&gt;</arg>
 </msg>
 
-<msg type="warning" file="Xst" num="819" delta="new" >&quot;<arg fmt="%s" index="1">D:/17LDLab/TAXI/SEG_DISPLAY.vhd</arg>&quot; line <arg fmt="%d" index="2">103</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
-<arg fmt="%s" index="3">&lt;taxiCharge&gt;</arg>
+<msg type="info" file="Xst" num="2679" delta="old" >Register &lt;<arg fmt="%s" index="1">AA</arg>&gt; in unit &lt;<arg fmt="%s" index="2">SEG_DISPlAY</arg>&gt; has a constant value of <arg fmt="%s" index="3">0000</arg> during circuit operation. The register is replaced by logic.
 </msg>
 
-<msg type="info" file="Xst" num="2679" delta="new" >Register &lt;<arg fmt="%s" index="1">SW1_flag</arg>&gt; in unit &lt;<arg fmt="%s" index="2">DATA_PROCESS</arg>&gt; has a constant value of <arg fmt="%s" index="3">1</arg> during circuit operation. The register is replaced by logic.
+<msg type="info" file="Xst" num="2679" delta="old" >Register &lt;<arg fmt="%s" index="1">mileageM_reg</arg>&gt; in unit &lt;<arg fmt="%s" index="2">DATA_PROCESS</arg>&gt; has a constant value of <arg fmt="%s" index="3">0000000000000</arg> during circuit operation. The register is replaced by logic.
 </msg>
 
-<msg type="info" file="Xst" num="2679" delta="new" >Register &lt;<arg fmt="%s" index="1">SW2_flag</arg>&gt; in unit &lt;<arg fmt="%s" index="2">DATA_PROCESS</arg>&gt; has a constant value of <arg fmt="%s" index="3">1</arg> during circuit operation. The register is replaced by logic.
+<msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">6</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">DIGIT</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 </msg>
 
-<msg type="info" file="Xst" num="2679" delta="new" >Register &lt;<arg fmt="%s" index="1">SW3_flag</arg>&gt; in unit &lt;<arg fmt="%s" index="2">DATA_PROCESS</arg>&gt; has a constant value of <arg fmt="%s" index="3">1</arg> during circuit operation. The register is replaced by logic.
+<msg type="info" file="Xst" num="2371" delta="old" >HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
 </msg>
 
-<msg type="info" file="Xst" num="2679" delta="new" >Register &lt;<arg fmt="%s" index="1">SW1_flag</arg>&gt; in unit &lt;<arg fmt="%s" index="2">DATA_PROCESS</arg>&gt; has a constant value of <arg fmt="%s" index="3">0</arg> during circuit operation. The register is replaced by logic.
+<msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">4</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">data_reg</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 </msg>
 
-<msg type="info" file="Xst" num="2679" delta="new" >Register &lt;<arg fmt="%s" index="1">SW2_flag</arg>&gt; in unit &lt;<arg fmt="%s" index="2">DATA_PROCESS</arg>&gt; has a constant value of <arg fmt="%s" index="3">0</arg> during circuit operation. The register is replaced by logic.
+<msg type="info" file="Xst" num="2371" delta="old" >HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
 </msg>
 
-<msg type="info" file="Xst" num="2679" delta="new" >Register &lt;<arg fmt="%s" index="1">SW3_flag</arg>&gt; in unit &lt;<arg fmt="%s" index="2">DATA_PROCESS</arg>&gt; has a constant value of <arg fmt="%s" index="3">0</arg> during circuit operation. The register is replaced by logic.
+<msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">8</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">seg_reg</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 </msg>
 
-<msg type="info" file="Xst" num="2679" delta="new" >Register &lt;<arg fmt="%s" index="1">SW1_flag</arg>&gt; in unit &lt;<arg fmt="%s" index="2">DATA_PROCESS</arg>&gt; has a constant value of <arg fmt="%s" index="3">0</arg> during circuit operation. The register is replaced by logic.
+<msg type="info" file="Xst" num="2371" delta="old" >HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
 </msg>
 
-<msg type="info" file="Xst" num="2679" delta="new" >Register &lt;<arg fmt="%s" index="1">SW2_flag</arg>&gt; in unit &lt;<arg fmt="%s" index="2">DATA_PROCESS</arg>&gt; has a constant value of <arg fmt="%s" index="3">0</arg> during circuit operation. The register is replaced by logic.
+<msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">taxiChargeCnt</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 </msg>
 
-<msg type="info" file="Xst" num="2679" delta="new" >Register &lt;<arg fmt="%s" index="1">SW3_flag</arg>&gt; in unit &lt;<arg fmt="%s" index="2">DATA_PROCESS</arg>&gt; has a constant value of <arg fmt="%s" index="3">0</arg> during circuit operation. The register is replaced by logic.
+<msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">mileageM</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 </msg>
 
-<msg type="info" file="Xst" num="2679" delta="new" >Register &lt;<arg fmt="%s" index="1">insSW1</arg>&gt; in unit &lt;<arg fmt="%s" index="2">DATA_PROCESS</arg>&gt; has a constant value of <arg fmt="%s" index="3">0</arg> during circuit operation. The register is replaced by logic.
+<msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">isPayment</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 </msg>
 
-<msg type="info" file="Xst" num="2679" delta="new" >Register &lt;<arg fmt="%s" index="1">insSW2</arg>&gt; in unit &lt;<arg fmt="%s" index="2">DATA_PROCESS</arg>&gt; has a constant value of <arg fmt="%s" index="3">0</arg> during circuit operation. The register is replaced by logic.
+<msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">isCall</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 </msg>
 
-<msg type="info" file="Xst" num="2679" delta="new" >Register &lt;<arg fmt="%s" index="1">insSW3</arg>&gt; in unit &lt;<arg fmt="%s" index="2">DATA_PROCESS</arg>&gt; has a constant value of <arg fmt="%s" index="3">0</arg> during circuit operation. The register is replaced by logic.
+<msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">extraCharge</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 </msg>
 
-<msg type="info" file="Xst" num="2679" delta="new" >Register &lt;<arg fmt="%s" index="1">taxiCharge_reg</arg>&gt; in unit &lt;<arg fmt="%s" index="2">DATA_PROCESS</arg>&gt; has a constant value of <arg fmt="%s" index="3">0000101110111000</arg> during circuit operation. The register is replaced by logic.
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">taxiCharge_reg_0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">DATA_PROCESS</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="info" file="Xst" num="2679" delta="new" >Register &lt;<arg fmt="%s" index="1">taxiChargeCnt_reg</arg>&gt; in unit &lt;<arg fmt="%s" index="2">DATA_PROCESS</arg>&gt; has a constant value of <arg fmt="%s" index="3">0111010100110000</arg> during circuit operation. The register is replaced by logic.
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">taxiCharge_reg_1</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">DATA_PROCESS</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="info" file="Xst" num="2679" delta="new" >Register &lt;<arg fmt="%s" index="1">mileageM_reg</arg>&gt; in unit &lt;<arg fmt="%s" index="2">DATA_PROCESS</arg>&gt; has a constant value of <arg fmt="%s" index="3">0000000000000</arg> during circuit operation. The register is replaced by logic.
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">seg_reg_7</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">SEG_DISPlAY</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">taxiCharge&lt;0&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">SEG/FF_0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">TAXI</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">AA</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">0000</arg>.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DATA/isCall_reg</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">TAXI</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">6</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">DIGIT</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DATA/isPayment_reg</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">TAXI</arg>&gt;.
 </msg>
 
-<msg type="info" file="Xst" num="2371" delta="new" >HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DATA/insSW3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">TAXI</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">4</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">data_reg</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DATA/insSW2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">TAXI</arg>&gt;.
 </msg>
 
-<msg type="info" file="Xst" num="2371" delta="new" >HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DATA/SW3_flag</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">TAXI</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">8</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">seg_reg</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DATA/SW2_flag</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">TAXI</arg>&gt;.
 </msg>
 
-<msg type="info" file="Xst" num="2371" delta="new" >HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DATA/SW3_flag_rst</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">TAXI</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">SW1</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DATA/extraCharge_reg_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">TAXI</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">SW2</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DATA/extraCharge_reg_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">TAXI</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">SW3</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DATA/SW2_flag_rst</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">TAXI</arg>&gt;.
 </msg>
 
-<msg type="error" file="Xst" num="528" delta="new" >Multi-source in Unit &lt;<arg fmt="%s" index="1">DATA_PROCESS</arg>&gt; on signal &lt;<arg fmt="%s" index="2">SW1_flag</arg>&gt;; this signal is connected to multiple drivers.
-</msg>
-
-<msg type="error" file="Xst" num="528" delta="new" >Multi-source in Unit &lt;<arg fmt="%s" index="1">DATA_PROCESS</arg>&gt; on signal &lt;<arg fmt="%s" index="2">insSW1</arg>&gt;; this signal is connected to multiple drivers.
-</msg>
-
-<msg type="error" file="Xst" num="528" delta="new" >Multi-source in Unit &lt;<arg fmt="%s" index="1">DATA_PROCESS</arg>&gt; on signal &lt;<arg fmt="%s" index="2">insSW2</arg>&gt;; this signal is connected to multiple drivers.
-</msg>
-
-<msg type="error" file="Xst" num="528" delta="new" >Multi-source in Unit &lt;<arg fmt="%s" index="1">DATA_PROCESS</arg>&gt; on signal &lt;<arg fmt="%s" index="2">insSW3</arg>&gt;; this signal is connected to multiple drivers.
-</msg>
-
-<msg type="error" file="Xst" num="528" delta="new" >Multi-source in Unit &lt;<arg fmt="%s" index="1">DATA_PROCESS</arg>&gt; on signal &lt;<arg fmt="%s" index="2">SW2_flag</arg>&gt;; this signal is connected to multiple drivers.
-</msg>
-
-<msg type="error" file="Xst" num="528" delta="new" >Multi-source in Unit &lt;<arg fmt="%s" index="1">DATA_PROCESS</arg>&gt; on signal &lt;<arg fmt="%s" index="2">SW3_flag</arg>&gt;; this signal is connected to multiple drivers.
+<msg type="info" file="Xst" num="2169" delta="old" >HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 </msg>
 
 </messages>

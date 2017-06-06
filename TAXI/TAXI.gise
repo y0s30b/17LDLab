@@ -22,18 +22,58 @@
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="TAXI.xise"/>
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="TAXI.bld"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="TAXI.cmd_log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="TAXI.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="TAXI.ncd" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="TAXI.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGD" xil_pn:name="TAXI.ngd"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="TAXI.ngr"/>
+    <file xil_pn:fileType="FILE_PAD_MISC" xil_pn:name="TAXI.pad"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAR_REPORT" xil_pn:name="TAXI.par" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PCF" xil_pn:name="TAXI.pcf" xil_pn:subbranch="Map"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TAXI.prj"/>
+    <file xil_pn:fileType="FILE_TRCE_MISC" xil_pn:name="TAXI.ptwx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="TAXI.stx"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="TAXI.syr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_TXT_REPORT" xil_pn:name="TAXI.twr" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_XML_REPORT" xil_pn:name="TAXI.twx" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_UNROUTES" xil_pn:name="TAXI.unroutes" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="TAXI.ut" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:fileType="FILE_XPI" xil_pn:name="TAXI.xpi"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="TAXI.xst"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="TAXI_envsettings.html"/>
+    <file xil_pn:fileType="FILE_NCD" xil_pn:name="TAXI_guide.ncd" xil_pn:origination="imported"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="TAXI_map.map" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="TAXI_map.mrp" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="TAXI_map.ncd" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGM" xil_pn:name="TAXI_map.ngm" xil_pn:subbranch="Map"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="TAXI_map.xrpt"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="TAXI_ngdbuild.xrpt"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_EXCEL_REPORT" xil_pn:name="TAXI_pad.csv" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_TXT_REPORT" xil_pn:name="TAXI_pad.txt" xil_pn:subbranch="Par"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="TAXI_par.xrpt"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="TAXI_summary.html"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="TAXI_summary.xml"/>
+    <file xil_pn:fileType="FILE_WEBTALK" xil_pn:name="TAXI_usage.xml"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TAXI_vhdl.prj"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="TAXI_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="_ngo"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/bitgen.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/map.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/par.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/trce.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="planAhead_run_1"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="planAhead_run_2"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="taxi.bgn" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BIT" xil_pn:name="taxi.bit" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_DRC" xil_pn:name="taxi.drc" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="usage_statistics_webtalk.html"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="webtalk.log"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 
@@ -66,13 +106,17 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1496727394" xil_pn:in_ck="-8141324910762504374" xil_pn:name="TRANEXT_xstsynthesize_spartan3" xil_pn:prop_ck="-1865455822446490761" xil_pn:start_ts="1496727386">
-      <status xil_pn:value="FailedRun"/>
+    <transform xil_pn:end_ts="1496734528" xil_pn:in_ck="-5570973692955660782" xil_pn:name="TRANEXT_xstsynthesize_spartan3" xil_pn:prop_ck="-1865455822446490761" xil_pn:start_ts="1496734514">
+      <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="TAXI.lso"/>
+      <outfile xil_pn:name="TAXI.ngc"/>
       <outfile xil_pn:name="TAXI.ngr"/>
       <outfile xil_pn:name="TAXI.prj"/>
+      <outfile xil_pn:name="TAXI.stx"/>
       <outfile xil_pn:name="TAXI.syr"/>
       <outfile xil_pn:name="TAXI.xst"/>
       <outfile xil_pn:name="TAXI_vhdl.prj"/>
@@ -80,6 +124,74 @@
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>
+    </transform>
+    <transform xil_pn:end_ts="1496734769" xil_pn:in_ck="3667426898754" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-7666235839587346738" xil_pn:start_ts="1496734769">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1496734773" xil_pn:in_ck="6676190602459022654" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-1426037267366254219" xil_pn:start_ts="1496734769">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="TAXI.bld"/>
+      <outfile xil_pn:name="TAXI.ngd"/>
+      <outfile xil_pn:name="TAXI_ngdbuild.xrpt"/>
+      <outfile xil_pn:name="_ngo"/>
+      <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+    </transform>
+    <transform xil_pn:end_ts="1496734776" xil_pn:in_ck="6676192008867640895" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="6068476255904139836" xil_pn:start_ts="1496734773">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="TAXI.pcf"/>
+      <outfile xil_pn:name="TAXI_map.map"/>
+      <outfile xil_pn:name="TAXI_map.mrp"/>
+      <outfile xil_pn:name="TAXI_map.ncd"/>
+      <outfile xil_pn:name="TAXI_map.ngm"/>
+      <outfile xil_pn:name="TAXI_map.xrpt"/>
+      <outfile xil_pn:name="TAXI_summary.xml"/>
+      <outfile xil_pn:name="TAXI_usage.xml"/>
+      <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
+    </transform>
+    <transform xil_pn:end_ts="1496734796" xil_pn:in_ck="-7883152540995862056" xil_pn:name="TRANEXT_par_spartan3" xil_pn:prop_ck="3333849164707216606" xil_pn:start_ts="1496734776">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="TAXI.ncd"/>
+      <outfile xil_pn:name="TAXI.pad"/>
+      <outfile xil_pn:name="TAXI.par"/>
+      <outfile xil_pn:name="TAXI.ptwx"/>
+      <outfile xil_pn:name="TAXI.unroutes"/>
+      <outfile xil_pn:name="TAXI.xpi"/>
+      <outfile xil_pn:name="TAXI_pad.csv"/>
+      <outfile xil_pn:name="TAXI_pad.txt"/>
+      <outfile xil_pn:name="TAXI_par.xrpt"/>
+      <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
+    </transform>
+    <transform xil_pn:end_ts="1496734818" xil_pn:in_ck="3667426891129" xil_pn:name="TRANEXT_bitFile_spartan3" xil_pn:prop_ck="4510053192889081886" xil_pn:start_ts="1496734809">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="TAXI.ut"/>
+      <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
+      <outfile xil_pn:name="taxi.bgn"/>
+      <outfile xil_pn:name="taxi.bit"/>
+      <outfile xil_pn:name="taxi.drc"/>
+      <outfile xil_pn:name="usage_statistics_webtalk.html"/>
+      <outfile xil_pn:name="webtalk.log"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+    </transform>
+    <transform xil_pn:end_ts="1496734818" xil_pn:in_ck="5073834310595" xil_pn:name="TRAN_impactProgrammingTool" xil_pn:prop_ck="-6864680952955714571" xil_pn:start_ts="1496734818">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1496734796" xil_pn:in_ck="6676006362930033083" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416186" xil_pn:start_ts="1496734793">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="TAXI.twr"/>
+      <outfile xil_pn:name="TAXI.twx"/>
+      <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>
     </transform>
   </transforms>
 
