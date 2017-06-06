@@ -1,5 +1,4 @@
 
-# PlanAhead Generated physical constraints 
 
 NET "CLK" LOC = P79;
 NET "RESET" LOC = P205;
@@ -22,3 +21,21 @@ NET "DIGIT[5]" LOC = P28;
 NET "DIGIT[6]" LOC = P29;
 
 NET "SW1" CLOCK_DEDICATED_ROUTE = FALSE;
+
+# PlanAhead Generated physical constraints 
+
+NET "LCD_A[0]" LOC = P50;
+NET "LCD_A[1]" LOC = P51;
+NET "LCD_EN" LOC = P52;
+NET "LCD_D[0]" LOC = P57;
+NET "LCD_D[1]" LOC = P58;
+NET "LCD_D[2]" LOC = P61;
+NET "LCD_D[3]" LOC = P62;
+NET "LCD_D[4]" LOC = P63;
+NET "LCD_D[5]" LOC = P64;
+NET "LCD_D[6]" LOC = P65;
+NET "LCD_D[7]" LOC = P67;
+
+NET "SW2" CLOCK_DEDICATED_ROUTE = FALSE;
+NET "SW3" CLOCK_DEDICATED_ROUTE = FALSE;
+NET "RESET" CLOCK_DEDICATED_ROUTE = FALSE;

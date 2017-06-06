@@ -1,7 +1,7 @@
 Release 14.7 - par P.20131013 (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Tue Jun 06 16:39:52 2017
+Tue Jun 06 18:51:38 2017
 
 
 INFO: The IO information is provided in three file formats as part of the Place and Route (PAR) process.  These formats are:
@@ -69,30 +69,30 @@ Pinout by Pin Number:
 |P47       |           |         |GND                |         |           |              |          |         |           |         |         |          |           |                |
 |P48       |SEG_DP     |IOB      |IO_L19N_6          |OUTPUT   |LVCMOS25*  |6             |12        |SLOW     |NONE**     |         |         |LOCATED   |NO         |NONE            |
 |P49       |           |         |VCCO_6             |         |           |6             |          |         |           |         |2.50     |          |           |                |
-|P50       |           |DIFFM    |IO/VREF_6          |UNUSED   |           |6             |          |         |           |         |         |          |           |                |
-|P51       |           |DIFFM    |IO_L01P_6/VRN_6    |UNUSED   |           |6             |          |         |           |         |         |          |           |                |
-|P52       |           |DIFFS    |IO_L01N_6/VRP_6    |UNUSED   |           |6             |          |         |           |         |         |          |           |                |
+|P50       |LCD_A<0>   |IOB      |IO/VREF_6          |OUTPUT   |LVCMOS25*  |6             |12        |SLOW     |NONE**     |         |         |LOCATED   |NO         |NONE            |
+|P51       |LCD_A<1>   |IOB      |IO_L01P_6/VRN_6    |OUTPUT   |LVCMOS25*  |6             |12        |SLOW     |NONE**     |         |         |LOCATED   |NO         |NONE            |
+|P52       |LCD_EN     |IOB      |IO_L01N_6/VRP_6    |OUTPUT   |LVCMOS25*  |6             |12        |SLOW     |NONE**     |         |         |LOCATED   |NO         |NONE            |
 |P53       |           |         |GND                |         |           |              |          |         |           |         |         |          |           |                |
 |P54       |           |         |M1                 |         |           |              |          |         |           |         |         |          |           |                |
 |P55       |           |         |M0                 |         |           |              |          |         |           |         |         |          |           |                |
 |P56       |           |         |M2                 |         |           |              |          |         |           |         |         |          |           |                |
-|P57       |           |DIFFM    |IO_L01P_5/CS_B     |UNUSED   |           |5             |          |         |           |         |         |          |           |                |
-|P58       |           |DIFFS    |IO_L01N_5/RDWR_B   |UNUSED   |           |5             |          |         |           |         |         |          |           |                |
+|P57       |LCD_D<0>   |IOB      |IO_L01P_5/CS_B     |OUTPUT   |LVCMOS25*  |5             |12        |SLOW     |NONE**     |         |         |LOCATED   |YES        |NONE            |
+|P58       |LCD_D<1>   |IOB      |IO_L01N_5/RDWR_B   |OUTPUT   |LVCMOS25*  |5             |12        |SLOW     |NONE**     |         |         |LOCATED   |YES        |NONE            |
 |P59       |           |         |GND                |         |           |              |          |         |           |         |         |          |           |                |
-|P60       |           |         |VCCO_5             |         |           |5             |          |         |           |         |any******|          |           |                |
-|P61       |           |DIFFM    |IO_L10P_5/VRN_5    |UNUSED   |           |5             |          |         |           |         |         |          |           |                |
-|P62       |           |DIFFS    |IO_L10N_5/VRP_5    |UNUSED   |           |5             |          |         |           |         |         |          |           |                |
-|P63       |           |IOB      |IO                 |UNUSED   |           |5             |          |         |           |         |         |          |           |                |
-|P64       |           |DIFFM    |IO_L27P_5          |UNUSED   |           |5             |          |         |           |         |         |          |           |                |
-|P65       |           |DIFFS    |IO_L27N_5/VREF_5   |UNUSED   |           |5             |          |         |           |         |         |          |           |                |
+|P60       |           |         |VCCO_5             |         |           |5             |          |         |           |         |2.50     |          |           |                |
+|P61       |LCD_D<2>   |IOB      |IO_L10P_5/VRN_5    |OUTPUT   |LVCMOS25*  |5             |12        |SLOW     |NONE**     |         |         |LOCATED   |YES        |NONE            |
+|P62       |LCD_D<3>   |IOB      |IO_L10N_5/VRP_5    |OUTPUT   |LVCMOS25*  |5             |12        |SLOW     |NONE**     |         |         |LOCATED   |YES        |NONE            |
+|P63       |LCD_D<4>   |IOB      |IO                 |OUTPUT   |LVCMOS25*  |5             |12        |SLOW     |NONE**     |         |         |LOCATED   |YES        |NONE            |
+|P64       |LCD_D<5>   |IOB      |IO_L27P_5          |OUTPUT   |LVCMOS25*  |5             |12        |SLOW     |NONE**     |         |         |LOCATED   |YES        |NONE            |
+|P65       |LCD_D<6>   |IOB      |IO_L27N_5/VREF_5   |OUTPUT   |LVCMOS25*  |5             |12        |SLOW     |NONE**     |         |         |LOCATED   |YES        |NONE            |
 |P66       |           |         |GND                |         |           |              |          |         |           |         |         |          |           |                |
-|P67       |           |DIFFM    |IO_L28P_5/D7       |UNUSED   |           |5             |          |         |           |         |         |          |           |                |
+|P67       |LCD_D<7>   |IOB      |IO_L28P_5/D7       |OUTPUT   |LVCMOS25*  |5             |12        |SLOW     |NONE**     |         |         |LOCATED   |YES        |NONE            |
 |P68       |           |DIFFS    |IO_L28N_5/D6       |UNUSED   |           |5             |          |         |           |         |         |          |           |                |
 |P69       |           |         |VCCAUX             |         |           |              |          |         |           |         |2.5      |          |           |                |
 |P70       |           |         |VCCINT             |         |           |              |          |         |           |         |1.2      |          |           |                |
 |P71       |           |IOB      |IO                 |UNUSED   |           |5             |          |         |           |         |         |          |           |                |
 |P72       |           |DIFFM    |IO_L31P_5/D5       |UNUSED   |           |5             |          |         |           |         |         |          |           |                |
-|P73       |           |         |VCCO_5             |         |           |5             |          |         |           |         |any******|          |           |                |
+|P73       |           |         |VCCO_5             |         |           |5             |          |         |           |         |2.50     |          |           |                |
 |P74       |           |DIFFS    |IO_L31N_5/D4       |UNUSED   |           |5             |          |         |           |         |         |          |           |                |
 |P75       |           |         |GND                |         |           |              |          |         |           |         |         |          |           |                |
 |P76       |           |DIFFM    |IO_L32P_5/GCLK2    |UNUSED   |           |5             |          |         |           |         |         |          |           |                |

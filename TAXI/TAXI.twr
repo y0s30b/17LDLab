@@ -39,23 +39,47 @@ Data Sheet report:
 -----------------
 All values displayed in nanoseconds (ns)
 
+Clock RESET to Pad
+------------+------------+------------------+--------+
+            | clk (edge) |                  | Clock  |
+Destination |   to PAD   |Internal Clock(s) | Phase  |
+------------+------------+------------------+--------+
+LCD_D<0>    |    9.348(F)|RESET_IBUF        |   0.000|
+LCD_D<1>    |    9.348(F)|RESET_IBUF        |   0.000|
+LCD_D<2>    |    9.348(F)|RESET_IBUF        |   0.000|
+LCD_D<3>    |    9.348(F)|RESET_IBUF        |   0.000|
+LCD_D<4>    |    9.347(F)|RESET_IBUF        |   0.000|
+LCD_D<5>    |    9.348(F)|RESET_IBUF        |   0.000|
+LCD_D<6>    |    9.348(F)|RESET_IBUF        |   0.000|
+LCD_D<7>    |    9.347(F)|RESET_IBUF        |   0.000|
+------------+------------+------------------+--------+
+
 Clock to Setup on destination clock CLK
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLK            |   24.072|    5.057|         |    2.941|
+CLK            |   22.030|    6.057|         |    3.710|
+RESET          |    8.422|    8.422|         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock RESET
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLK            |         |         |    6.109|         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Tue Jun 06 16:39:55 2017 
+Analysis completed Tue Jun 06 18:51:41 2017 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 101 MB
+Peak Memory Usage: 105 MB
 
 
 

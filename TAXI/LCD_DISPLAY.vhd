@@ -5,14 +5,14 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity LCD_DISPLAY is 
-    -- taxiCharge륜외4가지�보�LCD�출력.
+    -- taxiCharge륜외4가지�보�LCD�출
     port ( RESET, CLK : in std_logic;
             LCD_A : out std_logic_vector(1 downto 0);
             LCD_EN : out std_logic;
             LCD_D : out std_logic_vector(7 downto 0);
             taxiChargeCnt : in std_logic_vector(15 downto 0);
             extraCharge : in std_logic_vector(1 downto 0);
-            mileageM : in std_logic_vector(12 downto 0);
+            mileageM : in std_logic_vector(11 downto 0);
             isCall : in std_logic;
             isPayment : in std_logic);
 end LCD_DISPLAY;
@@ -35,9 +35,9 @@ architecture LCD_Behavioral of LCD_DISPLAY is
 	signal lcd_nstate : std_logic_vector (7 downto 0);
 	signal lcd_db : std_logic_vector (7 downto 0);
 begin
-	process(FPGA_RSTB,CLK,load_100k,cnt_100k) -- Clock(100kHz) Generator
+	process(RESET,CLK,load_100k,cnt_100k) -- Clock(100kHz) Generator
 	Begin
-		if FPGA_RSTB = '0' then
+		if RESET = '0' then
 			cnt_100k <= (others => '0');
 			clk_100k <= '0';
 		elsif CLK = '1' and CLK'event then
@@ -51,9 +51,9 @@ begin
 	end process;
 	load_100k <= '1' when (cnt_100k = X"13") else '0';
 
-	process(FPGA_RSTB,clk_100k,load_50,cnt_50) -- Clock(50 Hz) Generator
+	process(RESET,clk_100k,load_50,cnt_50) -- Clock(50 Hz) Generator
 	Begin
-		if FPGA_RSTB = '0' then
+		if RESET = '0' then
 			cnt_50 <= (others => '0');
 			clk_50 <= '0';
 		elsif clk_100k = '1' and clk_100k'event then
@@ -67,24 +67,24 @@ begin
 	end process;
 	load_50 <= '1' when (cnt_50 = X"3E7") else '0'; -- 999
 
-	process(FPGA_RSTB, clk_50)
+	process(RESET, clk_50)
 	Begin
-		if FPGA_RSTB = '0' then
+		if RESET = '0' then
 			lcd_state <= (others =>'0');
-		elsif clk_50 = '1' anad clk_50'event then
+		elsif clk_50 = '1' and clk_50'event then
 			lcd_state <= lcd_nstate;
 		end if;
 	end process;
 	w_enable_reg <= '0' when lcd_state < X"06" else '1';
 
-	process(FPGA_RSTB, CLK)
+	process(RESET, CLK)
 		variable tmp_chargeCnt : std_logic_vector(15 downto 0);
 		variable bcd : UNSIGNED (19 downto 0) := (others => '0');
 
 		variable tmp_mileageM : std_logic_vector(11 downto 0);
 		variable bcd2 : UNSIGNED (15 downto 0) := (others => '0');
 	Begin
-		if FPGA_RSTB = '0' then
+		if RESET = '0' then
 			for i in 0 to 31 loop
 				reg_file(i) <= X"20";
 			end loop;
@@ -94,7 +94,7 @@ begin
 --				reg_file(conv_integer(addr)) <= data;
 --			end if;
 
-			-- taxiChargeCnt 출력하는 부분
+			-- taxiChargeCnt 출력�는 부�
 			bcd := (others => '0');
 			tmp_chargeCnt := taxiChargeCnt;
 			
@@ -125,7 +125,7 @@ begin
 			reg_file(2) <= ("0000" & STD_LOGIC_VECTOR(bcd(15 downto 12))) + 48;
 			reg_file(1) <= ("0000" & STD_LOGIC_VECTOR(bcd(19 downto 16))) + 48;
 			
-			-- CALL 문구 출력하는 부분
+			-- CALL 문구 출력�는 부�
 			if isCall = '1' then
 				reg_file(7) <= "01000011";
 				reg_file(8) <= "01000001";
@@ -133,22 +133,22 @@ begin
 				reg_file(10) <= "01001100";
 			end if;
 
-			-- extraCharge 출력하는 부분
+			-- extraCharge 출력�는 부�
 			reg_file(23) <= "01000101";
 			case extraCharge is
-				when "00" => reg_file <= "00000000" + 48;
-				when "01" => reg_file <= "00000010" + 48;
-				when "10" => reg_file <= "00000100" + 48;
+				when "00" => reg_file(24) <= "00000000" + 48;
+				when "01" => reg_file(24) <= "00000010" + 48;
+				when "10" => reg_file(24) <= "00000100" + 48;
 				when others => null;
 			end case;
 			reg_file(25) <= "00000000" + 48;
 			reg_file(26) <= "00100101";
 
-			-- mileageM 출력하는 부분
+			-- mileageM 출력�는 부�
 			bcd2 := (others => '0');
 			tmp_mileageM := mileageM;
 			
-			for i in 0 to 11 loop
+			for j in 0 to 11 loop
 				if bcd2(3 downto 0) > 4 then 
 					bcd2(3 downto 0) := bcd2(3 downto 0) + 3;
 				end if;
@@ -171,14 +171,14 @@ begin
 			reg_file(17) <=  ("0000" & STD_LOGIC_VECTOR(bcd2(15 downto 12))) + 48;
 			reg_file(21) <= "01101101";
 
-			-- 말 출력하는 부분
-			-- 이따 추가하기!!!!
+			-- �출력�는 부�
+			-- �따 추�기!!!!
 		end if;
 	end process;
 
-	process(FPGA_RSTB, lcd_state) -- lcd_state (X00~X26)
+	process(RESET, lcd_state) -- lcd_state (X00~X26)
 	Begin
-		if FPGA_RSTB='0' then
+		if RESET='0' then
 			lcd_nstate <= X"00";
 		else
 			case lcd_state is
