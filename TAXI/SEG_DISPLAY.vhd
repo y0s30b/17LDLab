@@ -48,15 +48,15 @@ begin
 		end case;
 	end process;
 	
-	process(rst_n, clk)	
+	process(RESET, CLK)	
 	-- display time every 50 us on 7-segment
 	-- 50 us로 하면 사람 눈엔 stable한 걸로 보임!
 		variable seg_clk_cnt : integer range 0 to 200;
 	begin
-		if rst_n = '0' then
+		if RESET = '0' then
 			sel_reg <= "000";
 			seg_clk_cnt := 0;
-		elsif clk'event and clk = '1' then
+		elsif CLK'event and CLK = '1' then
 			if seg_clk_cnt = 200 then	-- 내장되어 있는 수정 진동자의 주파수가 4Mhz이고,
 										-- 이는 0.25 us여서 200번 진동하면 50 us가 된다.
 				seg_clk_cnt := 0;		-- 초기화 1
@@ -99,5 +99,11 @@ begin
 	SEG_DP <= seg_reg(7);
 	-- 각 7-segment별 출력 신호를 보낼 위치(segment 정보)를 signal seg에 저장한 후
 	-- 이 signal의 값들을 회로 블록의 output으로 보낸다.
+
+    process(RESET, CLK)
+    -- taxiCharge가 16bit로 들어오는 걸 BCD로 바꾸어서 AA~FF로 내보내야 함
+    -- 여기 부분에서 처리!!
+    begin
+    end process;
 	
 end SEG_Behavioral;
