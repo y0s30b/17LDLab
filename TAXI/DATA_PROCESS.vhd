@@ -155,7 +155,9 @@ begin
     process(RESET, CLK)
     -- 주행 모드 taxiChargeCnt� mileageM�절clk 주기�라 변경하�
     -- taxiChargeCnt가 0�로 �어지�간 taxiCharge�증�킴(�금 증�).
-        variable clk_cnt0 : std_logic_vector(11 downto 0);
+        variable clk_cnt0 : std_logic_vector(11 downto 0);  -- 할증 0%
+        variable clk_cnt1 : std_logic_vector(11 downto 0);  -- 할증 20%
+        variable clk_cnt2 : std_logic_vector(11 downto 0);  -- 할증 40%
     begin
         if RESET = '0' then
             clk_cnt0 := "000000000000";
@@ -165,24 +167,43 @@ begin
 
             mileageM_reg <= "0000000000000";
         elsif CLK = '1' and CLK'event then
-            if processState = "01" then
-                -- 주행 모드
-
+            if processState = "00" or processState = "10" then
+            -- 대기/정지 모드에서 '호출'버튼 적용 가능.
+                if isCall = '1' then
+                    taxiCharge <= taxiCharge + "0000001111101000";
+                end if;
+            elsif processState = "01" then
+            -- 주행 모드
                 if taxiChargeCnt_reg = "000000000000" then
                     taxiCharge_reg <= taxiCharge_reg + x"64"; -- 100추�
                     taxiChargeCnt_reg <= "0001101110111000"; -- �30000 �후 3000�로 count down
                 elsif taxiChargeCnt_reg > "0000000000000000" then
-                    if clk_cnt0 = "11111010000" then-- decimal 4000, 1 ms 주기 만들주기
-                        clk_cnt0 := "000000000000";
-                        taxiChargeCnt_reg <= taxiChargeCnt_reg - 1;
-                        -- 1 ms마다 taxiChargeCnt 감소�킴
-
+                    if extraCharge = "00" then
+                        if clk_cnt0 = "11111010000" then    -- decimal 4000, 1 ms 주기 만들어 주기 -- 0 추가!
+                            clk_cnt0 := "000000000000";
+                            taxiChargeCnt_reg <= taxiChargeCnt_reg - 1;
+                            -- 1 ms마다 taxiChargeCnt 감소�킴
+                        else
+                            clk_cnt0 := clk_cnt0 + 1;
+                        end if;
+                    elsif extraCharge = "01" then
+                        if clk_cnt1 = "11001000000" then    -- decimal 3200 셀 때마다 taxiChargeCnt 감소 -- 0 추가!
+                            clk_cnt1 := "000000000000";
+                            taxiChargeCnt_reg <= taxiChargeCnt_reg - 1;
+                        else
+                            clk_cnt1 := clk_cnt1 + 1;
+                        end if;
+                    elsif extraCharge = "10" then
+                        if clk_cnt2 = "10010110000" then    -- decimal 2400 셀 때마다 taxiChargeCnt 감소 -- 0 추가!
+                            clk_cnt2 := "000000000000";
+                            taxiChargeCnt_reg <= taxiChargeCnt_reg - 1;
+                        else
+                            clk_cnt2 := clk_cnt2 + 1;
+                        end if;
+                    end if;
                         -- 주행 거리 mileageM관부분도 �기추�기
                         -- 추�추�
                         -- 추�세
-                    else
-                        clk_cnt0 := clk_cnt0 + 1;
-                    end if;
                 end if;
             end if;
         end if;
