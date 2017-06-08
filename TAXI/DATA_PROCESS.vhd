@@ -25,11 +25,13 @@ architecture DATA_Behavioral of DATA_PROCESS is
 
     signal taxiCharge_reg, taxiChargeCnt_reg : std_logic_vector(15 downto 0);
     signal extraCharge_reg : std_logic_vector(1 downto 0);
-    signal mileageM_reg : std_logic_vector(11 downto 0);
+--    signal mileageM_reg : std_logic_vector(11 downto 0);
     signal isCall_reg, isPayment_reg : std_logic;
 
     signal SW1_flag_rst, SW2_flag_rst, SW3_flag_rst : std_logic;
 	 signal isCall_add1000_flag : std_logic;
+	 signal stop_check_flag : std_logic;
+	 signal stop_check_flag2 : std_logic;
 begin
     taxiCharge <= taxiCharge_reg;
     taxiChargeCnt <= taxiChargeCnt_reg;
@@ -126,6 +128,8 @@ begin
             extraCharge_reg <= "00";
             isCall_reg <= '0';
             isPayment_reg <= '0';
+				
+				stop_check_flag <= '0';
         elsif CLK = '1' and CLK'event then
             if insSW1 = '1' then
                 -- processState_reg = "00"ï¿'ï¿½ï¿½, "01"ï¿'ì£¼í–‰', "10"ï¿'ï¿½ï¿½'.
@@ -133,9 +137,23 @@ begin
                 if processState_reg = "00" or processState_reg = "01" then
                     processState_reg <= processState_reg + 1;
                     isPayment_reg <= '0';
+						  
+						  -- ´ÙÀ½ state = "10" (=Á¤Áö)
+						  if processState_reg = "01" then
+								stop_check_flag <= '1';
+						  end if;
                 elsif processState_reg = "10" then
                     processState_reg <= "00";
                     isPayment_reg <= '1';
+						  
+						  -- ´ÙÀ½ state = "00" (=´ë±â)
+						  if stop_check_flag = '1' then
+								extraCharge_reg <= "00";
+								isCall_reg <= '0';
+								isPayment_reg <= '0';
+								
+								stop_check_flag <= '0';
+						  end if;
                 end if;
             end if;
 
@@ -161,16 +179,16 @@ begin
         variable clk_cnt0 : std_logic_vector(11 downto 0);  --  ì¦ 0%
         variable clk_cnt1 : std_logic_vector(11 downto 0);  --  ì¦ 20%
         variable clk_cnt2 : std_logic_vector(11 downto 0);  --  ì¦ 40%
-		  
-		  
     begin
         if RESET = '0' then
             clk_cnt0 := "000000000000";
             
             taxiCharge_reg <= "0000101110111000";    -- decimal 3000
             taxiChargeCnt_reg <= "0111010100110000"; -- decimal 30000
+				
+				stop_check_flag2 <= '0';
 
-            mileageM_reg <= "000000000000";
+--            mileageM_reg <= "000000000000";
         elsif CLK = '1' and CLK'event then
             if processState_reg = "00" or processState_reg = "10" then
             -- €ê¸•ì ëª¨ë“œì„œ '¸ì¶œ'ë²„íŠ¼ ìš© ê°€
@@ -181,6 +199,16 @@ begin
 						  end if;
                 elsif isCall_reg = '0' then
 						  isCall_add1000_flag <= '0';
+					 end if;
+					 
+					 if processState_reg = "10" then
+							stop_check_flag2 <= '1';
+					 end if;
+					 
+					 if processState_reg = "00" and stop_check_flag2 = '1' then
+							taxiCharge_reg <= "0000101110111000";    -- decimal 3000
+							taxiChargeCnt_reg <= "0111010100110000"; -- decimal 30000
+							stop_check_flag2 <= '0';
 					 end if;
             elsif processState_reg = "01" then
             -- ì£¼í–‰ ëª¨ë“œ
