@@ -11,13 +11,14 @@ entity DATA_PROCESS is
             taxiCharge : out std_logic_vector(15 downto 0);
             taxiChargeCnt : out std_logic_vector(15 downto 0);
             extraCharge : out std_logic_vector(1 downto 0);
-            mileageM : out std_logic_vector(11 downto 0);
+--            mileageM : out std_logic_vector(11 downto 0);
             isCall : out std_logic;
-            isPayment : out std_logic);
+            isPayment : out std_logic;
+				processState : out std_logic_vector(1 downto 0));
 end DATA_PROCESS;
 
 architecture DATA_Behavioral of DATA_PROCESS is
-    signal processState : std_logic_vector(1 downto 0);
+    signal processState_reg : std_logic_vector(1 downto 0);
     -- "00": �� "01": "�작", "10": "��"
     signal SW1_flag, SW2_flag, SW3_flag : std_logic;
     signal insSW1, insSW2, insSW3 : std_logic;
@@ -33,9 +34,10 @@ begin
     taxiCharge <= taxiCharge_reg;
     taxiChargeCnt <= taxiChargeCnt_reg;
     extraCharge <= extraCharge_reg;
-    mileageM <= mileageM_reg;
+--    mileageM <= mileageM_reg;
     isCall <= isCall_reg;
     isPayment <= isPayment_reg;
+	 processState <= processState_reg;
 
     process(SW1, SW2, SW3, SW1_flag_rst, SW2_flag_rst, SW3_flag_rst)
     -- switch input각각instruction signal�바꿔주process ...1/2
@@ -119,20 +121,20 @@ begin
     -- SW1~3�호�라 �하�로 �작기술�는 process
     begin
         if RESET = '0' then
-            processState <= "00";
+            processState_reg <= "00";
             
             extraCharge_reg <= "00";
             isCall_reg <= '0';
             isPayment_reg <= '0';
         elsif CLK = '1' and CLK'event then
             if insSW1 = '1' then
-                -- processState = "00"�'��, "01"�'주행', "10"�'��'.
+                -- processState_reg = "00"�'��, "01"�'주행', "10"�'��'.
                 -- state가 "10"�서 "00"�로 �어�payment display륄한 isPayment�set.
-                if processState = "00" or processState = "01" then
-                    processState <= processState + 1;
+                if processState_reg = "00" or processState_reg = "01" then
+                    processState_reg <= processState_reg + 1;
                     isPayment_reg <= '0';
-                elsif processState = "10" then
-                    processState <= "00";
+                elsif processState_reg = "10" then
+                    processState_reg <= "00";
                     isPayment_reg <= '1';
                 end if;
             end if;
@@ -170,7 +172,7 @@ begin
 
             mileageM_reg <= "000000000000";
         elsif CLK = '1' and CLK'event then
-            if processState = "00" or processState = "10" then
+            if processState_reg = "00" or processState_reg = "10" then
             -- �긕� 모드�서 '�출'버튼 �용 가
                 if isCall_reg = '1' then
 						  if isCall_add1000_flag = '0' then
@@ -180,7 +182,7 @@ begin
                 elsif isCall_reg = '0' then
 						  isCall_add1000_flag <= '0';
 					 end if;
-            elsif processState = "01" then
+            elsif processState_reg = "01" then
             -- 주행 모드
                 if taxiChargeCnt_reg = "000000000000" then
                     taxiCharge_reg <= taxiCharge_reg + x"64"; -- 100추�
