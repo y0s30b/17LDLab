@@ -268,7 +268,7 @@ begin
 	LCD_A(1) <= '0';
 	LCD_A(0) <= '0' when (lcd_state >= X"00" and lcd_state < X"06") or (lcd_state = X"16")
 							else '1';
-	LCD_EN <= clk_50; --LCD_EN <= '0' when w_enable_reg='0' else clk_100;
+	LCD_EN <= not clk_50; --LCD_EN <= '0' when w_enable_reg='0' else clk_100;
 	LCD_D <= lcd_db; -- LCD display data
 	--w_enable <= w_enable_reg;
 end LCD_Behavioral;
