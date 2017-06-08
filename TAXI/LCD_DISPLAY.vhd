@@ -37,6 +37,9 @@ architecture LCD_Behavioral of LCD_DISPLAY is
 	signal lcd_db : std_logic_vector (7 downto 0);
 	
 	signal human_clk : std_logic;
+	signal reset_count_2sec : std_logic_vector(1 downto 0);
+	
+	signal start_enable : std_logic;
 begin
 	process(RESET,CLK,load_100k,cnt_100k) -- Clock(100kHz) Generator
 	Begin
@@ -95,7 +98,21 @@ begin
 	end process;
 	w_enable_reg <= '0' when lcd_state < X"06" else '1';
 
-	process(RESET, CLK, human_clk)
+	process(RESET, human_clk)
+	begin
+		if RESET = '0' then
+			reset_count_2sec <= "00";
+			start_enable <= '0';
+		elsif human_clk = '1' and human_clk'event then
+			if reset_count_2sec = "10" then
+				start_enable <= '1';
+			elsif reset_count_2sec < "10" then
+				reset_count_2sec <= reset_count_2sec + 1;
+			end if;
+		end if;
+	end process;
+
+	process(RESET, CLK)
 		variable tmp_chargeCnt : std_logic_vector(15 downto 0);
 		variable bcd : UNSIGNED (19 downto 0) := (others => '0');
 
@@ -103,133 +120,171 @@ begin
 --		variable bcd2 : UNSIGNED (15 downto 0) := (others => '0');
 		
 	Begin
+	
 		if RESET = '0' then
-			for i in 0 to 31 loop
-				reg_file(i) <= X"20";
-			end loop;
-		elsif CLK'event and CLK='1' then
+			reg_file(0) <= X"20";
+			reg_file(1) <= "01001110";
+			reg_file(2) <= "01001001";
+			reg_file(3) <= "01000011";
+			reg_file(4) <= "01000101";
+			reg_file(5) <= X"20";
+			reg_file(6) <= X"20";
+			reg_file(7) <= "01010100";
+			reg_file(8) <= X"20";
+			reg_file(9) <= "01001111";
+			reg_file(10) <= X"20";
+			reg_file(11) <= X"20";
+			reg_file(12) <= "00111110";
+			reg_file(13) <= "00111110";
+			reg_file(14) <= "10100101";
+			reg_file(15) <= "10100101";
+			reg_file(16) <= X"20";
+			reg_file(17) <= "01001101";
+			reg_file(18) <= "01000101";
+			reg_file(19) <= "01000101";
+			reg_file(20) <= "01010100";
+			reg_file(21) <= X"20";
+			reg_file(22) <= X"20";
+			reg_file(23) <= "01011001";
+			reg_file(24) <= "01001111";
+			reg_file(25) <= "01010101";
+			reg_file(26) <= X"20";
+			reg_file(27) <= X"20";
+			reg_file(28) <= "10100101";
+			reg_file(29) <= "00111110";
+			reg_file(30) <= "00111110";
+			reg_file(31) <= "10100101";
+			
+			elsif CLK'event and CLK='1' and start_enable = '1' then
 --			if w_enable_reg ='1' and data_out ='1' then
 --			if w_enable_reg = '1' then
 --				reg_file(conv_integer(addr)) <= data;
 --			end if;
 
 			-- taxiChargeCnt 출력�는 부�
-			bcd := (others => '0');
-			tmp_chargeCnt := taxiChargeCnt;
-			
-			for i in 0 to 15 loop
-				if bcd(3 downto 0) > 4 then 
-					bcd(3 downto 0) := bcd(3 downto 0) + 3;
+--			if reset_count_2sec = "10" then
+				bcd := (others => '0');
+				tmp_chargeCnt := taxiChargeCnt;
+				
+				for i in 0 to 15 loop
+					if bcd(3 downto 0) > 4 then 
+						bcd(3 downto 0) := bcd(3 downto 0) + 3;
+					end if;
+
+					if bcd(7 downto 4) > 4 then 
+						bcd(7 downto 4) := bcd(7 downto 4) + 3;
+					end if;
+
+					if bcd(11 downto 8) > 4 then  
+						bcd(11 downto 8) := bcd(11 downto 8) + 3;
+					end if;
+
+					if bcd(15 downto 12) > 4 then
+						bcd(15 downto 12) := bcd(15 downto 12) + 3;
+					end if;
+
+					bcd := bcd(18 downto 0) & tmp_chargeCnt(15);
+					tmp_chargeCnt := tmp_chargeCnt(14 downto 0) & '0';
+				end loop;
+
+				reg_file(5) <= ("0000" & STD_LOGIC_VECTOR(bcd(3 downto 0))) + 48;
+				reg_file(4) <= ("0000" & STD_LOGIC_VECTOR(bcd(7 downto 4))) + 48;
+				reg_file(3) <= ("0000" & STD_LOGIC_VECTOR(bcd(11 downto 8))) + 48;
+				reg_file(2) <= ("0000" & STD_LOGIC_VECTOR(bcd(15 downto 12))) + 48;
+				reg_file(1) <= ("0000" & STD_LOGIC_VECTOR(bcd(19 downto 16))) + 48;
+				
+				-- CALL 문구 출력�는 부�
+				if isCall = '1' then
+					reg_file(7) <= "01000011";
+					reg_file(8) <= "01000001";
+					reg_file(9) <= "01001100";
+					reg_file(10) <= "01001100";
+				elsif isCall = '0' then
+					reg_file(7) <= X"20";
+					reg_file(8) <= X"20";
+					reg_file(9) <= X"20";
+					reg_file(10)<= X"20";
 				end if;
 
-				if bcd(7 downto 4) > 4 then 
-					bcd(7 downto 4) := bcd(7 downto 4) + 3;
-				end if;
+				-- extraCharge 출력�는 부�
+				reg_file(23) <= "01000101";
+				case extraCharge is
+					when "00" => reg_file(24) <= "00000000" + 48;
+					when "01" => reg_file(24) <= "00000010" + 48;
+					when "10" => reg_file(24) <= "00000100" + 48;
+					when others => null;
+				end case;
+				reg_file(25) <= "00000000" + 48;
+				reg_file(26) <= "00100101";
 
-				if bcd(11 downto 8) > 4 then  
-					bcd(11 downto 8) := bcd(11 downto 8) + 3;
-				end if;
+				-- mileageM 출력�는 부�
+		--			bcd2 := (others => '0');
+		--			tmp_mileageM := mileageM;
+				
+		--			for j in 0 to 11 loop
+		--				if bcd2(3 downto 0) > 4 then 
+		--					bcd2(3 downto 0) := bcd2(3 downto 0) + 3;
+		--				end if;
 
-				if bcd(15 downto 12) > 4 then
-					bcd(15 downto 12) := bcd(15 downto 12) + 3;
-				end if;
+		--				if bcd2(7 downto 4) > 4 then 
+		--					bcd2(7 downto 4) := bcd2(7 downto 4) + 3;
+		--				end if;
 
-				bcd := bcd(18 downto 0) & tmp_chargeCnt(15);
-				tmp_chargeCnt := tmp_chargeCnt(14 downto 0) & '0';
-			end loop;
+		--				if bcd2(11 downto 8) > 4 then  
+		--					bcd2(11 downto 8) := bcd2(11 downto 8) + 3;
+		--				end if;
 
-			reg_file(5) <= ("0000" & STD_LOGIC_VECTOR(bcd(3 downto 0))) + 48;
-			reg_file(4) <= ("0000" & STD_LOGIC_VECTOR(bcd(7 downto 4))) + 48;
-			reg_file(3) <= ("0000" & STD_LOGIC_VECTOR(bcd(11 downto 8))) + 48;
-			reg_file(2) <= ("0000" & STD_LOGIC_VECTOR(bcd(15 downto 12))) + 48;
-			reg_file(1) <= ("0000" & STD_LOGIC_VECTOR(bcd(19 downto 16))) + 48;
-			
-			-- CALL 문구 출력�는 부�
-			if isCall = '1' then
-				reg_file(7) <= "01000011";
-				reg_file(8) <= "01000001";
-				reg_file(9) <= "01001100";
-				reg_file(10) <= "01001100";
-			end if;
+		--				bcd2 := bcd2(14 downto 0) & tmp_mileageM(11);
+		--				tmp_mileageM := tmp_mileageM(10 downto 0) & '0';
+		--			end loop;
 
-			-- extraCharge 출력�는 부�
-			reg_file(23) <= "01000101";
-			case extraCharge is
-				when "00" => reg_file(24) <= "00000000" + 48;
-				when "01" => reg_file(24) <= "00000010" + 48;
-				when "10" => reg_file(24) <= "00000100" + 48;
+		--			reg_file(20) <=  ("0000" & STD_LOGIC_VECTOR(bcd2(3 downto 0))) + 48;
+		--			reg_file(19) <=  ("0000" & STD_LOGIC_VECTOR(bcd2(7 downto 4))) + 48;
+		--			reg_file(18) <=  ("0000" & STD_LOGIC_VECTOR(bcd2(11 downto 8))) + 48;
+		--			reg_file(17) <=  ("0000" & STD_LOGIC_VECTOR(bcd2(15 downto 12))) + 48;
+		--			reg_file(21) <= "01101101";
+
+				case processState is
+				when "00" =>	reg_file(17) <= X"20";
+									reg_file(18) <= "01010111";
+									reg_file(19) <= "01000001";
+									reg_file(20) <= "01001001";
+									reg_file(21) <= "01010100";
+				when "01" =>	reg_file(17) <= "01000100";
+									reg_file(18) <= "01010010";
+									reg_file(19) <= "01001001";
+									reg_file(20) <= "01010110";
+									reg_file(21) <= "01000101";
+				when "10" =>	reg_file(17) <= X"20";
+									reg_file(18) <= "01010011";
+									reg_file(19) <= "01010100";
+									reg_file(20) <= "01001111";
+									reg_file(21) <= "01010000";
 				when others => null;
-			end case;
-			reg_file(25) <= "00000000" + 48;
-			reg_file(26) <= "00100101";
+				end case;
 
-			-- mileageM 출력�는 부�
---			bcd2 := (others => '0');
---			tmp_mileageM := mileageM;
-			
---			for j in 0 to 11 loop
---				if bcd2(3 downto 0) > 4 then 
---					bcd2(3 downto 0) := bcd2(3 downto 0) + 3;
---				end if;
-
---				if bcd2(7 downto 4) > 4 then 
---					bcd2(7 downto 4) := bcd2(7 downto 4) + 3;
---				end if;
-
---				if bcd2(11 downto 8) > 4 then  
---					bcd2(11 downto 8) := bcd2(11 downto 8) + 3;
---				end if;
-
---				bcd2 := bcd2(14 downto 0) & tmp_mileageM(11);
---				tmp_mileageM := tmp_mileageM(10 downto 0) & '0';
---			end loop;
-
---			reg_file(20) <=  ("0000" & STD_LOGIC_VECTOR(bcd2(3 downto 0))) + 48;
---			reg_file(19) <=  ("0000" & STD_LOGIC_VECTOR(bcd2(7 downto 4))) + 48;
---			reg_file(18) <=  ("0000" & STD_LOGIC_VECTOR(bcd2(11 downto 8))) + 48;
---			reg_file(17) <=  ("0000" & STD_LOGIC_VECTOR(bcd2(15 downto 12))) + 48;
---			reg_file(21) <= "01101101";
-
-			case processState is
-			when "00" =>	reg_file(17) <= X"20";
-								reg_file(18) <= "01010111";
-								reg_file(19) <= "01000001";
-								reg_file(20) <= "01001001";
-								reg_file(21) <= "01010100";
-			when "01" =>	reg_file(17) <= "01000100";
-								reg_file(18) <= "01010010";
-								reg_file(19) <= "01001001";
-								reg_file(20) <= "01010110";
-								reg_file(21) <= "01000101";
-			when "10" =>	reg_file(17) <= X"20";
-								reg_file(18) <= "01010011";
-								reg_file(19) <= "01010100";
-								reg_file(20) <= "01001111";
-								reg_file(21) <= "01010000";
-			when others => null;
-			end case;
-
-			if human_clk = '1' then
-				reg_file(12) <= "00111110";
-				reg_file(13) <= "00111110";
-				reg_file(14) <= "10100101";
-				reg_file(15) <= "10100101";
-				
-				reg_file(28) <= "10100101";
-				reg_file(29) <= "00111110";
-				reg_file(30) <= "00111110";
-				reg_file(31) <= "10100101";
-			elsif human_clk = '0' then
-				reg_file(13) <= "00111110";
-				reg_file(14) <= "00111110";
-				reg_file(12) <= "10100101";
-				reg_file(15) <= "10100101";
-				
-				reg_file(29) <= "10100101";
-				reg_file(30) <= "00111110";
-				reg_file(28) <= "00111110";
-				reg_file(31) <= "10100101";
-			end if;
+				if processState = "01" and human_clk = '1' then
+					reg_file(12) <= "00111110";
+					reg_file(13) <= "00111110";
+					reg_file(14) <= "10100101";
+					reg_file(15) <= "10100101";
+					
+					reg_file(28) <= "10100101";
+					reg_file(29) <= "00111110";
+					reg_file(30) <= "00111110";
+					reg_file(31) <= "10100101";
+				elsif processState = "01" and human_clk = '0' then
+					reg_file(13) <= "00111110";
+					reg_file(14) <= "00111110";
+					reg_file(12) <= "10100101";
+					reg_file(15) <= "10100101";
+					
+					reg_file(29) <= "10100101";
+					reg_file(30) <= "00111110";
+					reg_file(31) <= "00111110";
+					reg_file(28) <= "10100101";
+				end if;
+--			end if; -- welcome msg 2��
 		end if;
 	end process;
 

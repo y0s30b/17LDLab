@@ -4,7 +4,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Parameter xsthdpdir set to xst
 
@@ -104,14 +104,14 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-Compiling vhdl file "D:/0606/17LDLab/TAXI/LCD_DISPLAY.vhd" in Library work.
-Architecture lcd_behavioral of Entity lcd_display is up to date.
-Compiling vhdl file "D:/0606/17LDLab/TAXI/SEG_DISPLAY.vhd" in Library work.
+Compiling vhdl file "D:/0608/17LDLab/TAXI/LCD_DISPLAY.vhd" in Library work.
+Entity <lcd_display> compiled.
+Entity <lcd_display> (Architecture <lcd_behavioral>) compiled.
+Compiling vhdl file "D:/0608/17LDLab/TAXI/SEG_DISPLAY.vhd" in Library work.
 Architecture seg_behavioral of Entity seg_display is up to date.
-Compiling vhdl file "D:/0606/17LDLab/TAXI/DATA_PROCESS.vhd" in Library work.
-Entity <data_process> compiled.
-Entity <data_process> (Architecture <data_behavioral>) compiled.
-Compiling vhdl file "D:/0606/17LDLab/TAXI/TAXI.vhd" in Library work.
+Compiling vhdl file "D:/0608/17LDLab/TAXI/DATA_PROCESS.vhd" in Library work.
+Architecture data_behavioral of Entity data_process is up to date.
+Compiling vhdl file "D:/0608/17LDLab/TAXI/TAXI.vhd" in Library work.
 Architecture behavioral of Entity taxi is up to date.
 
 =========================================================================
@@ -133,32 +133,27 @@ Analyzing Entity <TAXI> in library <work> (Architecture <behavioral>).
 Entity <TAXI> analyzed. Unit <TAXI> generated.
 
 Analyzing Entity <LCD_DISPLAY> in library <work> (Architecture <lcd_behavioral>).
-WARNING:Xst:819 - "D:/0606/17LDLab/TAXI/LCD_DISPLAY.vhd" line 179: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+WARNING:Xst:819 - "D:/0608/17LDLab/TAXI/LCD_DISPLAY.vhd" line 291: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
    <reg_file>
 INFO:Xst:2679 - Register <reg_file<0>> in unit <LCD_DISPLAY> has a constant value of 00100000 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <reg_file<6>> in unit <LCD_DISPLAY> has a constant value of 00100000 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <reg_file<11>> in unit <LCD_DISPLAY> has a constant value of 00100000 during circuit operation. The register is replaced by logic.
-INFO:Xst:2679 - Register <reg_file<12>> in unit <LCD_DISPLAY> has a constant value of 00100000 during circuit operation. The register is replaced by logic.
-INFO:Xst:2679 - Register <reg_file<13>> in unit <LCD_DISPLAY> has a constant value of 00100000 during circuit operation. The register is replaced by logic.
-INFO:Xst:2679 - Register <reg_file<14>> in unit <LCD_DISPLAY> has a constant value of 00100000 during circuit operation. The register is replaced by logic.
-INFO:Xst:2679 - Register <reg_file<15>> in unit <LCD_DISPLAY> has a constant value of 00100000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <reg_file<13>> in unit <LCD_DISPLAY> has a constant value of 00111110 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <reg_file<15>> in unit <LCD_DISPLAY> has a constant value of 10100101 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <reg_file<16>> in unit <LCD_DISPLAY> has a constant value of 00100000 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <reg_file<22>> in unit <LCD_DISPLAY> has a constant value of 00100000 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <reg_file<27>> in unit <LCD_DISPLAY> has a constant value of 00100000 during circuit operation. The register is replaced by logic.
-INFO:Xst:2679 - Register <reg_file<28>> in unit <LCD_DISPLAY> has a constant value of 00100000 during circuit operation. The register is replaced by logic.
-INFO:Xst:2679 - Register <reg_file<29>> in unit <LCD_DISPLAY> has a constant value of 00100000 during circuit operation. The register is replaced by logic.
-INFO:Xst:2679 - Register <reg_file<30>> in unit <LCD_DISPLAY> has a constant value of 00100000 during circuit operation. The register is replaced by logic.
-INFO:Xst:2679 - Register <reg_file<31>> in unit <LCD_DISPLAY> has a constant value of 00100000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <reg_file<28>> in unit <LCD_DISPLAY> has a constant value of 10100101 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <reg_file<30>> in unit <LCD_DISPLAY> has a constant value of 00111110 during circuit operation. The register is replaced by logic.
 Entity <LCD_DISPLAY> analyzed. Unit <LCD_DISPLAY> generated.
 
 Analyzing Entity <SEG_DISPlAY> in library <work> (Architecture <seg_behavioral>).
-WARNING:Xst:819 - "D:/0606/17LDLab/TAXI/SEG_DISPLAY.vhd" line 30: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+WARNING:Xst:819 - "D:/0608/17LDLab/TAXI/SEG_DISPLAY.vhd" line 30: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
    <AA>, <BB>, <CC>, <DD>, <EE>, <FF>
 INFO:Xst:2679 - Register <AA> in unit <SEG_DISPlAY> has a constant value of 0000 during circuit operation. The register is replaced by logic.
 Entity <SEG_DISPlAY> analyzed. Unit <SEG_DISPlAY> generated.
 
 Analyzing Entity <DATA_PROCESS> in library <work> (Architecture <data_behavioral>).
-INFO:Xst:2679 - Register <mileageM_reg> in unit <DATA_PROCESS> has a constant value of 000000000000 during circuit operation. The register is replaced by logic.
 Entity <DATA_PROCESS> analyzed. Unit <DATA_PROCESS> generated.
 
 
@@ -169,155 +164,128 @@ Entity <DATA_PROCESS> analyzed. Unit <DATA_PROCESS> generated.
 Performing bidirectional port resolution...
 
 Synthesizing Unit <LCD_DISPLAY>.
-    Related source file is "D:/0606/17LDLab/TAXI/LCD_DISPLAY.vhd".
+    Related source file is "D:/0608/17LDLab/TAXI/LCD_DISPLAY.vhd".
 WARNING:Xst:647 - Input <isPayment> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:646 - Signal <w_enable_reg> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-    Register <reg_file<9>> equivalent to <reg_file<10>> has been removed
+    Register <reg_file<29>> equivalent to <reg_file<12>> has been removed
+    Register <reg_file<31>> equivalent to <reg_file<14>> has been removed
 WARNING:Xst:737 - Found 8-bit latch for signal <lcd_db>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
     Using one-hot encoding for signal <lcd_state>.
-INFO:Xst:2117 - HDL ADVISOR - Mux Selector <lcd_state> of Case statement line 184 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <lcd_state> of Case statement line 296 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
    	- add an 'INIT' attribute on signal <lcd_state> (optimization is then done without any risk)
    	- use the attribute 'signal_encoding user' to avoid onehot optimization
    	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
-INFO:Xst:2117 - HDL ADVISOR - Mux Selector <lcd_state> of Case statement line 184 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <lcd_state> of Case statement line 296 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
    	- add an 'INIT' attribute on signal <lcd_state> (optimization is then done without any risk)
    	- use the attribute 'signal_encoding user' to avoid onehot optimization
    	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
-    Found 5-bit comparator greater for signal <bcd2_0$cmp_gt0000> created at line 152.
-    Found 5-bit comparator greater for signal <bcd2_0$cmp_gt0001> created at line 152.
-    Found 5-bit comparator greater for signal <bcd2_0$cmp_gt0002> created at line 152.
-    Found 5-bit comparator greater for signal <bcd2_0$cmp_gt0003> created at line 152.
-    Found 5-bit comparator greater for signal <bcd2_0$cmp_gt0004> created at line 152.
-    Found 5-bit comparator greater for signal <bcd2_0$cmp_gt0005> created at line 152.
-    Found 5-bit comparator greater for signal <bcd2_0$cmp_gt0006> created at line 152.
-    Found 5-bit comparator greater for signal <bcd2_0$cmp_gt0007> created at line 152.
-    Found 5-bit comparator greater for signal <bcd2_0$cmp_gt0008> created at line 152.
-    Found 4-bit adder for signal <bcd2_11_8$add0000> created at line 161.
-    Found 4-bit adder for signal <bcd2_11_8$add0001> created at line 161.
-    Found 4-bit adder for signal <bcd2_11_8$add0002> created at line 161.
-    Found 4-bit adder for signal <bcd2_3_0$add0000> created at line 153.
-    Found 4-bit adder for signal <bcd2_3_0$add0001> created at line 153.
-    Found 4-bit adder for signal <bcd2_3_0$add0002> created at line 153.
-    Found 4-bit adder for signal <bcd2_3_0$add0003> created at line 153.
-    Found 4-bit adder for signal <bcd2_3_0$add0004> created at line 153.
-    Found 4-bit adder for signal <bcd2_3_0$add0005> created at line 153.
-    Found 4-bit adder for signal <bcd2_3_0$add0006> created at line 153.
-    Found 4-bit adder for signal <bcd2_3_0$add0007> created at line 153.
-    Found 4-bit adder for signal <bcd2_3_0$add0008> created at line 153.
-    Found 5-bit comparator greater for signal <bcd2_6$cmp_gt0000> created at line 156.
-    Found 5-bit comparator greater for signal <bcd2_6$cmp_gt0001> created at line 156.
-    Found 5-bit comparator greater for signal <bcd2_6$cmp_gt0002> created at line 156.
-    Found 5-bit comparator greater for signal <bcd2_6$cmp_gt0003> created at line 156.
-    Found 5-bit comparator greater for signal <bcd2_6$cmp_gt0004> created at line 156.
-    Found 5-bit comparator greater for signal <bcd2_6$cmp_gt0005> created at line 156.
-    Found 4-bit adder for signal <bcd2_7_4$add0000> created at line 157.
-    Found 4-bit adder for signal <bcd2_7_4$add0001> created at line 157.
-    Found 4-bit adder for signal <bcd2_7_4$add0002> created at line 157.
-    Found 4-bit adder for signal <bcd2_7_4$add0003> created at line 157.
-    Found 4-bit adder for signal <bcd2_7_4$add0004> created at line 157.
-    Found 4-bit adder for signal <bcd2_7_4$add0005> created at line 157.
-    Found 5-bit comparator greater for signal <bcd2_8$cmp_gt0000> created at line 160.
-    Found 5-bit comparator greater for signal <bcd2_8$cmp_gt0001> created at line 160.
-    Found 5-bit comparator greater for signal <bcd2_8$cmp_gt0002> created at line 160.
-    Found 5-bit comparator greater for signal <bcd_11$cmp_gt0000> created at line 110.
-    Found 5-bit comparator greater for signal <bcd_11$cmp_gt0001> created at line 110.
-    Found 5-bit comparator greater for signal <bcd_11$cmp_gt0002> created at line 110.
-    Found 5-bit comparator greater for signal <bcd_11$cmp_gt0003> created at line 110.
-    Found 5-bit comparator greater for signal <bcd_11$cmp_gt0004> created at line 110.
-    Found 5-bit comparator greater for signal <bcd_11$cmp_gt0005> created at line 110.
-    Found 4-bit adder for signal <bcd_11_8$add0000> created at line 111.
-    Found 4-bit adder for signal <bcd_11_8$add0001> created at line 111.
-    Found 4-bit adder for signal <bcd_11_8$add0002> created at line 111.
-    Found 4-bit adder for signal <bcd_11_8$add0003> created at line 111.
-    Found 4-bit adder for signal <bcd_11_8$add0004> created at line 111.
-    Found 4-bit adder for signal <bcd_11_8$add0005> created at line 111.
-    Found 4-bit adder for signal <bcd_11_8$add0006> created at line 111.
-    Found 5-bit comparator greater for signal <bcd_12$cmp_gt0000> created at line 114.
-    Found 5-bit comparator greater for signal <bcd_12$cmp_gt0001> created at line 114.
-    Found 5-bit comparator greater for signal <bcd_12$cmp_gt0002> created at line 114.
-    Found 5-bit comparator greater for signal <bcd_12$cmp_gt0003> created at line 114.
-    Found 4-bit adder for signal <bcd_15_12$add0000> created at line 115.
-    Found 4-bit adder for signal <bcd_15_12$add0001> created at line 115.
-    Found 4-bit adder for signal <bcd_15_12$add0002> created at line 115.
-    Found 4-bit adder for signal <bcd_15_12$add0003> created at line 115.
-    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0000> created at line 102.
-    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0001> created at line 102.
-    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0002> created at line 102.
-    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0003> created at line 102.
-    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0004> created at line 102.
-    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0005> created at line 102.
-    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0006> created at line 102.
-    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0007> created at line 102.
-    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0008> created at line 102.
-    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0009> created at line 102.
-    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0010> created at line 102.
-    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0011> created at line 102.
-    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0012> created at line 102.
-    Found 4-bit adder for signal <bcd_3_0$add0000> created at line 103.
-    Found 4-bit adder for signal <bcd_3_0$add0001> created at line 103.
-    Found 4-bit adder for signal <bcd_3_0$add0002> created at line 103.
-    Found 4-bit adder for signal <bcd_3_0$add0003> created at line 103.
-    Found 4-bit adder for signal <bcd_3_0$add0004> created at line 103.
-    Found 4-bit adder for signal <bcd_3_0$add0005> created at line 103.
-    Found 4-bit adder for signal <bcd_3_0$add0006> created at line 103.
-    Found 4-bit adder for signal <bcd_3_0$add0007> created at line 103.
-    Found 4-bit adder for signal <bcd_3_0$add0008> created at line 103.
-    Found 4-bit adder for signal <bcd_3_0$add0009> created at line 103.
-    Found 4-bit adder for signal <bcd_3_0$add0010> created at line 103.
-    Found 4-bit adder for signal <bcd_3_0$add0011> created at line 103.
-    Found 4-bit adder for signal <bcd_3_0$add0012> created at line 103.
-    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0000> created at line 106.
-    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0001> created at line 106.
-    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0002> created at line 106.
-    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0003> created at line 106.
-    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0004> created at line 106.
-    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0005> created at line 106.
-    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0006> created at line 106.
-    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0007> created at line 106.
-    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0008> created at line 106.
-    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0009> created at line 106.
-    Found 4-bit adder for signal <bcd_7_4$add0000> created at line 107.
-    Found 4-bit adder for signal <bcd_7_4$add0001> created at line 107.
-    Found 4-bit adder for signal <bcd_7_4$add0002> created at line 107.
-    Found 4-bit adder for signal <bcd_7_4$add0003> created at line 107.
-    Found 4-bit adder for signal <bcd_7_4$add0004> created at line 107.
-    Found 4-bit adder for signal <bcd_7_4$add0005> created at line 107.
-    Found 4-bit adder for signal <bcd_7_4$add0006> created at line 107.
-    Found 4-bit adder for signal <bcd_7_4$add0007> created at line 107.
-    Found 4-bit adder for signal <bcd_7_4$add0008> created at line 107.
-    Found 4-bit adder for signal <bcd_7_4$add0009> created at line 107.
-    Found 5-bit comparator greater for signal <bcd_8$cmp_gt0000> created at line 110.
+    Found 5-bit comparator greater for signal <bcd_11$cmp_gt0000> created at line 178.
+    Found 5-bit comparator greater for signal <bcd_11$cmp_gt0001> created at line 178.
+    Found 5-bit comparator greater for signal <bcd_11$cmp_gt0002> created at line 178.
+    Found 5-bit comparator greater for signal <bcd_11$cmp_gt0003> created at line 178.
+    Found 5-bit comparator greater for signal <bcd_11$cmp_gt0004> created at line 178.
+    Found 5-bit comparator greater for signal <bcd_11$cmp_gt0005> created at line 178.
+    Found 4-bit adder for signal <bcd_11_8$add0000> created at line 179.
+    Found 4-bit adder for signal <bcd_11_8$add0001> created at line 179.
+    Found 4-bit adder for signal <bcd_11_8$add0002> created at line 179.
+    Found 4-bit adder for signal <bcd_11_8$add0003> created at line 179.
+    Found 4-bit adder for signal <bcd_11_8$add0004> created at line 179.
+    Found 4-bit adder for signal <bcd_11_8$add0005> created at line 179.
+    Found 4-bit adder for signal <bcd_11_8$add0006> created at line 179.
+    Found 5-bit comparator greater for signal <bcd_12$cmp_gt0000> created at line 182.
+    Found 5-bit comparator greater for signal <bcd_12$cmp_gt0001> created at line 182.
+    Found 5-bit comparator greater for signal <bcd_12$cmp_gt0002> created at line 182.
+    Found 5-bit comparator greater for signal <bcd_12$cmp_gt0003> created at line 182.
+    Found 4-bit adder for signal <bcd_15_12$add0000> created at line 183.
+    Found 4-bit adder for signal <bcd_15_12$add0001> created at line 183.
+    Found 4-bit adder for signal <bcd_15_12$add0002> created at line 183.
+    Found 4-bit adder for signal <bcd_15_12$add0003> created at line 183.
+    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0000> created at line 170.
+    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0001> created at line 170.
+    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0002> created at line 170.
+    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0003> created at line 170.
+    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0004> created at line 170.
+    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0005> created at line 170.
+    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0006> created at line 170.
+    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0007> created at line 170.
+    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0008> created at line 170.
+    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0009> created at line 170.
+    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0010> created at line 170.
+    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0011> created at line 170.
+    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0012> created at line 170.
+    Found 4-bit adder for signal <bcd_3_0$add0000> created at line 171.
+    Found 4-bit adder for signal <bcd_3_0$add0001> created at line 171.
+    Found 4-bit adder for signal <bcd_3_0$add0002> created at line 171.
+    Found 4-bit adder for signal <bcd_3_0$add0003> created at line 171.
+    Found 4-bit adder for signal <bcd_3_0$add0004> created at line 171.
+    Found 4-bit adder for signal <bcd_3_0$add0005> created at line 171.
+    Found 4-bit adder for signal <bcd_3_0$add0006> created at line 171.
+    Found 4-bit adder for signal <bcd_3_0$add0007> created at line 171.
+    Found 4-bit adder for signal <bcd_3_0$add0008> created at line 171.
+    Found 4-bit adder for signal <bcd_3_0$add0009> created at line 171.
+    Found 4-bit adder for signal <bcd_3_0$add0010> created at line 171.
+    Found 4-bit adder for signal <bcd_3_0$add0011> created at line 171.
+    Found 4-bit adder for signal <bcd_3_0$add0012> created at line 171.
+    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0000> created at line 174.
+    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0001> created at line 174.
+    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0002> created at line 174.
+    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0003> created at line 174.
+    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0004> created at line 174.
+    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0005> created at line 174.
+    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0006> created at line 174.
+    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0007> created at line 174.
+    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0008> created at line 174.
+    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0009> created at line 174.
+    Found 4-bit adder for signal <bcd_7_4$add0000> created at line 175.
+    Found 4-bit adder for signal <bcd_7_4$add0001> created at line 175.
+    Found 4-bit adder for signal <bcd_7_4$add0002> created at line 175.
+    Found 4-bit adder for signal <bcd_7_4$add0003> created at line 175.
+    Found 4-bit adder for signal <bcd_7_4$add0004> created at line 175.
+    Found 4-bit adder for signal <bcd_7_4$add0005> created at line 175.
+    Found 4-bit adder for signal <bcd_7_4$add0006> created at line 175.
+    Found 4-bit adder for signal <bcd_7_4$add0007> created at line 175.
+    Found 4-bit adder for signal <bcd_7_4$add0008> created at line 175.
+    Found 4-bit adder for signal <bcd_7_4$add0009> created at line 175.
+    Found 5-bit comparator greater for signal <bcd_8$cmp_gt0000> created at line 178.
     Found 1-bit register for signal <clk_100k>.
     Found 1-bit register for signal <clk_50>.
     Found 8-bit up counter for signal <cnt_100k>.
     Found 12-bit up counter for signal <cnt_50>.
+    Found 21-bit up counter for signal <count_clk>.
+    Found 21-bit adder for signal <count_clk$addsub0000> created at line 83.
+    Found 1-bit register for signal <human_clk>.
     Found 39-bit register for signal <lcd_state>.
     Found 40-bit register for signal <reg_file<1:5>>.
-    Found 16-bit register for signal <reg_file<7:8>>.
-    Found 8-bit register for signal <reg_file<10>>.
+    Found 32-bit register for signal <reg_file<7:10>>.
+    Found 8-bit register for signal <reg_file<12>>.
+    Found 8-bit register for signal <reg_file<14>>.
     Found 40-bit register for signal <reg_file<17:21>>.
     Found 32-bit register for signal <reg_file<23:26>>.
-    Found 8-bit adder for signal <reg_file_1$add0000> created at line 126.
-    Found 8-bit adder for signal <reg_file_17$add0000> created at line 171.
-    Found 8-bit adder for signal <reg_file_18$add0000> created at line 170.
-    Found 8-bit adder for signal <reg_file_19$add0000> created at line 169.
-    Found 8-bit adder for signal <reg_file_2$add0000> created at line 125.
-    Found 8-bit adder for signal <reg_file_20$add0000> created at line 168.
-    Found 8-bit 4-to-1 multiplexer for signal <reg_file_24$mux0000> created at line 138.
-    Found 8-bit adder for signal <reg_file_3$add0000> created at line 124.
-    Found 8-bit adder for signal <reg_file_4$add0000> created at line 123.
-    Found 8-bit adder for signal <reg_file_5$add0000> created at line 122.
+    Found 8-bit adder for signal <reg_file_1$add0000> created at line 194.
+    Found 8-bit 4-to-1 multiplexer for signal <reg_file_17$mux0000> created at line 247.
+    Found 8-bit 4-to-1 multiplexer for signal <reg_file_18$mux0000> created at line 247.
+    Found 8-bit 4-to-1 multiplexer for signal <reg_file_19$mux0000> created at line 247.
+    Found 8-bit adder for signal <reg_file_2$add0000> created at line 193.
+    Found 8-bit 4-to-1 multiplexer for signal <reg_file_20$mux0000> created at line 247.
+    Found 8-bit 4-to-1 multiplexer for signal <reg_file_21$mux0000> created at line 247.
+    Found 8-bit 4-to-1 multiplexer for signal <reg_file_24$mux0000> created at line 211.
+    Found 8-bit adder for signal <reg_file_3$add0000> created at line 192.
+    Found 8-bit adder for signal <reg_file_4$add0000> created at line 191.
+    Found 8-bit adder for signal <reg_file_5$add0000> created at line 190.
+    Found 2-bit up counter for signal <reset_count_2sec>.
+    Found 2-bit comparator greatequal for signal <reset_count_2sec$cmp_ge0000> created at line 108.
+    Found 1-bit register for signal <start_enable>.
     Summary:
-	inferred   2 Counter(s).
-	inferred   2 D-type flip-flop(s).
-	inferred  61 Adder/Subtractor(s).
-	inferred  52 Comparator(s).
-	inferred   8 Multiplexer(s).
+	inferred   4 Counter(s).
+	inferred   4 D-type flip-flop(s).
+	inferred  40 Adder/Subtractor(s).
+	inferred  35 Comparator(s).
+	inferred  48 Multiplexer(s).
 Unit <LCD_DISPLAY> synthesized.
 
 
 Synthesizing Unit <SEG_DISPlAY>.
-    Related source file is "D:/0606/17LDLab/TAXI/SEG_DISPLAY.vhd".
+    Related source file is "D:/0608/17LDLab/TAXI/SEG_DISPLAY.vhd".
     Found 6x6-bit ROM for signal <DIGIT$mux0000>.
     Found 10x8-bit ROM for signal <seg_reg$mux0000>.
 WARNING:Xst:737 - Found 6-bit latch for signal <DIGIT>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
@@ -413,21 +381,25 @@ Unit <SEG_DISPlAY> synthesized.
 
 
 Synthesizing Unit <DATA_PROCESS>.
-    Related source file is "D:/0606/17LDLab/TAXI/DATA_PROCESS.vhd".
+    Related source file is "D:/0608/17LDLab/TAXI/DATA_PROCESS.vhd".
     Found 12-bit up counter for signal <clk_cnt0>.
+    Found 16-bit comparator lessequal for signal <clk_cnt0$cmp_le0000> created at line 217.
     Found 12-bit up counter for signal <clk_cnt1>.
     Found 12-bit up counter for signal <clk_cnt2>.
     Found 2-bit register for signal <extraCharge_reg>.
-    Found 2-bit adder for signal <extraCharge_reg$addsub0000> created at line 148.
+    Found 2-bit adder for signal <extraCharge_reg$addsub0000> created at line 168.
     Found 1-bit register for signal <insSW1>.
     Found 1-bit register for signal <insSW2>.
     Found 1-bit register for signal <insSW3>.
     Found 1-bit register for signal <isCall_add1000_flag>.
     Found 1-bit register for signal <isCall_reg>.
     Found 1-bit register for signal <isPayment_reg>.
-    Found 1-bit 4-to-1 multiplexer for signal <isPayment_reg$mux0000>.
-    Found 2-bit register for signal <processState>.
-    Found 2-bit adder for signal <processState$addsub0000> created at line 132.
+    Found 1-bit 4-to-1 multiplexer for signal <isPayment_reg$mux0001>.
+    Found 2-bit register for signal <processState_reg>.
+    Found 2-bit adder for signal <processState_reg$addsub0000> created at line 138.
+    Found 1-bit register for signal <stop_check_flag>.
+    Found 1-bit 4-to-1 multiplexer for signal <stop_check_flag$mux0000>.
+    Found 1-bit register for signal <stop_check_flag2>.
     Found 1-bit register for signal <SW1_flag>.
     Found 1-bit register for signal <SW1_flag_rst>.
     Found 1-bit register for signal <SW2_flag>.
@@ -438,19 +410,21 @@ Synthesizing Unit <DATA_PROCESS>.
     Found 16-bit 4-to-1 multiplexer for signal <taxiCharge_reg$mux0000>.
     Found 16-bit adder for signal <taxiCharge_reg$share0000>.
     Found 16-bit register for signal <taxiChargeCnt_reg>.
-    Found 16-bit comparator lessequal for signal <taxiChargeCnt_reg$cmp_le0000> created at line 187.
+    Found 16-bit comparator greater for signal <taxiChargeCnt_reg$cmp_gt0000> created at line 217.
+    Found 16-bit 4-to-1 multiplexer for signal <taxiChargeCnt_reg$mux0000>.
+    Found 16-bit 4-to-1 multiplexer for signal <taxiChargeCnt_reg$mux0001> created at line 219.
     Found 16-bit subtractor for signal <taxiChargeCnt_reg$share0000>.
     Summary:
 	inferred   3 Counter(s).
-	inferred  16 D-type flip-flop(s).
+	inferred  18 D-type flip-flop(s).
 	inferred   4 Adder/Subtractor(s).
-	inferred   1 Comparator(s).
-	inferred  17 Multiplexer(s).
+	inferred   2 Comparator(s).
+	inferred  50 Multiplexer(s).
 Unit <DATA_PROCESS> synthesized.
 
 
 Synthesizing Unit <TAXI>.
-    Related source file is "D:/0606/17LDLab/TAXI/TAXI.vhd".
+    Related source file is "D:/0608/17LDLab/TAXI/TAXI.vhd".
 Unit <TAXI> synthesized.
 
 INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
@@ -462,35 +436,40 @@ Macro Statistics
 # ROMs                                                 : 2
  10x8-bit ROM                                          : 1
  6x6-bit ROM                                           : 1
-# Adders/Subtractors                                   : 99
+# Adders/Subtractors                                   : 78
  16-bit adder                                          : 1
  16-bit subtractor                                     : 1
  2-bit adder                                           : 2
- 4-bit adder                                           : 86
- 8-bit adder                                           : 9
-# Counters                                             : 7
+ 21-bit adder                                          : 1
+ 4-bit adder                                           : 68
+ 8-bit adder                                           : 5
+# Counters                                             : 9
  12-bit up counter                                     : 4
+ 2-bit up counter                                      : 1
+ 21-bit up counter                                     : 1
  3-bit up counter                                      : 1
  8-bit up counter                                      : 2
-# Registers                                            : 41
- 1-bit register                                        : 14
+# Registers                                            : 48
+ 1-bit register                                        : 18
  16-bit register                                       : 2
  2-bit register                                        : 2
  39-bit register                                       : 1
  4-bit register                                        : 5
- 8-bit register                                        : 17
+ 8-bit register                                        : 20
 # Latches                                              : 4
  4-bit latch                                           : 1
  6-bit latch                                           : 1
  8-bit latch                                           : 2
-# Comparators                                          : 87
+# Comparators                                          : 71
+ 16-bit comparator greater                             : 1
  16-bit comparator lessequal                           : 1
- 5-bit comparator greater                              : 86
-# Multiplexers                                         : 4
- 1-bit 4-to-1 multiplexer                              : 1
- 16-bit 4-to-1 multiplexer                             : 1
+ 2-bit comparator greatequal                           : 1
+ 5-bit comparator greater                              : 68
+# Multiplexers                                         : 12
+ 1-bit 4-to-1 multiplexer                              : 2
+ 16-bit 4-to-1 multiplexer                             : 3
  4-bit 6-to-1 multiplexer                              : 1
- 8-bit 4-to-1 multiplexer                              : 1
+ 8-bit 4-to-1 multiplexer                              : 6
 
 =========================================================================
 
@@ -498,40 +477,34 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <reg_file_25>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <1> (without init value) has a constant value of 0 in block <reg_file_25>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <2> (without init value) has a constant value of 0 in block <reg_file_25>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <3> (without init value) has a constant value of 0 in block <reg_file_25>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <5> (without init value) has a constant value of 1 in block <reg_file_25>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <6> (without init value) has a constant value of 0 in block <reg_file_25>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <7> (without init value) has a constant value of 0 in block <reg_file_25>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <1> (without init value) has a constant value of 0 in block <reg_file_26>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <3> (without init value) has a constant value of 0 in block <reg_file_26>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <4> (without init value) has a constant value of 0 in block <reg_file_26>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <5> (without init value) has a constant value of 1 in block <reg_file_26>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <6> (without init value) has a constant value of 0 in block <reg_file_26>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <7> (without init value) has a constant value of 0 in block <reg_file_26>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <2> (without init value) has a constant value of 0 in block <reg_file_7>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <3> (without init value) has a constant value of 0 in block <reg_file_7>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <4> (without init value) has a constant value of 0 in block <reg_file_7>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <7> (without init value) has a constant value of 0 in block <reg_file_7>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <1> (without init value) has a constant value of 0 in block <reg_file_8>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <2> (without init value) has a constant value of 0 in block <reg_file_8>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <3> (without init value) has a constant value of 0 in block <reg_file_8>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <4> (without init value) has a constant value of 0 in block <reg_file_8>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <7> (without init value) has a constant value of 0 in block <reg_file_8>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <reg_file_10>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <1> (without init value) has a constant value of 0 in block <reg_file_10>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <4> (without init value) has a constant value of 0 in block <reg_file_10>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <7> (without init value) has a constant value of 0 in block <reg_file_10>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <1> (without init value) has a constant value of 0 in block <reg_file_21>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <4> (without init value) has a constant value of 0 in block <reg_file_21>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <5> (without init value) has a constant value of 1 in block <reg_file_21>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <7> (without init value) has a constant value of 0 in block <reg_file_21>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <1> (without init value) has a constant value of 0 in block <reg_file_23>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <3> (without init value) has a constant value of 0 in block <reg_file_23>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <4> (without init value) has a constant value of 0 in block <reg_file_23>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <3> (without init value) has a constant value of 0 in block <reg_file_7>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <7> (without init value) has a constant value of 0 in block <reg_file_26>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <6> (without init value) has a constant value of 0 in block <reg_file_26>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <5> (without init value) has a constant value of 1 in block <reg_file_26>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <4> (without init value) has a constant value of 0 in block <reg_file_26>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <3> (without init value) has a constant value of 0 in block <reg_file_26>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <1> (without init value) has a constant value of 0 in block <reg_file_26>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <7> (without init value) has a constant value of 0 in block <reg_file_25>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <4> (without init value) has a constant value of 1 in block <reg_file_25>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <3> (without init value) has a constant value of 0 in block <reg_file_25>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <1> (without init value) has a constant value of 0 in block <reg_file_25>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <7> (without init value) has a constant value of 0 in block <reg_file_23>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <6> (without init value) has a constant value of 1 in block <reg_file_23>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <5> (without init value) has a constant value of 0 in block <reg_file_23>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <1> (without init value) has a constant value of 0 in block <reg_file_23>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 1 in block <reg_file_23>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <7> (without init value) has a constant value of 0 in block <reg_file_10>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <4> (without init value) has a constant value of 0 in block <reg_file_10>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <1> (without init value) has a constant value of 0 in block <reg_file_10>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <reg_file_10>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <7> (without init value) has a constant value of 0 in block <reg_file_9>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <4> (without init value) has a constant value of 0 in block <reg_file_9>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <7> (without init value) has a constant value of 0 in block <reg_file_8>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <4> (without init value) has a constant value of 0 in block <reg_file_8>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <3> (without init value) has a constant value of 0 in block <reg_file_8>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <2> (without init value) has a constant value of 0 in block <reg_file_8>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <1> (without init value) has a constant value of 0 in block <reg_file_8>. This FF/Latch will be trimmed during the optimization process.
 
 =========================================================================
 Advanced HDL Synthesis Report
@@ -540,100 +513,110 @@ Macro Statistics
 # ROMs                                                 : 2
  10x8-bit ROM                                          : 1
  6x6-bit ROM                                           : 1
-# Adders/Subtractors                                   : 99
+# Adders/Subtractors                                   : 78
  16-bit adder                                          : 1
  16-bit subtractor                                     : 1
  2-bit adder                                           : 2
- 4-bit adder                                           : 86
- 8-bit adder                                           : 9
-# Counters                                             : 7
+ 21-bit adder                                          : 1
+ 4-bit adder                                           : 68
+ 8-bit adder                                           : 5
+# Counters                                             : 9
  12-bit up counter                                     : 4
+ 2-bit up counter                                      : 1
+ 21-bit up counter                                     : 1
  3-bit up counter                                      : 1
  8-bit up counter                                      : 2
-# Registers                                            : 245
- Flip-Flops                                            : 245
+# Registers                                            : 273
+ Flip-Flops                                            : 273
 # Latches                                              : 4
  4-bit latch                                           : 1
  6-bit latch                                           : 1
  8-bit latch                                           : 2
-# Comparators                                          : 87
+# Comparators                                          : 71
+ 16-bit comparator greater                             : 1
  16-bit comparator lessequal                           : 1
- 5-bit comparator greater                              : 86
-# Multiplexers                                         : 4
- 1-bit 4-to-1 multiplexer                              : 1
- 16-bit 4-to-1 multiplexer                             : 1
+ 2-bit comparator greatequal                           : 1
+ 5-bit comparator greater                              : 68
+# Multiplexers                                         : 12
+ 1-bit 4-to-1 multiplexer                              : 2
+ 16-bit 4-to-1 multiplexer                             : 3
  4-bit 6-to-1 multiplexer                              : 1
- 8-bit 4-to-1 multiplexer                              : 1
+ 8-bit 4-to-1 multiplexer                              : 6
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-INFO:Xst:2261 - The FF/Latch <2> in Unit <LPM_DFF_22> is equivalent to the following 3 FFs/Latches, which will be removed : <3> <4> <7> 
-INFO:Xst:2261 - The FF/Latch <0> in Unit <LPM_DFF_22> is equivalent to the following 2 FFs/Latches, which will be removed : <1> <6> 
-INFO:Xst:2261 - The FF/Latch <1> in Unit <LPM_DFF_15> is equivalent to the following 4 FFs/Latches, which will be removed : <3> <4> <6> <7> 
-INFO:Xst:2261 - The FF/Latch <0> in Unit <LPM_DFF_15> is equivalent to the following FF/Latch, which will be removed : <2> 
-INFO:Xst:2261 - The FF/Latch <0> in Unit <LPM_DFF_14> is equivalent to the following 5 FFs/Latches, which will be removed : <1> <2> <3> <6> <7> 
-INFO:Xst:2261 - The FF/Latch <1> in Unit <LPM_DFF_10> is equivalent to the following 3 FFs/Latches, which will be removed : <3> <4> <7> 
-INFO:Xst:2261 - The FF/Latch <0> in Unit <LPM_DFF_10> is equivalent to the following 2 FFs/Latches, which will be removed : <2> <6> 
-INFO:Xst:2261 - The FF/Latch <1> in Unit <LPM_DFF_8> is equivalent to the following 2 FFs/Latches, which will be removed : <4> <7> 
-INFO:Xst:2261 - The FF/Latch <0> in Unit <LPM_DFF_8> is equivalent to the following 3 FFs/Latches, which will be removed : <2> <3> <6> 
-INFO:Xst:2261 - The FF/Latch <0> in Unit <LPM_DFF_4> is equivalent to the following 3 FFs/Latches, which will be removed : <1> <4> <7> 
+INFO:Xst:2261 - The FF/Latch <3> in Unit <LPM_DFF_25> is equivalent to the following FF/Latch, which will be removed : <7> 
+INFO:Xst:2261 - The FF/Latch <0> in Unit <LPM_DFF_25> is equivalent to the following FF/Latch, which will be removed : <1> 
+INFO:Xst:2261 - The FF/Latch <2> in Unit <LPM_DFF_25> is equivalent to the following FF/Latch, which will be removed : <4> 
+INFO:Xst:2261 - The FF/Latch <1> in Unit <LPM_DFF_16> is equivalent to the following 4 FFs/Latches, which will be removed : <3> <4> <6> <7> 
+INFO:Xst:2261 - The FF/Latch <0> in Unit <LPM_DFF_16> is equivalent to the following FF/Latch, which will be removed : <2> 
+INFO:Xst:2261 - The FF/Latch <1> in Unit <LPM_DFF_15> is equivalent to the following 2 FFs/Latches, which will be removed : <3> <7> 
+INFO:Xst:2261 - The FF/Latch <0> in Unit <LPM_DFF_15> is equivalent to the following 2 FFs/Latches, which will be removed : <2> <6> 
+INFO:Xst:2261 - The FF/Latch <0> in Unit <LPM_DFF_11> is equivalent to the following FF/Latch, which will be removed : <6> 
+INFO:Xst:2261 - The FF/Latch <1> in Unit <LPM_DFF_11> is equivalent to the following 2 FFs/Latches, which will be removed : <5> <7> 
+INFO:Xst:2261 - The FF/Latch <3> in Unit <LPM_DFF_11> is equivalent to the following FF/Latch, which will be removed : <4> 
+INFO:Xst:2261 - The FF/Latch <0> in Unit <LPM_DFF_5> is equivalent to the following 3 FFs/Latches, which will be removed : <1> <4> <7> 
+INFO:Xst:2261 - The FF/Latch <2> in Unit <LPM_DFF_5> is equivalent to the following 2 FFs/Latches, which will be removed : <3> <6> 
 INFO:Xst:2261 - The FF/Latch <2> in Unit <LPM_DFF_4> is equivalent to the following 2 FFs/Latches, which will be removed : <3> <6> 
+INFO:Xst:2261 - The FF/Latch <4> in Unit <LPM_DFF_4> is equivalent to the following FF/Latch, which will be removed : <7> 
+INFO:Xst:2261 - The FF/Latch <0> in Unit <LPM_DFF_4> is equivalent to the following FF/Latch, which will be removed : <1> 
 INFO:Xst:2261 - The FF/Latch <1> in Unit <LPM_DFF_1> is equivalent to the following 4 FFs/Latches, which will be removed : <2> <3> <4> <7> 
 INFO:Xst:2261 - The FF/Latch <0> in Unit <LPM_DFF_1> is equivalent to the following FF/Latch, which will be removed : <6> 
-WARNING:Xst:1710 - FF/Latch <2> (without init value) has a constant value of 0 in block <LPM_DFF_22>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <3> (without init value) has a constant value of 0 in block <LPM_DFF_25>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <1> (without init value) has a constant value of 0 in block <LPM_DFF_16>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <5> (without init value) has a constant value of 1 in block <LPM_DFF_16>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <1> (without init value) has a constant value of 0 in block <LPM_DFF_15>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <5> (without init value) has a constant value of 1 in block <LPM_DFF_15>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <LPM_DFF_14>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <5> (without init value) has a constant value of 1 in block <LPM_DFF_14>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <1> (without init value) has a constant value of 0 in block <LPM_DFF_10>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <1> (without init value) has a constant value of 0 in block <LPM_DFF_8>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <5> (without init value) has a constant value of 1 in block <LPM_DFF_8>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <LPM_DFF_4>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <4> (without init value) has a constant value of 1 in block <LPM_DFF_15>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 1 in block <LPM_DFF_11>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <1> (without init value) has a constant value of 0 in block <LPM_DFF_11>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <LPM_DFF_5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <4> (without init value) has a constant value of 0 in block <LPM_DFF_4>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <1> (without init value) has a constant value of 0 in block <LPM_DFF_1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <reg_file_20_5> (without init value) has a constant value of 1 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_20_6> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <reg_file_12_6> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_14_6> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_20_5> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_20_6> (without init value) has a constant value of 1 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_20_7> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_17_3> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_17_5> (without init value) has a constant value of 1 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_17_6> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_21_1> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_21_3> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_21_7> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_17_1> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_17_4> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_17_7> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_18_5> (without init value) has a constant value of 1 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_18_6> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_18_3> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_18_5> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_18_6> (without init value) has a constant value of 1 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_18_7> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_24_0> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_24_3> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_24_5> (without init value) has a constant value of 1 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_24_6> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_24_7> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_19_5> (without init value) has a constant value of 1 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_5_7> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_5_6> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_5_5> (without init value) has a constant value of 1 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_4_7> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_4_6> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_4_5> (without init value) has a constant value of 1 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_3_7> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_3_6> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_3_5> (without init value) has a constant value of 1 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_2_7> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_2_6> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_2_5> (without init value) has a constant value of 1 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_1_7> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_1_6> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_1_5> (without init value) has a constant value of 1 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_19_1> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_19_5> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_19_6> (without init value) has a constant value of 1 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_19_7> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_19_6> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_1_7> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_2_7> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_3_7> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_4_7> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_5_5> (without init value) has a constant value of 1 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_5_6> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_5_7> (without init value) has a constant value of 0 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <seg_reg_7> (without init value) has a constant value of 0 in block <SEG_DISPlAY>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <reg_file_5_4> in Unit <LCD_DISPLAY> is equivalent to the following 12 FFs/Latches, which will be removed : <reg_file_4_4> <reg_file_3_4> <reg_file_2_4> <reg_file_1_4> <reg_file_26_0> <reg_file_25_4> <reg_file_19_4> <reg_file_18_4> <reg_file_23_0> <reg_file_17_4> <reg_file_21_0> <reg_file_20_4> 
+INFO:Xst:2261 - The FF/Latch <reg_file_10_5> in Unit <LCD_DISPLAY> is equivalent to the following FF/Latch, which will be removed : <reg_file_8_5> 
+INFO:Xst:2261 - The FF/Latch <reg_file_7_6> in Unit <LCD_DISPLAY> is equivalent to the following FF/Latch, which will be removed : <reg_file_9_2> 
+INFO:Xst:2261 - The FF/Latch <reg_file_5_4> in Unit <LCD_DISPLAY> is equivalent to the following 11 FFs/Latches, which will be removed : <reg_file_4_5> <reg_file_4_4> <reg_file_3_5> <reg_file_3_4> <reg_file_2_5> <reg_file_2_4> <reg_file_1_5> <reg_file_1_4> <reg_file_26_0> <reg_file_25_5> <reg_file_23_2> 
+INFO:Xst:2261 - The FF/Latch <reg_file_7_5> in Unit <LCD_DISPLAY> is equivalent to the following FF/Latch, which will be removed : <reg_file_9_5> 
 INFO:Xst:2261 - The FF/Latch <reg_file_7_0> in Unit <LCD_DISPLAY> is equivalent to the following 2 FFs/Latches, which will be removed : <reg_file_10_2> <reg_file_8_0> 
-INFO:Xst:2261 - The FF/Latch <reg_file_7_5> in Unit <LCD_DISPLAY> is equivalent to the following 2 FFs/Latches, which will be removed : <reg_file_10_5> <reg_file_8_5> 
+INFO:Xst:2261 - The FF/Latch <reg_file_7_2> in Unit <LCD_DISPLAY> is equivalent to the following 7 FFs/Latches, which will be removed : <reg_file_4_6> <reg_file_3_6> <reg_file_2_6> <reg_file_1_6> <reg_file_25_0> <reg_file_23_3> <reg_file_9_0> 
 
 Optimizing unit <TAXI> ...
 
 Optimizing unit <LCD_DISPLAY> ...
+WARNING:Xst:1710 - FF/Latch <reg_file_14_5> (without init value) has a constant value of 1 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_14_2> (without init value) has a constant value of 1 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_12_5> (without init value) has a constant value of 1 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_file_12_2> (without init value) has a constant value of 1 in block <LCD_DISPLAY>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <SEG_DISPlAY> ...
 
@@ -642,32 +625,26 @@ WARNING:Xst:1710 - FF/Latch <taxiCharge_reg_1> (without init value) has a consta
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <taxiCharge_reg_0> (without init value) has a constant value of 0 in block <DATA_PROCESS>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <taxiCharge_reg_1> (without init value) has a constant value of 0 in block <DATA_PROCESS>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <taxiCharge_reg_0> (without init value) has a constant value of 0 in block <DATA_PROCESS>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <taxiCharge_reg_1> (without init value) has a constant value of 0 in block <DATA_PROCESS>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <taxiCharge_reg_0> (without init value) has a constant value of 0 in block <DATA_PROCESS>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <taxiCharge_reg_1> (without init value) has a constant value of 0 in block <DATA_PROCESS>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <taxiCharge_reg_0> (without init value) has a constant value of 0 in block <DATA_PROCESS>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LCD/reg_file_20_0> (without init value) has a constant value of 0 in block <TAXI>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <LCD/reg_file_20_1> (without init value) has a constant value of 0 in block <TAXI>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <LCD/reg_file_20_2> (without init value) has a constant value of 0 in block <TAXI>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <LCD/reg_file_20_3> (without init value) has a constant value of 0 in block <TAXI>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <LCD/reg_file_17_0> (without init value) has a constant value of 0 in block <TAXI>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <LCD/reg_file_17_1> (without init value) has a constant value of 0 in block <TAXI>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <LCD/reg_file_17_2> (without init value) has a constant value of 0 in block <TAXI>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <LCD/reg_file_18_0> (without init value) has a constant value of 0 in block <TAXI>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <LCD/reg_file_18_1> (without init value) has a constant value of 0 in block <TAXI>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <LCD/reg_file_18_2> (without init value) has a constant value of 0 in block <TAXI>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <LCD/reg_file_18_3> (without init value) has a constant value of 0 in block <TAXI>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <LCD/reg_file_19_0> (without init value) has a constant value of 0 in block <TAXI>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <LCD/reg_file_19_1> (without init value) has a constant value of 0 in block <TAXI>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <LCD/reg_file_19_2> (without init value) has a constant value of 0 in block <TAXI>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <LCD/reg_file_19_3> (without init value) has a constant value of 0 in block <TAXI>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <SEG/FF_0> (without init value) has a constant value of 0 in block <TAXI>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <SEG/FF_0> (without init value) has a constant value of 0 in block <TAXI>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <DATA/isPayment_reg> of sequential type is unconnected in block <TAXI>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block TAXI, actual ratio is 21.
+Found area constraint ratio of 100 (+ 5) on block TAXI, actual ratio is 29.
+FlipFlop DATA/taxiChargeCnt_reg_10 has been replicated 1 time(s)
 FlipFlop DATA/taxiChargeCnt_reg_11 has been replicated 1 time(s)
+FlipFlop DATA/taxiChargeCnt_reg_12 has been replicated 1 time(s)
+FlipFlop DATA/taxiChargeCnt_reg_13 has been replicated 1 time(s)
+FlipFlop DATA/taxiChargeCnt_reg_14 has been replicated 1 time(s)
+FlipFlop DATA/taxiChargeCnt_reg_15 has been replicated 1 time(s)
+FlipFlop DATA/taxiChargeCnt_reg_9 has been replicated 1 time(s)
+FlipFlop DATA/taxiCharge_reg_10 has been replicated 1 time(s)
+FlipFlop DATA/taxiCharge_reg_11 has been replicated 1 time(s)
+FlipFlop DATA/taxiCharge_reg_12 has been replicated 1 time(s)
+FlipFlop DATA/taxiCharge_reg_13 has been replicated 1 time(s)
+FlipFlop DATA/taxiCharge_reg_14 has been replicated 1 time(s)
+FlipFlop DATA/taxiCharge_reg_15 has been replicated 1 time(s)
+FlipFlop DATA/taxiCharge_reg_9 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -675,8 +652,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 200
- Flip-Flops                                            : 200
+# Registers                                            : 279
+ Flip-Flops                                            : 279
 
 =========================================================================
 
@@ -705,31 +682,31 @@ Design Statistics
 # IOs                              : 30
 
 Cell Usage :
-# BELS                             : 1210
+# BELS                             : 1722
 #      GND                         : 1
-#      INV                         : 30
-#      LUT1                        : 66
-#      LUT2                        : 86
-#      LUT2_D                      : 11
-#      LUT2_L                      : 17
-#      LUT3                        : 167
-#      LUT3_D                      : 22
-#      LUT3_L                      : 14
-#      LUT4                        : 416
-#      LUT4_D                      : 117
-#      LUT4_L                      : 43
-#      MUXCY                       : 96
-#      MUXF5                       : 29
+#      INV                         : 36
+#      LUT1                        : 107
+#      LUT2                        : 120
+#      LUT2_D                      : 14
+#      LUT2_L                      : 15
+#      LUT3                        : 222
+#      LUT3_D                      : 29
+#      LUT3_L                      : 17
+#      LUT4                        : 602
+#      LUT4_D                      : 120
+#      LUT4_L                      : 46
+#      MUXCY                       : 167
+#      MUXF5                       : 89
 #      VCC                         : 1
-#      XORCY                       : 94
-# FlipFlops/Latches                : 225
+#      XORCY                       : 136
+# FlipFlops/Latches                : 304
 #      FD                          : 18
-#      FDC                         : 100
-#      FDCE                        : 33
+#      FDC                         : 114
+#      FDCE                        : 61
 #      FDCE_1                      : 3
 #      FDE                         : 25
-#      FDP                         : 9
-#      FDPE                        : 8
+#      FDP                         : 21
+#      FDPE                        : 33
 #      FDPE_1                      : 3
 #      FDR                         : 1
 #      LD                          : 25
@@ -746,9 +723,9 @@ Device utilization summary:
 
 Selected Device : 3s200pq208-4 
 
- Number of Slices:                      525  out of   1920    27%  
- Number of Slice Flip Flops:            204  out of   3840     5%  
- Number of 4 input LUTs:                989  out of   3840    25%  
+ Number of Slices:                      699  out of   1920    36%  
+ Number of Slice Flip Flops:            283  out of   3840     7%  
+ Number of 4 input LUTs:               1328  out of   3840    34%  
  Number of IOs:                          30
  Number of bonded IOBs:                  30  out of    141    21%  
     IOB Flip Flops:                      21
@@ -772,19 +749,20 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------------+------------------------+-------+
-Clock Signal                             | Clock buffer(FF name)  | Load  |
------------------------------------------+------------------------+-------+
-RESET                                    | IBUF+BUFG              | 8     |
-CLK                                      | BUFGP                  | 145   |
-LCD/clk_501                              | BUFG                   | 39    |
-LCD/clk_100k                             | NONE(LCD/cnt_50_11)    | 13    |
-SEG/seg_reg_or0000(SEG/seg_reg_or00001:O)| NONE(*)(SEG/seg_reg_6) | 7     |
-SEG/DIGIT_or0000(SEG/DIGIT_or00001:O)    | NONE(*)(SEG/DIGIT_5)   | 10    |
-SW3                                      | BUFGP                  | 1     |
-SW2                                      | BUFGP                  | 1     |
-SW1                                      | BUFGP                  | 1     |
------------------------------------------+------------------------+-------+
+-----------------------------------------+-----------------------------+-------+
+Clock Signal                             | Clock buffer(FF name)       | Load  |
+-----------------------------------------+-----------------------------+-------+
+RESET                                    | IBUF+BUFG                   | 8     |
+CLK                                      | BUFGP                       | 221   |
+LCD/clk_501                              | BUFG                        | 39    |
+LCD/human_clk                            | NONE(LCD/reset_count_2sec_1)| 3     |
+LCD/clk_100k                             | NONE(LCD/cnt_50_11)         | 13    |
+SEG/seg_reg_or0000(SEG/seg_reg_or00001:O)| NONE(*)(SEG/seg_reg_6)      | 7     |
+SEG/DIGIT_or0000(SEG/DIGIT_or00001:O)    | NONE(*)(SEG/DIGIT_5)        | 10    |
+SW3                                      | BUFGP                       | 1     |
+SW2                                      | BUFGP                       | 1     |
+SW1                                      | BUFGP                       | 1     |
+-----------------------------------------+-----------------------------+-------+
 (*) These 2 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
 Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
@@ -795,7 +773,7 @@ Asynchronous Control Signals Information:
 --------------------------------------+------------------------+-------+
 Control Signal                        | Buffer(FF name)        | Load  |
 --------------------------------------+------------------------+-------+
-DATA/RESET_inv(SEG/RESET_inv1_INV_0:O)| NONE(DATA/SW1_flag_rst)| 153   |
+DATA/RESET_inv(SEG/RESET_inv1_INV_0:O)| NONE(DATA/SW1_flag_rst)| 232   |
 DATA/SW1_flag_rst(DATA/SW1_flag_rst:Q)| NONE(DATA/SW1_flag)    | 1     |
 DATA/SW2_flag_rst(DATA/SW2_flag_rst:Q)| NONE(DATA/SW2_flag)    | 1     |
 DATA/SW3_flag_rst(DATA/SW3_flag_rst:Q)| NONE(DATA/SW3_flag)    | 1     |
@@ -805,8 +783,8 @@ Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 28.892ns (Maximum Frequency: 34.612MHz)
-   Minimum input arrival time before clock: 6.043ns
+   Minimum period: 29.640ns (Maximum Frequency: 33.738MHz)
+   Minimum input arrival time before clock: 6.566ns
    Maximum output required time after clock: 10.340ns
    Maximum combinational path delay: No path found
 
@@ -816,72 +794,93 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CLK'
-  Clock period: 28.892ns (frequency: 34.612MHz)
-  Total number of paths / destination ports: 274106995 / 208
+  Clock period: 29.640ns (frequency: 33.738MHz)
+  Total number of paths / destination ports: 391208653 / 271
 -------------------------------------------------------------------------
-Delay:               28.892ns (Levels of Logic = 19)
-  Source:            DATA/taxiCharge_reg_12 (FF)
-  Destination:       SEG/DD_2 (FF)
+Delay:               29.640ns (Levels of Logic = 18)
+  Source:            DATA/taxiCharge_reg_12_1 (FF)
+  Destination:       SEG/EE_1 (FF)
   Source Clock:      CLK rising
   Destination Clock: CLK rising
 
-  Data Path: DATA/taxiCharge_reg_12 to SEG/DD_2
+  Data Path: DATA/taxiCharge_reg_12_1 to SEG/EE_1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             16   0.720   1.576  DATA/taxiCharge_reg_12 (DATA/taxiCharge_reg_12)
-     LUT4_D:I0->O          6   0.551   1.029  SEG/bcd_3_mux00011 (SEG/bcd_3_mux0001)
-     LUT4:I3->O            1   0.551   0.827  SEG/bcd_3_mux000311_SW3 (N643)
-     LUT4_D:I3->O          4   0.551   0.943  SEG/bcd_3_mux000311 (SEG/N511)
-     LUT4:I3->O            9   0.551   1.319  SEG/Madd_bcd_7_4_add0001_cy<1>11 (SEG/Madd_bcd_7_4_add0001_cy<1>)
-     LUT4_D:I1->O          8   0.551   1.109  SEG/bcd_5_mux00011 (SEG/Madd_bcd_7_4_add0002_lut<2>)
-     LUT4:I3->O           11   0.551   1.170  SEG/bcd_5_mux000221 (SEG/N181)
-     LUT4:I3->O            1   0.551   0.827  SEG/bcd_5_mux000321_SW0 (N589)
-     LUT4:I3->O            4   0.551   0.985  SEG/bcd_5_mux000321 (SEG/N191)
-     LUT4:I2->O            6   0.551   1.029  SEG/bcd_7_mux000411 (SEG/N44)
-     LUT4:I3->O            2   0.551   0.903  SEG/Madd_bcd_7_4_add0005_cy<1>11 (SEG/Madd_bcd_7_4_add0005_cy<1>)
-     LUT4_D:I3->O          7   0.551   1.134  SEG/bcd_6_mux0005 (SEG/Madd_bcd_7_4_add0006_lut<3>)
-     LUT4:I2->O            2   0.551   1.216  SEG/Madd_bcd_11_8_add0004_cy<1>11_SW0_SW0 (N899)
-     LUT4:I0->O            1   0.551   0.000  SEG/bcd_10_cmp_gt00041_F (N988)
-     MUXF5:I0->O           3   0.360   0.933  SEG/bcd_10_cmp_gt00041 (SEG/bcd_10_cmp_gt0004)
-     LUT4_D:I3->O          4   0.551   1.112  SEG/Madd_bcd_11_8_add0005_cy<1>11 (SEG/Madd_bcd_11_8_add0005_cy<1>)
-     LUT3:I1->O            4   0.551   0.943  SEG/bcd_10_mux00051 (SEG/Madd_bcd_11_8_add0006_lut<3>)
-     LUT4:I3->O            1   0.551   0.000  SEG/bcd_11_mux000611_SW2_F (N934)
-     MUXF5:I0->O           1   0.360   0.827  SEG/bcd_11_mux000611_SW2 (N298)
-     LUT4:I3->O            1   0.551   0.000  SEG/bcd_9_mux00061 (SEG/bcd_9_mux0006)
-     FD:D                      0.203          SEG/DD_2
+     FDC:C->Q              8   0.720   1.422  DATA/taxiCharge_reg_12_1 (DATA/taxiCharge_reg_12_1)
+     LUT4_D:I0->O         10   0.551   1.160  SEG/bcd_3_mux00011 (SEG/bcd_3_mux0001)
+     LUT4:I3->O            1   0.551   0.827  SEG/bcd_3_mux000311_SW2 (N655)
+     LUT4_D:I3->O          4   0.551   0.985  SEG/bcd_3_mux000311 (SEG/N511)
+     LUT3:I2->O            1   0.551   0.827  SEG/bcd_1_mux000321 (SEG/N251)
+     LUT4:I3->O           16   0.551   1.263  SEG/bcd_2_mux0004 (SEG/Madd_bcd_3_0_add0005_lut<3>)
+     LUT4_D:I3->O          8   0.551   1.151  SEG/bcd_2_mux0005 (SEG/Madd_bcd_3_0_add0006_lut<3>)
+     LUT4:I2->O            3   0.551   1.102  SEG/Madd_bcd_3_0_add0007_cy<1>11 (SEG/Madd_bcd_3_0_add0007_cy<1>)
+     LUT4:I1->O            6   0.551   1.029  SEG/bcd_2_mux0007 (SEG/Madd_bcd_3_0_add0008_lut<3>)
+     LUT4:I3->O           11   0.551   1.170  SEG/bcd_3_mux00082 (SEG/Madd_bcd_7_4_add0006_cy<0>)
+     LUT4:I3->O            1   0.551   1.140  SEG/bcd_7_mux000611_SW3 (N843)
+     LUT4_D:I0->O          6   0.551   1.029  SEG/bcd_7_mux000611 (SEG/N46)
+     LUT4:I3->O            3   0.551   0.975  SEG/bcd_7_mux000711_SW0 (N307)
+     LUT4_D:I2->O          8   0.551   1.109  SEG/bcd_7_mux000711 (SEG/N47)
+     LUT4_D:I3->O          3   0.551   0.933  SEG/Madd_bcd_7_4_add0008_cy<1>11 (SEG/Madd_bcd_7_4_add0008_cy<1>)
+     LUT4:I3->O            5   0.551   0.947  SEG/bcd_7_mux000811 (SEG/N48)
+     LUT4:I3->O            2   0.551   0.903  SEG/bcd_3_mux00112_SW0 (N204)
+     LUT4_D:I3->O          1   0.551   0.827  SEG/bcd_7_mux000911 (SEG/N49)
+     LUT4:I3->O            1   0.551   0.000  SEG/bcd_4_mux00091 (SEG/bcd_4_mux0009)
+     FD:D                      0.203          SEG/EE_1
     ----------------------------------------
-    Total                     28.892ns (11.010ns logic, 17.882ns route)
-                                       (38.1% logic, 61.9% route)
+    Total                     29.640ns (10.841ns logic, 18.799ns route)
+                                       (36.6% logic, 63.4% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'LCD/clk_501'
-  Clock period: 2.672ns (frequency: 374.252MHz)
+  Clock period: 2.752ns (frequency: 363.372MHz)
   Total number of paths / destination ports: 39 / 38
 -------------------------------------------------------------------------
-Delay:               2.672ns (Levels of Logic = 1)
-  Source:            LCD/lcd_state_7 (FF)
-  Destination:       LCD/lcd_state_8 (FF)
+Delay:               2.752ns (Levels of Logic = 1)
+  Source:            LCD/lcd_state_31 (FF)
+  Destination:       LCD/lcd_state_32 (FF)
   Source Clock:      LCD/clk_501 rising
   Destination Clock: LCD/clk_501 rising
 
-  Data Path: LCD/lcd_state_7 to LCD/lcd_state_8
+  Data Path: LCD/lcd_state_31 to LCD/lcd_state_32
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              6   0.720   1.198  LCD/lcd_state_7 (LCD/lcd_state_7)
-     LUT2:I1->O            1   0.551   0.000  LCD/lcd_nstate<8>1 (LCD/lcd_nstate<8>)
-     FDC:D                     0.203          LCD/lcd_state_8
+     FDC:C->Q              8   0.720   1.278  LCD/lcd_state_31 (LCD/lcd_state_31)
+     LUT2:I1->O            1   0.551   0.000  LCD/lcd_nstate<32>1 (LCD/lcd_nstate<32>)
+     FDC:D                     0.203          LCD/lcd_state_32
     ----------------------------------------
-    Total                      2.672ns (1.474ns logic, 1.198ns route)
-                                       (55.2% logic, 44.8% route)
+    Total                      2.752ns (1.474ns logic, 1.278ns route)
+                                       (53.6% logic, 46.4% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'LCD/human_clk'
+  Clock period: 3.920ns (frequency: 255.102MHz)
+  Total number of paths / destination ports: 7 / 5
+-------------------------------------------------------------------------
+Delay:               3.920ns (Levels of Logic = 1)
+  Source:            LCD/reset_count_2sec_0 (FF)
+  Destination:       LCD/start_enable (FF)
+  Source Clock:      LCD/human_clk rising
+  Destination Clock: LCD/human_clk rising
+
+  Data Path: LCD/reset_count_2sec_0 to LCD/start_enable
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             3   0.720   1.246  LCD/reset_count_2sec_0 (LCD/reset_count_2sec_0)
+     LUT2:I0->O            1   0.551   0.801  LCD/start_enable_cmp_eq00001 (LCD/start_enable_cmp_eq0000)
+     FDCE:CE                   0.602          LCD/start_enable
+    ----------------------------------------
+    Total                      3.920ns (1.873ns logic, 2.047ns route)
+                                       (47.8% logic, 52.2% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'LCD/clk_100k'
-  Clock period: 6.361ns (frequency: 157.208MHz)
+  Clock period: 6.217ns (frequency: 160.849MHz)
   Total number of paths / destination ports: 235 / 14
 -------------------------------------------------------------------------
-Delay:               6.361ns (Levels of Logic = 13)
+Delay:               6.217ns (Levels of Logic = 13)
   Source:            LCD/cnt_50_1 (FF)
   Destination:       LCD/cnt_50_11 (FF)
   Source Clock:      LCD/clk_100k rising
@@ -903,18 +902,18 @@ Delay:               6.361ns (Levels of Logic = 13)
      MUXCY:CI->O           1   0.064   0.000  LCD/Mcount_cnt_50_cy<8> (LCD/Mcount_cnt_50_cy<8>)
      MUXCY:CI->O           1   0.064   0.000  LCD/Mcount_cnt_50_cy<9> (LCD/Mcount_cnt_50_cy<9>)
      MUXCY:CI->O           0   0.064   0.000  LCD/Mcount_cnt_50_cy<10> (LCD/Mcount_cnt_50_cy<10>)
-     XORCY:CI->O           1   0.904   1.140  LCD/Mcount_cnt_50_xor<11> (LCD/Result<11>)
-     LUT4:I0->O            1   0.551   0.000  LCD/Mcount_cnt_50_eqn_111 (LCD/Mcount_cnt_50_eqn_11)
+     XORCY:CI->O           1   0.904   0.996  LCD/Mcount_cnt_50_xor<11> (LCD/Result<11>)
+     LUT4:I1->O            1   0.551   0.000  LCD/Mcount_cnt_50_eqn_111 (LCD/Mcount_cnt_50_eqn_11)
      FDC:D                     0.203          LCD/cnt_50_11
     ----------------------------------------
-    Total                      6.361ns (4.005ns logic, 2.356ns route)
-                                       (63.0% logic, 37.0% route)
+    Total                      6.217ns (4.005ns logic, 2.212ns route)
+                                       (64.4% logic, 35.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'LCD/clk_501'
   Total number of paths / destination ports: 39 / 39
 -------------------------------------------------------------------------
-Offset:              6.043ns (Levels of Logic = 2)
+Offset:              6.490ns (Levels of Logic = 2)
   Source:            RESET (PAD)
   Destination:       LCD/lcd_state_0 (FF)
   Destination Clock: LCD/clk_501 rising
@@ -923,38 +922,39 @@ Offset:              6.043ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            43   0.821   1.916  RESET_IBUF (RESET_IBUF1)
-     INV:I->O            154   0.551   2.552  SEG/RESET_inv1_INV_0 (DATA/RESET_inv)
+     IBUF:I->O            42   0.821   1.910  RESET_IBUF (RESET_IBUF1)
+     INV:I->O            233   0.551   3.005  SEG/RESET_inv1_INV_0 (DATA/RESET_inv)
      FDP:D                     0.203          LCD/lcd_state_0
     ----------------------------------------
-    Total                      6.043ns (1.575ns logic, 4.468ns route)
-                                       (26.1% logic, 73.9% route)
+    Total                      6.490ns (1.575ns logic, 4.915ns route)
+                                       (24.3% logic, 75.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK'
   Total number of paths / destination ports: 25 / 25
 -------------------------------------------------------------------------
-Offset:              5.034ns (Levels of Logic = 2)
+Offset:              6.566ns (Levels of Logic = 3)
   Source:            RESET (PAD)
-  Destination:       DATA/clk_cnt1_11 (FF)
+  Destination:       DATA/clk_cnt2_11 (FF)
   Destination Clock: CLK rising
 
-  Data Path: RESET to DATA/clk_cnt1_11
+  Data Path: RESET to DATA/clk_cnt2_11
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            43   0.821   1.942  RESET_IBUF (RESET_IBUF1)
-     LUT4:I3->O           12   0.551   1.118  DATA/clk_cnt2_and00001 (DATA/clk_cnt2_and0000)
+     IBUF:I->O            42   0.821   1.978  RESET_IBUF (RESET_IBUF1)
+     LUT4:I2->O            2   0.551   0.945  DATA/clk_cnt2_and000011 (DATA/N12)
+     LUT3:I2->O           12   0.551   1.118  DATA/clk_cnt2_and00001 (DATA/clk_cnt2_and0000)
      FDE:CE                    0.602          DATA/clk_cnt2_0
     ----------------------------------------
-    Total                      5.034ns (1.974ns logic, 3.060ns route)
-                                       (39.2% logic, 60.8% route)
+    Total                      6.566ns (2.525ns logic, 4.041ns route)
+                                       (38.5% logic, 61.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'LCD/clk_100k'
   Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
-Offset:              7.271ns (Levels of Logic = 1)
+Offset:              8.669ns (Levels of Logic = 2)
   Source:            LCD/clk_50 (FF)
   Destination:       LCD_EN (PAD)
   Source Clock:      LCD/clk_100k rising
@@ -963,11 +963,12 @@ Offset:              7.271ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             3   0.720   0.907  LCD/clk_50 (LCD/clk_501)
+     FDCE:C->Q             2   0.720   0.877  LCD/clk_50 (LCD/clk_501)
+     INV:I->O              2   0.551   0.877  LCD/LCD_EN1_INV_0 (LCD_EN_OBUF)
      OBUF:I->O                 5.644          LCD_EN_OBUF (LCD_EN)
     ----------------------------------------
-    Total                      7.271ns (6.364ns logic, 0.907ns route)
-                                       (87.5% logic, 12.5% route)
+    Total                      8.669ns (6.915ns logic, 1.754ns route)
+                                       (79.8% logic, 20.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'SEG/seg_reg_or0000'
@@ -1021,7 +1022,7 @@ Offset:              10.340ns (Levels of Logic = 3)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDC:C->Q              3   0.720   1.246  LCD/lcd_state_2 (LCD/lcd_state_2)
-     LUT4:I0->O            1   0.551   0.827  LCD/LCD_A_0_mux0000_SW0 (N12)
+     LUT4:I0->O            1   0.551   0.827  LCD/LCD_A_0_mux0000_SW0 (N16)
      LUT4:I3->O            1   0.551   0.801  LCD/LCD_A_0_mux0000 (LCD_A_0_OBUF)
      OBUF:I->O                 5.644          LCD_A_0_OBUF (LCD_A<0>)
     ----------------------------------------
@@ -1050,14 +1051,14 @@ Offset:              7.078ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 22.00 secs
-Total CPU time to Xst completion: 22.65 secs
+Total REAL time to Xst completion: 27.00 secs
+Total CPU time to Xst completion: 26.97 secs
  
 --> 
 
-Total memory usage is 218156 kilobytes
+Total memory usage is 221164 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  111 (   0 filtered)
-Number of infos    :   39 (   0 filtered)
+Number of warnings :   84 (   0 filtered)
+Number of infos    :   41 (   0 filtered)
 
