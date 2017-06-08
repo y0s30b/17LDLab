@@ -214,10 +214,10 @@ begin
             -- 주행 모드
                 if taxiChargeCnt_reg = "000000000000" then
                     taxiCharge_reg <= taxiCharge_reg + x"64"; -- 100추�
-                    taxiChargeCnt_reg <= "0001101110111000"; -- �0000 �후 3000�로 count down
+                    taxiChargeCnt_reg <= "0000101110111000"; -- �0000 �후 3000�로 count down
                 elsif taxiChargeCnt_reg > "0000000000000000" then
                     if extraCharge_reg = "00" then
-                        if clk_cnt0 = "11111010000" then    -- decimal 4000, 1 ms 주기 만들주기 -- 0 추�!
+                        if clk_cnt0 = "111110100000" then    -- decimal 4000, 1 ms 주기 만들주기 -- 0 추�!
                             clk_cnt0 := "000000000000";
                             taxiChargeCnt_reg <= taxiChargeCnt_reg - 1;
                             -- 1 ms마다 taxiChargeCnt 감소�킴
@@ -225,14 +225,14 @@ begin
                             clk_cnt0 := clk_cnt0 + 1;
                         end if;
                     elsif extraCharge_reg = "01" then
-                        if clk_cnt1 = "11001000000" then    -- decimal 3200 � �마taxiChargeCnt 감소 -- 0 추�!
+                        if clk_cnt1 = "110010000000" then    -- decimal 3200 � �마taxiChargeCnt 감소 -- 0 추�!
                             clk_cnt1 := "000000000000";
                             taxiChargeCnt_reg <= taxiChargeCnt_reg - 1;
                         else
                             clk_cnt1 := clk_cnt1 + 1;
                         end if;
                     elsif extraCharge_reg = "10" then
-                        if clk_cnt2 = "10010110000" then    -- decimal 2400 � �마taxiChargeCnt 감소 -- 0 추�!
+                        if clk_cnt2 = "100101100000" then    -- decimal 2400 � �마taxiChargeCnt 감소 -- 0 추�!
                             clk_cnt2 := "000000000000";
                             taxiChargeCnt_reg <= taxiChargeCnt_reg - 1;
                         else

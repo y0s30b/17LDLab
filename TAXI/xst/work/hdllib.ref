@@ -1,8 +1,8 @@
-EN seg_display NULL D:/0608/17LDLab/TAXI/SEG_DISPLAY.vhd sub00/vhpl02 1496921328
-AR lcd_display lcd_behavioral D:/0608/17LDLab/TAXI/LCD_DISPLAY.vhd sub00/vhpl01 1496921327
-EN data_process NULL D:/0608/17LDLab/TAXI/DATA_PROCESS.vhd sub00/vhpl04 1496921330
-EN taxi NULL D:/0608/17LDLab/TAXI/TAXI.vhd sub00/vhpl06 1496921332
-AR seg_display seg_behavioral D:/0608/17LDLab/TAXI/SEG_DISPLAY.vhd sub00/vhpl03 1496921329
-EN lcd_display NULL D:/0608/17LDLab/TAXI/LCD_DISPLAY.vhd sub00/vhpl00 1496921326
-AR data_process data_behavioral D:/0608/17LDLab/TAXI/DATA_PROCESS.vhd sub00/vhpl05 1496921331
-AR taxi behavioral D:/0608/17LDLab/TAXI/TAXI.vhd sub00/vhpl07 1496921333
+EN seg_display NULL D:/0608/17LDLab/TAXI/SEG_DISPLAY.vhd sub00/vhpl02 1496922697
+AR lcd_display lcd_behavioral D:/0608/17LDLab/TAXI/LCD_DISPLAY.vhd sub00/vhpl01 1496922696
+EN data_process NULL D:/0608/17LDLab/TAXI/DATA_PROCESS.vhd sub00/vhpl04 1496922699
+EN taxi NULL D:/0608/17LDLab/TAXI/TAXI.vhd sub00/vhpl06 1496922701
+AR seg_display seg_behavioral D:/0608/17LDLab/TAXI/SEG_DISPLAY.vhd sub00/vhpl03 1496922698
+EN lcd_display NULL D:/0608/17LDLab/TAXI/LCD_DISPLAY.vhd sub00/vhpl00 1496922695
+AR data_process data_behavioral D:/0608/17LDLab/TAXI/DATA_PROCESS.vhd sub00/vhpl05 1496922700
+AR taxi behavioral D:/0608/17LDLab/TAXI/TAXI.vhd sub00/vhpl07 1496922702
