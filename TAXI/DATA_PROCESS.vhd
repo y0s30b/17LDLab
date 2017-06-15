@@ -226,7 +226,7 @@ begin
                             clk_cnt1 := clk_cnt1 + 1;
                         end if;
                     elsif extraCharge_reg = "10" then
-                        if clk_cnt2 = "100101100000" then    -- decimal 2400 셀 때마다 taxiChargeCnt 감소 -- 0 추가!
+                        if clk_cnt2 = "100101100000" then    -- decimal 2400 셀 때마다 taxiChargeCnt 감소
                             clk_cnt2 := "000000000000";
                             taxiChargeCnt_reg <= taxiChargeCnt_reg - 1;
                         else
