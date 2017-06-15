@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.49 secs
+Total CPU time to Xst completion: 0.37 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.49 secs
+Total CPU time to Xst completion: 0.38 secs
  
 --> Reading design: TAXI.prj
 
@@ -104,20 +104,15 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-WARNING:HDLParsers:3607 - Unit work/TAXI is now defined in a different file.  It was defined in "D:/0608/17LDLab/TAXI/TAXI.vhd", and is now defined in "C:/17LDLab/TAXI/TAXI.vhd".
-WARNING:HDLParsers:3607 - Unit work/TAXI/Behavioral is now defined in a different file.  It was defined in "D:/0608/17LDLab/TAXI/TAXI.vhd", and is now defined in "C:/17LDLab/TAXI/TAXI.vhd".
-WARNING:HDLParsers:3607 - Unit work/DATA_PROCESS is now defined in a different file.  It was defined in "D:/0608/17LDLab/TAXI/DATA_PROCESS.vhd", and is now defined in "C:/17LDLab/TAXI/DATA_PROCESS.vhd".
-WARNING:HDLParsers:3607 - Unit work/DATA_PROCESS/DATA_Behavioral is now defined in a different file.  It was defined in "D:/0608/17LDLab/TAXI/DATA_PROCESS.vhd", and is now defined in "C:/17LDLab/TAXI/DATA_PROCESS.vhd".
-WARNING:HDLParsers:3607 - Unit work/LCD_DISPLAY is now defined in a different file.  It was defined in "D:/0608/17LDLab/TAXI/LCD_DISPLAY.vhd", and is now defined in "C:/17LDLab/TAXI/LCD_DISPLAY.vhd".
-WARNING:HDLParsers:3607 - Unit work/LCD_DISPLAY/LCD_Behavioral is now defined in a different file.  It was defined in "D:/0608/17LDLab/TAXI/LCD_DISPLAY.vhd", and is now defined in "C:/17LDLab/TAXI/LCD_DISPLAY.vhd".
-WARNING:HDLParsers:3607 - Unit work/SEG_DISPLAY is now defined in a different file.  It was defined in "D:/0608/17LDLab/TAXI/SEG_DISPLAY.vhd", and is now defined in "C:/17LDLab/TAXI/SEG_DISPLAY.vhd".
-WARNING:HDLParsers:3607 - Unit work/SEG_DISPLAY/SEG_Behavioral is now defined in a different file.  It was defined in "D:/0608/17LDLab/TAXI/SEG_DISPLAY.vhd", and is now defined in "C:/17LDLab/TAXI/SEG_DISPLAY.vhd".
 Compiling vhdl file "C:/17LDLab/TAXI/LCD_DISPLAY.vhd" in Library work.
-Architecture lcd_behavioral of Entity lcd_display is up to date.
+Entity <lcd_display> compiled.
+Entity <lcd_display> (Architecture <lcd_behavioral>) compiled.
 Compiling vhdl file "C:/17LDLab/TAXI/SEG_DISPLAY.vhd" in Library work.
-Architecture seg_behavioral of Entity seg_display is up to date.
+Entity <seg_display> compiled.
+Entity <seg_display> (Architecture <seg_behavioral>) compiled.
 Compiling vhdl file "C:/17LDLab/TAXI/DATA_PROCESS.vhd" in Library work.
-Architecture data_behavioral of Entity data_process is up to date.
+Entity <data_process> compiled.
+Entity <data_process> (Architecture <data_behavioral>) compiled.
 Compiling vhdl file "C:/17LDLab/TAXI/TAXI.vhd" in Library work.
 Entity <taxi> compiled.
 Entity <taxi> (Architecture <behavioral>) compiled.
@@ -173,7 +168,6 @@ Performing bidirectional port resolution...
 
 Synthesizing Unit <LCD_DISPLAY>.
     Related source file is "C:/17LDLab/TAXI/LCD_DISPLAY.vhd".
-WARNING:Xst:647 - Input <isPayment> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:646 - Signal <w_enable_reg> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
     Register <reg_file<29>> equivalent to <reg_file<12>> has been removed
     Register <reg_file<31>> equivalent to <reg_file<14>> has been removed
@@ -187,80 +181,80 @@ INFO:Xst:2117 - HDL ADVISOR - Mux Selector <lcd_state> of Case statement line 29
    	- add an 'INIT' attribute on signal <lcd_state> (optimization is then done without any risk)
    	- use the attribute 'signal_encoding user' to avoid onehot optimization
    	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
-    Found 5-bit comparator greater for signal <bcd_11$cmp_gt0000> created at line 178.
-    Found 5-bit comparator greater for signal <bcd_11$cmp_gt0001> created at line 178.
-    Found 5-bit comparator greater for signal <bcd_11$cmp_gt0002> created at line 178.
-    Found 5-bit comparator greater for signal <bcd_11$cmp_gt0003> created at line 178.
-    Found 5-bit comparator greater for signal <bcd_11$cmp_gt0004> created at line 178.
-    Found 5-bit comparator greater for signal <bcd_11$cmp_gt0005> created at line 178.
-    Found 4-bit adder for signal <bcd_11_8$add0000> created at line 179.
-    Found 4-bit adder for signal <bcd_11_8$add0001> created at line 179.
-    Found 4-bit adder for signal <bcd_11_8$add0002> created at line 179.
-    Found 4-bit adder for signal <bcd_11_8$add0003> created at line 179.
-    Found 4-bit adder for signal <bcd_11_8$add0004> created at line 179.
-    Found 4-bit adder for signal <bcd_11_8$add0005> created at line 179.
-    Found 4-bit adder for signal <bcd_11_8$add0006> created at line 179.
-    Found 5-bit comparator greater for signal <bcd_12$cmp_gt0000> created at line 182.
-    Found 5-bit comparator greater for signal <bcd_12$cmp_gt0001> created at line 182.
-    Found 5-bit comparator greater for signal <bcd_12$cmp_gt0002> created at line 182.
-    Found 5-bit comparator greater for signal <bcd_12$cmp_gt0003> created at line 182.
-    Found 4-bit adder for signal <bcd_15_12$add0000> created at line 183.
-    Found 4-bit adder for signal <bcd_15_12$add0001> created at line 183.
-    Found 4-bit adder for signal <bcd_15_12$add0002> created at line 183.
-    Found 4-bit adder for signal <bcd_15_12$add0003> created at line 183.
-    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0000> created at line 170.
-    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0001> created at line 170.
-    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0002> created at line 170.
-    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0003> created at line 170.
-    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0004> created at line 170.
-    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0005> created at line 170.
-    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0006> created at line 170.
-    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0007> created at line 170.
-    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0008> created at line 170.
-    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0009> created at line 170.
-    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0010> created at line 170.
-    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0011> created at line 170.
-    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0012> created at line 170.
-    Found 4-bit adder for signal <bcd_3_0$add0000> created at line 171.
-    Found 4-bit adder for signal <bcd_3_0$add0001> created at line 171.
-    Found 4-bit adder for signal <bcd_3_0$add0002> created at line 171.
-    Found 4-bit adder for signal <bcd_3_0$add0003> created at line 171.
-    Found 4-bit adder for signal <bcd_3_0$add0004> created at line 171.
-    Found 4-bit adder for signal <bcd_3_0$add0005> created at line 171.
-    Found 4-bit adder for signal <bcd_3_0$add0006> created at line 171.
-    Found 4-bit adder for signal <bcd_3_0$add0007> created at line 171.
-    Found 4-bit adder for signal <bcd_3_0$add0008> created at line 171.
-    Found 4-bit adder for signal <bcd_3_0$add0009> created at line 171.
-    Found 4-bit adder for signal <bcd_3_0$add0010> created at line 171.
-    Found 4-bit adder for signal <bcd_3_0$add0011> created at line 171.
-    Found 4-bit adder for signal <bcd_3_0$add0012> created at line 171.
-    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0000> created at line 174.
-    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0001> created at line 174.
-    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0002> created at line 174.
-    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0003> created at line 174.
-    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0004> created at line 174.
-    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0005> created at line 174.
-    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0006> created at line 174.
-    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0007> created at line 174.
-    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0008> created at line 174.
-    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0009> created at line 174.
-    Found 4-bit adder for signal <bcd_7_4$add0000> created at line 175.
-    Found 4-bit adder for signal <bcd_7_4$add0001> created at line 175.
-    Found 4-bit adder for signal <bcd_7_4$add0002> created at line 175.
-    Found 4-bit adder for signal <bcd_7_4$add0003> created at line 175.
-    Found 4-bit adder for signal <bcd_7_4$add0004> created at line 175.
-    Found 4-bit adder for signal <bcd_7_4$add0005> created at line 175.
-    Found 4-bit adder for signal <bcd_7_4$add0006> created at line 175.
-    Found 4-bit adder for signal <bcd_7_4$add0007> created at line 175.
-    Found 4-bit adder for signal <bcd_7_4$add0008> created at line 175.
-    Found 4-bit adder for signal <bcd_7_4$add0009> created at line 175.
-    Found 5-bit comparator greater for signal <bcd_8$cmp_gt0000> created at line 178.
+    Found 5-bit comparator greater for signal <bcd_11$cmp_gt0000> created at line 177.
+    Found 5-bit comparator greater for signal <bcd_11$cmp_gt0001> created at line 177.
+    Found 5-bit comparator greater for signal <bcd_11$cmp_gt0002> created at line 177.
+    Found 5-bit comparator greater for signal <bcd_11$cmp_gt0003> created at line 177.
+    Found 5-bit comparator greater for signal <bcd_11$cmp_gt0004> created at line 177.
+    Found 5-bit comparator greater for signal <bcd_11$cmp_gt0005> created at line 177.
+    Found 4-bit adder for signal <bcd_11_8$add0000> created at line 178.
+    Found 4-bit adder for signal <bcd_11_8$add0001> created at line 178.
+    Found 4-bit adder for signal <bcd_11_8$add0002> created at line 178.
+    Found 4-bit adder for signal <bcd_11_8$add0003> created at line 178.
+    Found 4-bit adder for signal <bcd_11_8$add0004> created at line 178.
+    Found 4-bit adder for signal <bcd_11_8$add0005> created at line 178.
+    Found 4-bit adder for signal <bcd_11_8$add0006> created at line 178.
+    Found 5-bit comparator greater for signal <bcd_12$cmp_gt0000> created at line 181.
+    Found 5-bit comparator greater for signal <bcd_12$cmp_gt0001> created at line 181.
+    Found 5-bit comparator greater for signal <bcd_12$cmp_gt0002> created at line 181.
+    Found 5-bit comparator greater for signal <bcd_12$cmp_gt0003> created at line 181.
+    Found 4-bit adder for signal <bcd_15_12$add0000> created at line 182.
+    Found 4-bit adder for signal <bcd_15_12$add0001> created at line 182.
+    Found 4-bit adder for signal <bcd_15_12$add0002> created at line 182.
+    Found 4-bit adder for signal <bcd_15_12$add0003> created at line 182.
+    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0000> created at line 169.
+    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0001> created at line 169.
+    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0002> created at line 169.
+    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0003> created at line 169.
+    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0004> created at line 169.
+    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0005> created at line 169.
+    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0006> created at line 169.
+    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0007> created at line 169.
+    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0008> created at line 169.
+    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0009> created at line 169.
+    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0010> created at line 169.
+    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0011> created at line 169.
+    Found 5-bit comparator greater for signal <bcd_2$cmp_gt0012> created at line 169.
+    Found 4-bit adder for signal <bcd_3_0$add0000> created at line 170.
+    Found 4-bit adder for signal <bcd_3_0$add0001> created at line 170.
+    Found 4-bit adder for signal <bcd_3_0$add0002> created at line 170.
+    Found 4-bit adder for signal <bcd_3_0$add0003> created at line 170.
+    Found 4-bit adder for signal <bcd_3_0$add0004> created at line 170.
+    Found 4-bit adder for signal <bcd_3_0$add0005> created at line 170.
+    Found 4-bit adder for signal <bcd_3_0$add0006> created at line 170.
+    Found 4-bit adder for signal <bcd_3_0$add0007> created at line 170.
+    Found 4-bit adder for signal <bcd_3_0$add0008> created at line 170.
+    Found 4-bit adder for signal <bcd_3_0$add0009> created at line 170.
+    Found 4-bit adder for signal <bcd_3_0$add0010> created at line 170.
+    Found 4-bit adder for signal <bcd_3_0$add0011> created at line 170.
+    Found 4-bit adder for signal <bcd_3_0$add0012> created at line 170.
+    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0000> created at line 173.
+    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0001> created at line 173.
+    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0002> created at line 173.
+    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0003> created at line 173.
+    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0004> created at line 173.
+    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0005> created at line 173.
+    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0006> created at line 173.
+    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0007> created at line 173.
+    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0008> created at line 173.
+    Found 5-bit comparator greater for signal <bcd_4$cmp_gt0009> created at line 173.
+    Found 4-bit adder for signal <bcd_7_4$add0000> created at line 174.
+    Found 4-bit adder for signal <bcd_7_4$add0001> created at line 174.
+    Found 4-bit adder for signal <bcd_7_4$add0002> created at line 174.
+    Found 4-bit adder for signal <bcd_7_4$add0003> created at line 174.
+    Found 4-bit adder for signal <bcd_7_4$add0004> created at line 174.
+    Found 4-bit adder for signal <bcd_7_4$add0005> created at line 174.
+    Found 4-bit adder for signal <bcd_7_4$add0006> created at line 174.
+    Found 4-bit adder for signal <bcd_7_4$add0007> created at line 174.
+    Found 4-bit adder for signal <bcd_7_4$add0008> created at line 174.
+    Found 4-bit adder for signal <bcd_7_4$add0009> created at line 174.
+    Found 5-bit comparator greater for signal <bcd_8$cmp_gt0000> created at line 177.
     Found 1-bit register for signal <clk_100k>.
     Found 1-bit register for signal <clk_50>.
     Found 8-bit up counter for signal <cnt_100k>.
     Found 12-bit up counter for signal <cnt_50>.
     Found 21-bit up counter for signal <count_clk>.
-    Found 21-bit adder for signal <count_clk$addsub0000> created at line 83.
+    Found 21-bit adder for signal <count_clk$addsub0000> created at line 82.
     Found 1-bit register for signal <human_clk>.
     Found 39-bit register for signal <lcd_state>.
     Found 40-bit register for signal <reg_file<1:5>>.
@@ -269,19 +263,19 @@ INFO:Xst:2117 - HDL ADVISOR - Mux Selector <lcd_state> of Case statement line 29
     Found 8-bit register for signal <reg_file<14>>.
     Found 40-bit register for signal <reg_file<17:21>>.
     Found 32-bit register for signal <reg_file<23:26>>.
-    Found 8-bit adder for signal <reg_file_1$add0000> created at line 194.
+    Found 8-bit adder for signal <reg_file_1$add0000> created at line 193.
     Found 8-bit 4-to-1 multiplexer for signal <reg_file_17$mux0000> created at line 247.
     Found 8-bit 4-to-1 multiplexer for signal <reg_file_18$mux0000> created at line 247.
     Found 8-bit 4-to-1 multiplexer for signal <reg_file_19$mux0000> created at line 247.
-    Found 8-bit adder for signal <reg_file_2$add0000> created at line 193.
+    Found 8-bit adder for signal <reg_file_2$add0000> created at line 192.
     Found 8-bit 4-to-1 multiplexer for signal <reg_file_20$mux0000> created at line 247.
     Found 8-bit 4-to-1 multiplexer for signal <reg_file_21$mux0000> created at line 247.
-    Found 8-bit 4-to-1 multiplexer for signal <reg_file_24$mux0000> created at line 211.
-    Found 8-bit adder for signal <reg_file_3$add0000> created at line 192.
-    Found 8-bit adder for signal <reg_file_4$add0000> created at line 191.
-    Found 8-bit adder for signal <reg_file_5$add0000> created at line 190.
+    Found 8-bit 4-to-1 multiplexer for signal <reg_file_24$mux0000> created at line 210.
+    Found 8-bit adder for signal <reg_file_3$add0000> created at line 191.
+    Found 8-bit adder for signal <reg_file_4$add0000> created at line 190.
+    Found 8-bit adder for signal <reg_file_5$add0000> created at line 189.
     Found 2-bit up counter for signal <reset_count_2sec>.
-    Found 2-bit comparator greatequal for signal <reset_count_2sec$cmp_ge0000> created at line 108.
+    Found 2-bit comparator greatequal for signal <reset_count_2sec$cmp_ge0000> created at line 107.
     Found 1-bit register for signal <start_enable>.
     Summary:
 	inferred   4 Counter(s).
@@ -303,74 +297,74 @@ INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and 
 WARNING:Xst:737 - Found 8-bit latch for signal <seg_reg>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
     Found 4-bit register for signal <BB>.
-    Found 5-bit comparator greater for signal <bcd_10$cmp_gt0000> created at line 121.
-    Found 5-bit comparator greater for signal <bcd_10$cmp_gt0001> created at line 121.
-    Found 5-bit comparator greater for signal <bcd_10$cmp_gt0002> created at line 121.
-    Found 5-bit comparator greater for signal <bcd_10$cmp_gt0003> created at line 121.
-    Found 5-bit comparator greater for signal <bcd_10$cmp_gt0004> created at line 121.
-    Found 5-bit comparator greater for signal <bcd_10$cmp_gt0005> created at line 121.
-    Found 5-bit comparator greater for signal <bcd_11$cmp_gt0000> created at line 121.
-    Found 4-bit adder for signal <bcd_11_8$add0000> created at line 122.
-    Found 4-bit adder for signal <bcd_11_8$add0001> created at line 122.
-    Found 4-bit adder for signal <bcd_11_8$add0002> created at line 122.
-    Found 4-bit adder for signal <bcd_11_8$add0003> created at line 122.
-    Found 4-bit adder for signal <bcd_11_8$add0004> created at line 122.
-    Found 4-bit adder for signal <bcd_11_8$add0005> created at line 122.
-    Found 4-bit adder for signal <bcd_11_8$add0006> created at line 122.
-    Found 5-bit comparator greater for signal <bcd_15$cmp_gt0000> created at line 125.
-    Found 5-bit comparator greater for signal <bcd_15$cmp_gt0001> created at line 125.
-    Found 5-bit comparator greater for signal <bcd_15$cmp_gt0002> created at line 125.
-    Found 5-bit comparator greater for signal <bcd_15$cmp_gt0003> created at line 125.
-    Found 4-bit adder for signal <bcd_15_12$add0000> created at line 126.
-    Found 4-bit adder for signal <bcd_15_12$add0001> created at line 126.
-    Found 4-bit adder for signal <bcd_15_12$add0002> created at line 126.
-    Found 4-bit adder for signal <bcd_15_12$add0003> created at line 126.
-    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0000> created at line 113.
-    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0001> created at line 113.
-    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0002> created at line 113.
-    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0003> created at line 113.
-    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0004> created at line 113.
-    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0005> created at line 113.
-    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0006> created at line 113.
-    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0007> created at line 113.
-    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0008> created at line 113.
-    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0009> created at line 113.
-    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0010> created at line 113.
-    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0011> created at line 113.
-    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0012> created at line 113.
-    Found 4-bit adder for signal <bcd_3_0$add0000> created at line 114.
-    Found 4-bit adder for signal <bcd_3_0$add0001> created at line 114.
-    Found 4-bit adder for signal <bcd_3_0$add0002> created at line 114.
-    Found 4-bit adder for signal <bcd_3_0$add0003> created at line 114.
-    Found 4-bit adder for signal <bcd_3_0$add0004> created at line 114.
-    Found 4-bit adder for signal <bcd_3_0$add0005> created at line 114.
-    Found 4-bit adder for signal <bcd_3_0$add0006> created at line 114.
-    Found 4-bit adder for signal <bcd_3_0$add0007> created at line 114.
-    Found 4-bit adder for signal <bcd_3_0$add0008> created at line 114.
-    Found 4-bit adder for signal <bcd_3_0$add0009> created at line 114.
-    Found 4-bit adder for signal <bcd_3_0$add0010> created at line 114.
-    Found 4-bit adder for signal <bcd_3_0$add0011> created at line 114.
-    Found 4-bit adder for signal <bcd_3_0$add0012> created at line 114.
-    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0000> created at line 117.
-    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0001> created at line 117.
-    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0002> created at line 117.
-    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0003> created at line 117.
-    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0004> created at line 117.
-    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0005> created at line 117.
-    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0006> created at line 117.
-    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0007> created at line 117.
-    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0008> created at line 117.
-    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0009> created at line 117.
-    Found 4-bit adder for signal <bcd_7_4$add0000> created at line 118.
-    Found 4-bit adder for signal <bcd_7_4$add0001> created at line 118.
-    Found 4-bit adder for signal <bcd_7_4$add0002> created at line 118.
-    Found 4-bit adder for signal <bcd_7_4$add0003> created at line 118.
-    Found 4-bit adder for signal <bcd_7_4$add0004> created at line 118.
-    Found 4-bit adder for signal <bcd_7_4$add0005> created at line 118.
-    Found 4-bit adder for signal <bcd_7_4$add0006> created at line 118.
-    Found 4-bit adder for signal <bcd_7_4$add0007> created at line 118.
-    Found 4-bit adder for signal <bcd_7_4$add0008> created at line 118.
-    Found 4-bit adder for signal <bcd_7_4$add0009> created at line 118.
+    Found 5-bit comparator greater for signal <bcd_10$cmp_gt0000> created at line 122.
+    Found 5-bit comparator greater for signal <bcd_10$cmp_gt0001> created at line 122.
+    Found 5-bit comparator greater for signal <bcd_10$cmp_gt0002> created at line 122.
+    Found 5-bit comparator greater for signal <bcd_10$cmp_gt0003> created at line 122.
+    Found 5-bit comparator greater for signal <bcd_10$cmp_gt0004> created at line 122.
+    Found 5-bit comparator greater for signal <bcd_10$cmp_gt0005> created at line 122.
+    Found 5-bit comparator greater for signal <bcd_11$cmp_gt0000> created at line 122.
+    Found 4-bit adder for signal <bcd_11_8$add0000> created at line 123.
+    Found 4-bit adder for signal <bcd_11_8$add0001> created at line 123.
+    Found 4-bit adder for signal <bcd_11_8$add0002> created at line 123.
+    Found 4-bit adder for signal <bcd_11_8$add0003> created at line 123.
+    Found 4-bit adder for signal <bcd_11_8$add0004> created at line 123.
+    Found 4-bit adder for signal <bcd_11_8$add0005> created at line 123.
+    Found 4-bit adder for signal <bcd_11_8$add0006> created at line 123.
+    Found 5-bit comparator greater for signal <bcd_15$cmp_gt0000> created at line 126.
+    Found 5-bit comparator greater for signal <bcd_15$cmp_gt0001> created at line 126.
+    Found 5-bit comparator greater for signal <bcd_15$cmp_gt0002> created at line 126.
+    Found 5-bit comparator greater for signal <bcd_15$cmp_gt0003> created at line 126.
+    Found 4-bit adder for signal <bcd_15_12$add0000> created at line 127.
+    Found 4-bit adder for signal <bcd_15_12$add0001> created at line 127.
+    Found 4-bit adder for signal <bcd_15_12$add0002> created at line 127.
+    Found 4-bit adder for signal <bcd_15_12$add0003> created at line 127.
+    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0000> created at line 114.
+    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0001> created at line 114.
+    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0002> created at line 114.
+    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0003> created at line 114.
+    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0004> created at line 114.
+    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0005> created at line 114.
+    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0006> created at line 114.
+    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0007> created at line 114.
+    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0008> created at line 114.
+    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0009> created at line 114.
+    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0010> created at line 114.
+    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0011> created at line 114.
+    Found 5-bit comparator greater for signal <bcd_3$cmp_gt0012> created at line 114.
+    Found 4-bit adder for signal <bcd_3_0$add0000> created at line 115.
+    Found 4-bit adder for signal <bcd_3_0$add0001> created at line 115.
+    Found 4-bit adder for signal <bcd_3_0$add0002> created at line 115.
+    Found 4-bit adder for signal <bcd_3_0$add0003> created at line 115.
+    Found 4-bit adder for signal <bcd_3_0$add0004> created at line 115.
+    Found 4-bit adder for signal <bcd_3_0$add0005> created at line 115.
+    Found 4-bit adder for signal <bcd_3_0$add0006> created at line 115.
+    Found 4-bit adder for signal <bcd_3_0$add0007> created at line 115.
+    Found 4-bit adder for signal <bcd_3_0$add0008> created at line 115.
+    Found 4-bit adder for signal <bcd_3_0$add0009> created at line 115.
+    Found 4-bit adder for signal <bcd_3_0$add0010> created at line 115.
+    Found 4-bit adder for signal <bcd_3_0$add0011> created at line 115.
+    Found 4-bit adder for signal <bcd_3_0$add0012> created at line 115.
+    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0000> created at line 118.
+    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0001> created at line 118.
+    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0002> created at line 118.
+    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0003> created at line 118.
+    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0004> created at line 118.
+    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0005> created at line 118.
+    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0006> created at line 118.
+    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0007> created at line 118.
+    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0008> created at line 118.
+    Found 5-bit comparator greater for signal <bcd_7$cmp_gt0009> created at line 118.
+    Found 4-bit adder for signal <bcd_7_4$add0000> created at line 119.
+    Found 4-bit adder for signal <bcd_7_4$add0001> created at line 119.
+    Found 4-bit adder for signal <bcd_7_4$add0002> created at line 119.
+    Found 4-bit adder for signal <bcd_7_4$add0003> created at line 119.
+    Found 4-bit adder for signal <bcd_7_4$add0004> created at line 119.
+    Found 4-bit adder for signal <bcd_7_4$add0005> created at line 119.
+    Found 4-bit adder for signal <bcd_7_4$add0006> created at line 119.
+    Found 4-bit adder for signal <bcd_7_4$add0007> created at line 119.
+    Found 4-bit adder for signal <bcd_7_4$add0008> created at line 119.
+    Found 4-bit adder for signal <bcd_7_4$add0009> created at line 119.
     Found 4-bit register for signal <CC>.
     Found 4-bit 6-to-1 multiplexer for signal <data_reg$mux0000>.
     Found 4-bit register for signal <DD>.
@@ -391,20 +385,18 @@ Unit <SEG_DISPlAY> synthesized.
 Synthesizing Unit <DATA_PROCESS>.
     Related source file is "C:/17LDLab/TAXI/DATA_PROCESS.vhd".
     Found 12-bit up counter for signal <clk_cnt0>.
-    Found 16-bit comparator lessequal for signal <clk_cnt0$cmp_le0000> created at line 217.
+    Found 16-bit comparator lessequal for signal <clk_cnt0$cmp_le0000> created at line 211.
     Found 12-bit up counter for signal <clk_cnt1>.
     Found 12-bit up counter for signal <clk_cnt2>.
     Found 2-bit register for signal <extraCharge_reg>.
-    Found 2-bit adder for signal <extraCharge_reg$addsub0000> created at line 168.
+    Found 2-bit adder for signal <extraCharge_reg$addsub0000> created at line 162.
     Found 1-bit register for signal <insSW1>.
     Found 1-bit register for signal <insSW2>.
     Found 1-bit register for signal <insSW3>.
     Found 1-bit register for signal <isCall_add1000_flag>.
     Found 1-bit register for signal <isCall_reg>.
-    Found 1-bit register for signal <isPayment_reg>.
-    Found 1-bit 4-to-1 multiplexer for signal <isPayment_reg$mux0001>.
     Found 2-bit register for signal <processState_reg>.
-    Found 2-bit adder for signal <processState_reg$addsub0000> created at line 138.
+    Found 2-bit adder for signal <processState_reg$addsub0000> created at line 135.
     Found 1-bit register for signal <stop_check_flag>.
     Found 1-bit 4-to-1 multiplexer for signal <stop_check_flag$mux0000>.
     Found 1-bit register for signal <stop_check_flag2>.
@@ -418,16 +410,16 @@ Synthesizing Unit <DATA_PROCESS>.
     Found 16-bit 4-to-1 multiplexer for signal <taxiCharge_reg$mux0000>.
     Found 16-bit adder for signal <taxiCharge_reg$share0000>.
     Found 16-bit register for signal <taxiChargeCnt_reg>.
-    Found 16-bit comparator greater for signal <taxiChargeCnt_reg$cmp_gt0000> created at line 217.
+    Found 16-bit comparator greater for signal <taxiChargeCnt_reg$cmp_gt0000> created at line 211.
     Found 16-bit 4-to-1 multiplexer for signal <taxiChargeCnt_reg$mux0000>.
-    Found 16-bit 4-to-1 multiplexer for signal <taxiChargeCnt_reg$mux0001> created at line 219.
+    Found 16-bit 4-to-1 multiplexer for signal <taxiChargeCnt_reg$mux0001> created at line 213.
     Found 16-bit subtractor for signal <taxiChargeCnt_reg$share0000>.
     Summary:
 	inferred   3 Counter(s).
-	inferred  18 D-type flip-flop(s).
+	inferred  17 D-type flip-flop(s).
 	inferred   4 Adder/Subtractor(s).
 	inferred   2 Comparator(s).
-	inferred  50 Multiplexer(s).
+	inferred  49 Multiplexer(s).
 Unit <DATA_PROCESS> synthesized.
 
 
@@ -457,8 +449,8 @@ Macro Statistics
  21-bit up counter                                     : 1
  3-bit up counter                                      : 1
  8-bit up counter                                      : 2
-# Registers                                            : 48
- 1-bit register                                        : 18
+# Registers                                            : 47
+ 1-bit register                                        : 17
  16-bit register                                       : 2
  2-bit register                                        : 2
  39-bit register                                       : 1
@@ -473,8 +465,8 @@ Macro Statistics
  16-bit comparator lessequal                           : 1
  2-bit comparator greatequal                           : 1
  5-bit comparator greater                              : 68
-# Multiplexers                                         : 12
- 1-bit 4-to-1 multiplexer                              : 2
+# Multiplexers                                         : 11
+ 1-bit 4-to-1 multiplexer                              : 1
  16-bit 4-to-1 multiplexer                             : 3
  4-bit 6-to-1 multiplexer                              : 1
  8-bit 4-to-1 multiplexer                              : 6
@@ -534,8 +526,8 @@ Macro Statistics
  21-bit up counter                                     : 1
  3-bit up counter                                      : 1
  8-bit up counter                                      : 2
-# Registers                                            : 273
- Flip-Flops                                            : 273
+# Registers                                            : 272
+ Flip-Flops                                            : 272
 # Latches                                              : 4
  4-bit latch                                           : 1
  6-bit latch                                           : 1
@@ -545,8 +537,8 @@ Macro Statistics
  16-bit comparator lessequal                           : 1
  2-bit comparator greatequal                           : 1
  5-bit comparator greater                              : 68
-# Multiplexers                                         : 12
- 1-bit 4-to-1 multiplexer                              : 2
+# Multiplexers                                         : 11
+ 1-bit 4-to-1 multiplexer                              : 1
  16-bit 4-to-1 multiplexer                             : 3
  4-bit 6-to-1 multiplexer                              : 1
  8-bit 4-to-1 multiplexer                              : 6
@@ -634,7 +626,6 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <taxiCharge_reg_0> (
 WARNING:Xst:1710 - FF/Latch <taxiCharge_reg_1> (without init value) has a constant value of 0 in block <DATA_PROCESS>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <taxiCharge_reg_0> (without init value) has a constant value of 0 in block <DATA_PROCESS>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <SEG/FF_0> (without init value) has a constant value of 0 in block <TAXI>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <DATA/isPayment_reg> of sequential type is unconnected in block <TAXI>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -1059,14 +1050,14 @@ Offset:              7.078ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 54.00 secs
-Total CPU time to Xst completion: 54.15 secs
+Total REAL time to Xst completion: 42.00 secs
+Total CPU time to Xst completion: 41.67 secs
  
 --> 
 
-Total memory usage is 369712 kilobytes
+Total memory usage is 373568 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   92 (   0 filtered)
+Number of warnings :   82 (   0 filtered)
 Number of infos    :   41 (   0 filtered)
 

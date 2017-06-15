@@ -5,7 +5,7 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity DATA_PROCESS is
-    -- SW1~3ï¿½ìœ„ì¹…ë ¥ë°›ì•„ 5ê°€ì§€ ï¿½ë³´ë¥œê³µï¿½ëŠ” ï¿½ï¿½ signalï¿½ì¶œ
+    -- SW1~3ÀÇ ½ºÀ§Ä¡ ÀÔ·ÂÀ» ¹Þ¾Æ 5°¡Áö Á¤º¸¸¦ Á¦°øÇÏ´Â ³»ºÎ signal·Î Ãâ·Â.
     port( RESET, CLK : in std_logic;
             SW1, SW2, SW3 : in std_logic;
             taxiCharge : out std_logic_vector(15 downto 0);
@@ -18,7 +18,7 @@ end DATA_PROCESS;
 
 architecture DATA_Behavioral of DATA_PROCESS is
     signal processState_reg : std_logic_vector(1 downto 0);
-    -- "00": ï¿½ï¿½ "01": "ï¿½ìž‘", "10": "ï¿½ï¿½"
+    -- "00": ´ë±â, "01": "½ÃÀÛ", "10": "Á¤Áö"
     signal SW1_flag, SW2_flag, SW3_flag : std_logic;
     signal insSW1, insSW2, insSW3 : std_logic;
 
@@ -40,9 +40,9 @@ begin
 	 processState <= processState_reg;
 
     process(SW1, SW2, SW3, SW1_flag_rst, SW2_flag_rst, SW3_flag_rst)
-    -- switch inputê°ê°instruction signalï¿½ë°”ê¿”ì£¼process ...1/2
+    -- switch inputÀ» °¢°¢ÀÇ instruction signal·Î ¹Ù²ãÁÖ´Â process ...1/2
     begin
-        -- ï¿½ëŠ” ï¿½ê°„ë°œìƒï¿½í‚¤ê²ƒì´ë¯€ï¿½active-LOë¡™ìž‘ï¿½ëŠ” ï¿½ìœ„ì¹˜ì—ï¿½ëŠ” '1'.
+        -- ¶¼´Â ¼ø°£¿¡ ¹ß»ý½ÃÅ°´Â °ÍÀÌ¹Ç·Î active-LO·Î µ¿ÀÛÇÏ´Â ½ºÀ§Ä¡¿¡¼­´Â '1'.
         if SW1 = '1' and SW1'event then
             SW1_flag <= '1';
         end if;
@@ -66,7 +66,7 @@ begin
     end process;
 
     process(RESET, CLK)
-    -- switch inputê°ê°instruction signalï¿½ë°”ê¿”ì£¼process ...2/2
+    -- switch inputÀ» °¢°¢ÀÇ instruction signal·Î ¹Ù²ãÁÖ´Â process ...2/2
     begin
         if RESET = '0' then
             SW1_flag_rst <= '1';
@@ -77,9 +77,9 @@ begin
             insSW2 <= '0';
             insSw3 <= '0';
         elsif CLK = '0' and CLK'event then
-        -- clk's falling edgeï¿½ì„œ ï¿½ìŒ falling edgeê¹Œï¿½ 1 clock periodë§Œí¼
-        -- instruction signalë³´ë‚´ì£¼ì–´ï¿½ë¥¸ processï¿½ì„œ clk's rising edge
-        -- ï¿½ï¿½ï¿½ì²˜ë¦¬ï¿½
+        -- clk's falling edge¿¡¼­ ´ÙÀ½ falling edge±îÁö 1 clock period¸¸Å­
+        -- instruction signalÀ» º¸³»ÁÖ¾î¾ß ´Ù¸¥ process¿¡¼­ clk's rising edgeÀÏ ¶§
+        -- Á¦´ë·Î Ã³¸®ÇÒ ¼ö ÀÖÀ½.
             if SW1_flag_rst = '1' then
                 SW1_flag_rst <= '0';
             end if;
@@ -118,7 +118,7 @@ begin
     end process;
 
     process(RESET, CLK)
-    -- SW1~3ï¿½í˜¸ï¿½ë¼ ï¿½í•˜ï¿½ë¡œ ï¿½ìž‘ê¸°ìˆ ï¿½ëŠ” process
+    -- SW1~3ÀÇ ½ÅÈ£¿¡ µû¶ó ¿øÇÏ´Â È¸·Î µ¿ÀÛÀ» ±â¼úÇÏ´Â process
     begin
         if RESET = '0' then
             processState_reg <= "00";
@@ -129,8 +129,8 @@ begin
 				stop_check_flag <= '0';
         elsif CLK = '1' and CLK'event then
             if insSW1 = '1' then
-                -- processState_reg = "00"ï¿'ï¿½ï¿½, "01"ï¿'ì£¼í–‰', "10"ï¿'ï¿½ï¿½'.
-                -- stateê°€ "10"ï¿½ì„œ "00"ï¿½ë¡œ ï¿½ì–´ï¿½payment displayë¥„í•œ isPaymentï¿½set.
+                -- processState = "00"Àº '´ë±â', "01"Àº 'ÁÖÇà', "10"Àº 'Á¤Áö'.
+                -- state°¡ "10"¿¡¼­ "00"À¸·Î ³Ñ¾î°¥ ¶§ payment display¸¦ À§ÇÑ isPayment¸¦ set.
                 if processState_reg = "00" or processState_reg = "01" then
                     processState_reg <= processState_reg + 1;
 						  
@@ -152,12 +152,12 @@ begin
             end if;
 
             if insSW2 = '1' then
-                -- ï¿½ì¶œ ï¿½ï¿½ ê²°ì •ï¿½ëŠ” ï¿½í˜¸.
+                -- È£Ãâ ¿©ºÎ °áÁ¤ÇÏ´Â ½ÅÈ£.
                 isCall_reg <= '1';
             end if;
             
             if insSW3 = '1' then
-                -- ï¿½ì¦ % ê²°ì •ï¿½ëŠ” ï¿½í˜¸.
+                -- ÇÒÁõ % °áÁ¤ÇÏ´Â ½ÅÈ£.
                 if extraCharge_reg = "00" or extraCharge_reg = "01" then
                     extraCharge_reg <= extraCharge_reg + 1;
                 elsif extraCharge_reg = "10" then
@@ -168,11 +168,11 @@ begin
     end process;
 
     process(RESET, CLK)
-    -- ì£¼í–‰ ëª¨ë“œ taxiChargeCntï¿mileageMï¿½ì ˆclk ì£¼ê¸°ï¿½ë¼ ë³€ê²½í•˜ï¿
-    -- taxiChargeCntê°€ 0ï¿½ë¡œ ï¿½ì–´ì§€ï¿½ê°„ taxiChargeï¿½ì¦ï¿½í‚´(ï¿½ê¸ˆ ì¦ï¿½).
-        variable clk_cnt0 : std_logic_vector(11 downto 0);  --  ì¦ 0%
-        variable clk_cnt1 : std_logic_vector(11 downto 0);  --  ì¦ 20%
-        variable clk_cnt2 : std_logic_vector(11 downto 0);  --  ì¦ 40%
+    -- ÁÖÇà ¸ðµåÀÏ ¶§, taxiChargeCnt¿Í mileageMÀ» ÀûÀýÇÑ clk ÁÖ±â¿¡ µû¶ó º¯°æÇÏ°í
+    -- taxiChargeCnt°¡ 0À¸·Î ¶³¾îÁö´Â ¼ø°£ taxiCharge¸¦ Áõ°¡½ÃÅ´(¿ä±Ý Áõ°¡).
+        variable clk_cnt0 : std_logic_vector(11 downto 0);  -- ÇÒÁõ 0%
+        variable clk_cnt1 : std_logic_vector(11 downto 0);  -- ÇÒÁõ 20%
+        variable clk_cnt2 : std_logic_vector(11 downto 0);  -- ÇÒÁõ 40%
     begin
         if RESET = '0' then
             clk_cnt0 := "000000000000";
@@ -185,7 +185,7 @@ begin
 --            mileageM_reg <= "000000000000";
         elsif CLK = '1' and CLK'event then
             if processState_reg = "00" or processState_reg = "10" then
-            -- €ê¸•ì ëª¨ë“œì„œ '¸ì¶œ'ë²„íŠ¼ ìš© ê°€
+            -- €´ë±â/Á¤Áö ¸ðµåÀÏ ¶§
                 if isCall_reg = '1' then
 						  if isCall_add1000_flag = '0' then
 							  taxiCharge_reg <= taxiCharge_reg + "0000001111101000";
@@ -205,37 +205,34 @@ begin
 							stop_check_flag2 <= '0';
 					 end if;
             elsif processState_reg = "01" then
-            -- ì£¼í–‰ ëª¨ë“œ
+            -- ÁÖÇà ¸ðµåÀÏ ¶§
                 if taxiChargeCnt_reg = "000000000000" then
-                    taxiCharge_reg <= taxiCharge_reg + x"64"; -- 100ì¶”ï¿½
-                    taxiChargeCnt_reg <= "0000101110111000"; -- ï¿0000 ï¿½í›„ 3000ï¿½ë¡œ count down
+                    taxiCharge_reg <= taxiCharge_reg + x"64"; -- 100¿ø Ãß°¡
+                    taxiChargeCnt_reg <= "0000101110111000"; -- Ã¹ 30000 ÀÌÈÄ 3000À¸·Î count down
                 elsif taxiChargeCnt_reg > "0000000000000000" then
                     if extraCharge_reg = "00" then
-                        if clk_cnt0 = "111110100000" then    -- decimal 4000, 1 ms ì£¼ê¸° ë§Œë“¤ì£¼ê¸° -- 0 ì¶”ê!
+                        if clk_cnt0 = "111110100000" then    -- decimal 4000, 1 ms ÁÖ±â ¸¸µé¾î ÁÖ±â
                             clk_cnt0 := "000000000000";
                             taxiChargeCnt_reg <= taxiChargeCnt_reg - 1;
-                            -- 1 msë§ˆë‹¤ taxiChargeCnt ê°ì†Œï¿½í‚´
+                            -- 1 ms¸¶´Ù taxiChargeCnt °¨¼Ò½ÃÅ´
                         else
                             clk_cnt0 := clk_cnt0 + 1;
                         end if;
                     elsif extraCharge_reg = "01" then
-                        if clk_cnt1 = "110010000000" then    -- decimal 3200 € Œë§ˆtaxiChargeCnt ê°ì†Œ -- 0 ì¶”ê!
+                        if clk_cnt1 = "110010000000" then    -- decimal 3200 ¼¿ ¶§¸¶´Ù taxiChargeCnt °¨¼Ò
                             clk_cnt1 := "000000000000";
                             taxiChargeCnt_reg <= taxiChargeCnt_reg - 1;
                         else
                             clk_cnt1 := clk_cnt1 + 1;
                         end if;
                     elsif extraCharge_reg = "10" then
-                        if clk_cnt2 = "100101100000" then    -- decimal 2400 € Œë§ˆtaxiChargeCnt ê°ì†Œ -- 0 ì¶”ê!
+                        if clk_cnt2 = "100101100000" then    -- decimal 2400 ¼¿ ¶§¸¶´Ù taxiChargeCnt °¨¼Ò -- 0 Ãß°¡!
                             clk_cnt2 := "000000000000";
                             taxiChargeCnt_reg <= taxiChargeCnt_reg - 1;
                         else
                             clk_cnt2 := clk_cnt2 + 1;
                         end if;
                     end if;
-                        -- ì£¼í–‰ ê±°ë¦¬ mileageMê´€ë¶€ë¶„ë„ ï¿½ê¸°ì¶”ï¿½ê¸
-                        -- ì¶”ï¿½ì¶”ï¿½
-                        -- ì¶”ï¿½
                 end if;
             end if;
         end if;

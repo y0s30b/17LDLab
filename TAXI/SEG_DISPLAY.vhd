@@ -5,7 +5,7 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity SEG_DISPLAY is
-    -- taxiChargeë¥7-segment displayë¡ì¶œë ¥.
+    -- taxiCharge¸¦ 7-segment display·Î Ãâ·Â.
     port ( RESET, CLK : in std_logic;
             DIGIT : out std_logic_vector(6 downto 1);
             SEG_A : out std_logic;
@@ -22,16 +22,16 @@ end SEG_DISPLAY;
 
 architecture SEG_Behavioral of SEG_DISPLAY is
  --   signal SEG_CLK : std_logic;
-    signal sel_reg : std_logic_vector(2 downto 0);   -- 6ê°œì˜ 7-segment ì¤´ëŠ ê²ƒì— ì¶œë ¥ì§€ ê²°ì •.
-    signal data_reg : std_logic_vector(3 downto 0);  -- segRegë¡ë³´ë‚´ê¸„í•œ dataì¤‘ê°„ ¨ê³„.
-    signal seg_reg : std_logic_vector(7 downto 0);   -- output SEG_Xë¡ë³´ë‚´ê¸„í•œ signal.
+    signal sel_reg : std_logic_vector(2 downto 0);   -- 6°³ÀÇ 7-segment Áß ¾î´À °Í¿¡ Ãâ·ÂÇÒ Áö °áÁ¤.
+    signal data_reg : std_logic_vector(3 downto 0);  -- segReg·Î º¸³»±â À§ÇÑ dataÀÇ Áß°£ ´Ü°è.
+    signal seg_reg : std_logic_vector(7 downto 0);   -- output SEG_X·Î º¸³»±â À§ÇÑ signal.
     signal AA, BB, CC, DD, EE, FF : std_logic_vector(3 downto 0);
 begin
-    process(sel_reg)
+   process(sel_reg)
 	begin
 		case sel_reg is		
-		-- sel€ ´ëŠ 7-segmentê°’ì„ œì‹œì§€ ê²°ì •
-		-- 6ê°œì˜ 7-segmentê°€ ˆê³  ê°segment ë¶ ì´ˆë ë¶€ë¶„ì ¼ë¡œ ´ë‹¹
+		-- selÀº ¾î´À 7-segment¿¡ °ªÀ» Ç¥½ÃÇÒ Áö °áÁ¤
+		-- 6°³ÀÇ 7-segment°¡ ÀÖ°í °¢ segment´Â ½Ã, ºÐ, ÃÊ¸¦ ºÎºÐÀûÀ¸·Î ´ã´çÇÔ.
 			when "000" =>	DIGIT <= "000001";
 							data_reg <= AA;
 			when "001" =>	DIGIT <= "000010";
@@ -50,20 +50,20 @@ begin
 	
 	process(RESET, CLK)	
 	-- display time every 50 us on 7-segment
-	-- 50 usë¡˜ë©´ ¬ëžŒ ˆì—” stableê±¸ë¡œ ë³´ìž„!
+	-- 50 us·Î ÇÏ¸é »ç¶÷ ´«¿£ stableÇÑ °É·Î º¸ÀÓ!
 		variable seg_clk_cnt : integer range 0 to 200;
 	begin
 		if RESET = '0' then
 			sel_reg <= "000";
 			seg_clk_cnt := 0;
 		elsif CLK'event and CLK = '1' then
-			if seg_clk_cnt = 200 then	-- ´ìž¥˜ì–´ ˆëŠ” ˜ì • ì§„ë™ì˜ ì£¼íŒŒ˜ê 4Mhz´ê³ ,
-										-- ´ëŠ” 0.25 us¬ì„œ 200ë²ì§„ë™˜ë©´ 50 usê°€ œë‹¤.
-				seg_clk_cnt := 0;		-- ì´ˆê¸°1
+			if seg_clk_cnt = 200 then	-- ³»ÀåµÇ¾î ÀÖ´Â ¼öÁ¤ Áøµ¿ÀÚÀÇ ÁÖÆÄ¼ö°¡ 4MhzÀÌ°í,
+										-- ÀÌ´Â 0.25 us¿©¼­ 200¹ø Áøµ¿ÇÏ¸é 50 us°¡ µÈ´Ù.
+				seg_clk_cnt := 0;		-- ÃÊ±âÈ­ 1
 				
-				if sel_reg = "101" then		-- ì´ˆê¸°2
+				if sel_reg = "101" then		-- ÃÊ±âÈ­ 2
 					sel_reg <= "000";
-				else					-- ë²ˆê°ˆ„êë©sel_reg ê²°ì •(0~5)
+				else					-- ¹ø°¥¾Æ°¡¸ç sel_reg °áÁ¤(0~5)
 					sel_reg <= sel_reg + 1;
 				end if;
 			else
@@ -73,9 +73,9 @@ begin
 	end process;
 	
 	process(data_reg)		
-	-- dataselë¡ íƒ7-segmentì¶œë ¥'ê°
+	-- data´Â sel·Î ¼±ÅÃµÈ 7-segment¿¡ Ãâ·ÂÇÒ '°ª'
 	begin
-		case data_reg is	-- dpgfedcba 
+		case data_reg is	-- dpgfedcba ¼ø
 			when "0000" => seg_reg <= "00111111";
 			when "0001" => seg_reg <= "00000110";
 			when "0010" => seg_reg <= "01011011";
@@ -97,11 +97,12 @@ begin
 	SEG_F <= seg_reg(5);
 	SEG_G <= seg_reg(6);
 	SEG_DP <= seg_reg(7);
-	-- ê°7-segmentë³ì¶œë ¥  í˜¸ë¥ë³´ë‚¼ „ì¹˜(segment •ë³´)ë¥signal seg€¥í•œ 
-	-- signalê°’ë“¤Œë¡œ ë¸”ë¡output¼ë¡œ ë³´ë‚¸
+	-- °¢ 7-segmentº° Ãâ·Â ½ÅÈ£¸¦ º¸³¾ À§Ä¡(segment Á¤º¸)¸¦ signal seg¿¡ ÀúÀåÇÑ ÈÄ
+	-- ÀÌ signalÀÇ °ªµéÀ» È¸·Î ºí·ÏÀÇ outputÀ¸·Î º¸³½´Ù.
 
 	process(RESET, CLK)
-		-- taxiChargeê°¢æ 16bitë¡¤ì–´¤ëŠ” ê±BCDë¡ë°”ê¾¸´ì„œ AA~FFë¡´ë³´´ì•¼     -- ¬ê¸° ë¶¢æë¶„ì—ì²˜ë¦¬!!
+		 -- taxiCharge°¡ 16bit·Î µé¾î¿À´Â °É BCD·Î ¹Ù²Ù¾î¼­ AA~FF·Î ³»º¸³»¾ß ÇÔ
+		 -- double-dabble algorithm ÀÌ¿ë
 		variable temp : STD_LOGIC_VECTOR (15 downto 0);
 		variable bcd : UNSIGNED (19 downto 0) := (others => '0');
 	begin

@@ -5,7 +5,7 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity LCD_DISPLAY is 
-    -- taxiChargeë¥œì™¸4ê°€ì§€ï¿½ë³´ï¿½LCDï¿½ì¶œ
+    -- taxiCharge¸¦ Á¦¿ÜÇÑ 4°¡ÁöÀÇ Á¤º¸¸¦ LCD·Î Ãâ·Â.
     port ( RESET, CLK : in std_logic;
             LCD_A : out std_logic_vector(1 downto 0);
             LCD_EN : out std_logic;
@@ -160,7 +160,7 @@ begin
 --				reg_file(conv_integer(addr)) <= data;
 --			end if;
 
-			-- taxiChargeCnt ì¶œë ¥˜ëŠ” ë¶€ë¶
+			-- taxiChargeCnt Ãâ·ÂÇÏ´Â ºÎºÐ
 --			if reset_count_2sec = "10" then
 				bcd := (others => '0');
 				tmp_chargeCnt := taxiChargeCnt;
@@ -192,7 +192,7 @@ begin
 				reg_file(2) <= ("0000" & STD_LOGIC_VECTOR(bcd(15 downto 12))) + 48;
 				reg_file(1) <= ("0000" & STD_LOGIC_VECTOR(bcd(19 downto 16))) + 48;
 				
-				-- CALL ë¬¸êµ¬ ì¶œë ¥˜ëŠ” ë¶€ë¶
+				-- CALL ¹®±¸ Ãâ·ÂÇÏ´Â ºÎºÐ
 				if isCall = '1' then
 					reg_file(7) <= "01000011";
 					reg_file(8) <= "01000001";
@@ -205,7 +205,7 @@ begin
 					reg_file(10)<= X"20";
 				end if;
 
-				-- extraCharge ì¶œë ¥˜ëŠ” ë¶€ë¶
+				-- extraCharge Ãâ·ÂÇÏ´Â ºÎºÐ
 				reg_file(23) <= "01000101";
 				case extraCharge is
 					when "00" => reg_file(24) <= "00000000" + 48;
@@ -216,7 +216,7 @@ begin
 				reg_file(25) <= "00000000" + 48;
 				reg_file(26) <= "00100101";
 
-				-- mileageM ì¶œë ¥˜ëŠ” ë¶€ë¶
+				-- mileageM Ãâ·ÂÇÏ´Â ºÎºÐ
 		--			bcd2 := (others => '0');
 		--			tmp_mileageM := mileageM;
 				
@@ -243,6 +243,7 @@ begin
 		--			reg_file(17) <=  ("0000" & STD_LOGIC_VECTOR(bcd2(15 downto 12))) + 48;
 		--			reg_file(21) <= "01101101";
 
+				-- processState Ãâ·ÂÇÏ´Â ºÎºÐ
 				case processState is
 				when "00" =>	reg_file(17) <= X"20";
 									reg_file(18) <= "01010111";
@@ -288,7 +289,7 @@ begin
 	end process;
 
 	process(RESET, lcd_state) -- lcd_state (X00~X26)
-	Begin
+	begin
 		if RESET='0' then
 			lcd_nstate <= X"00";
 		else

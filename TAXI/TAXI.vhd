@@ -30,7 +30,7 @@ entity TAXI is
 end TAXI;
 
 architecture Behavioral of TAXI is
-    -- component of LCD_DISPLAY: taxiCharge œì™¸4ê°€ì§€ •ë³´ë¥LCDì¶œë ¥.
+    -- component of LCD_DISPLAY: taxiCharge Á¦¿ÜÇÑ 4°¡Áö Á¤º¸¸¦ LCD¿¡ Ãâ·Â.
     component LCD_DISPLAY is
         port ( RESET, CLK : in std_logic;
             LCD_A : out std_logic_vector(1 downto 0);
@@ -43,7 +43,7 @@ architecture Behavioral of TAXI is
 				processState : in std_logic_vector(1 downto 0));
     end component;
 
-    -- component of SEG_DISPLAY: taxiCharge •ë³´ë¥7-segmentì¶œë ¥.
+    -- component of SEG_DISPLAY: taxiCharge Á¤º¸¸¦ 7-segment¿¡ Ãâ·Â.
     component SEG_DISPlAY is
         port ( RESET, CLK : in std_logic;
             DIGIT : out std_logic_vector(6 downto 1);
@@ -58,7 +58,7 @@ architecture Behavioral of TAXI is
             taxiCharge : in std_logic_vector(15 downto 0));
     end component;
 
-    -- component of DATA_PROCESS: SW1~3 ¤ìœ„ì¹…ë ¥°ë¼ 5ê°€ì§€ •ë³´ ì„±.
+    -- component of DATA_PROCESS: SW1~3 ½ºÀ§Ä¡ ÀÔ·Â¿¡ µû¶ó 5°¡Áö Á¤º¸ »ı¼º.
     component DATA_PROCESS is
         port( RESET, CLK : in std_logic;
             SW1, SW2, SW3 : in std_logic;
@@ -70,19 +70,19 @@ architecture Behavioral of TAXI is
 				processState : out std_logic_vector(1 downto 0));
     end component;
 
-    -- < LCD€ 7-segmentœì‹œ•ë³´¤ì„ ´ëŠ” ´ë signal5ê°€ì§€ > --
+    -- < LCD¿Í 7-segment¿¡ Ç¥½ÃÇÒ Á¤º¸µéÀ» ´ã´Â ³»ºÎ signalµé 5°¡Áö > --
     signal taxiCharge : std_logic_vector (15 downto 0);
-    -- taxiCharge3000ëœì‘taxi ê°€ê²©ì„ ë³´ì—¬ ì¤€
+    -- taxiCharge´Â 3000¿øºÎÅÍ ½ÃÀÛÇØ taxi °¡°İÀ» º¸¿© ÁØ´Ù.
     signal taxiChargeCnt : std_logic_vector (15 downto 0);
-    -- taxiChargeCntê°€ 0˜ëŠ” œê°„ taxiCharge ì¦ê. ì´ˆê¸° íƒœì„œ 30000ë¶€count down.
+    -- taxiChargeCnt°¡ 0ÀÌ µÇ´Â ¼ø°£ taxiCharge Áõ°¡. ÃÊ±â »óÅÂ¿¡¼­ 30000ºÎÅÍ count down.
     signal extraCharge : std_logic_vector (1 downto 0);
     -- 00%(="00"), 20%(="01"), 40%(="10")
 --  signal mileageM : std_logic_vector (11 downto 0);
-    -- ìµœë 0x1FFF m(=8191 m)
+    -- ÃÖ´ë 0x1FFF m(=8191 m)
     signal isCall : std_logic;
     -- Not Call(='0'), Call(='1')
 	 signal processState : std_logic_vector (1 downto 0);
-	 -- ÁÖ¼® ³ªÁß¿¡ ¾²¼¼¿©
+	 -- SW1 ÀÔ·Â¿¡ µû¶ó, ÇöÀç ´ë±â/ÁÖÇà/Á¤Áö Áß ¾î¶² ¸ğµå¿¡ ÀÖ´ÂÁö¿¡ ´ëÇÑ Á¤º¸¸¦ ´ã´Â´Ù(State machine).
 begin
     LCD : LCD_DISPLAY port map (RESET, CLK, LCD_A, LCD_EN, LCD_D, taxiChargeCnt, extraCharge, isCall, processState);
     SEG : SEG_DISPLAY port map (RESET, CLK, DIGIT, SEG_A, SEG_B, SEG_C, SEG_D, SEG_E, SEG_F, SEG_G, SEG_DP, taxiCharge);

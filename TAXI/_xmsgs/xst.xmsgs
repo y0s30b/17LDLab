@@ -5,31 +5,7 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/TAXI</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">D:/0608/17LDLab/TAXI/TAXI.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">C:/17LDLab/TAXI/TAXI.vhd</arg>&quot;.
-</msg>
-
-<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/TAXI/Behavioral</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">D:/0608/17LDLab/TAXI/TAXI.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">C:/17LDLab/TAXI/TAXI.vhd</arg>&quot;.
-</msg>
-
-<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/DATA_PROCESS</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">D:/0608/17LDLab/TAXI/DATA_PROCESS.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">C:/17LDLab/TAXI/DATA_PROCESS.vhd</arg>&quot;.
-</msg>
-
-<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/DATA_PROCESS/DATA_Behavioral</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">D:/0608/17LDLab/TAXI/DATA_PROCESS.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">C:/17LDLab/TAXI/DATA_PROCESS.vhd</arg>&quot;.
-</msg>
-
-<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/LCD_DISPLAY</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">D:/0608/17LDLab/TAXI/LCD_DISPLAY.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">C:/17LDLab/TAXI/LCD_DISPLAY.vhd</arg>&quot;.
-</msg>
-
-<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/LCD_DISPLAY/LCD_Behavioral</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">D:/0608/17LDLab/TAXI/LCD_DISPLAY.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">C:/17LDLab/TAXI/LCD_DISPLAY.vhd</arg>&quot;.
-</msg>
-
-<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/SEG_DISPLAY</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">D:/0608/17LDLab/TAXI/SEG_DISPLAY.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">C:/17LDLab/TAXI/SEG_DISPLAY.vhd</arg>&quot;.
-</msg>
-
-<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/SEG_DISPLAY/SEG_Behavioral</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">D:/0608/17LDLab/TAXI/SEG_DISPLAY.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">C:/17LDLab/TAXI/SEG_DISPLAY.vhd</arg>&quot;.
-</msg>
-
-<msg type="warning" file="Xst" num="819" delta="new" >&quot;<arg fmt="%s" index="1">C:/17LDLab/TAXI/LCD_DISPLAY.vhd</arg>&quot; line <arg fmt="%d" index="2">291</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+<msg type="warning" file="Xst" num="819" delta="old" >&quot;<arg fmt="%s" index="1">C:/17LDLab/TAXI/LCD_DISPLAY.vhd</arg>&quot; line <arg fmt="%d" index="2">291</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
 <arg fmt="%s" index="3">&lt;reg_file&gt;</arg>
 </msg>
 
@@ -63,14 +39,11 @@
 <msg type="info" file="Xst" num="2679" delta="old" >Register &lt;<arg fmt="%s" index="1">reg_file&lt;30&gt;</arg>&gt; in unit &lt;<arg fmt="%s" index="2">LCD_DISPLAY</arg>&gt; has a constant value of <arg fmt="%s" index="3">00111110</arg> during circuit operation. The register is replaced by logic.
 </msg>
 
-<msg type="warning" file="Xst" num="819" delta="new" >&quot;<arg fmt="%s" index="1">C:/17LDLab/TAXI/SEG_DISPLAY.vhd</arg>&quot; line <arg fmt="%d" index="2">30</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+<msg type="warning" file="Xst" num="819" delta="old" >&quot;<arg fmt="%s" index="1">C:/17LDLab/TAXI/SEG_DISPLAY.vhd</arg>&quot; line <arg fmt="%d" index="2">30</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
 <arg fmt="%s" index="3">&lt;AA&gt;, &lt;BB&gt;, &lt;CC&gt;, &lt;DD&gt;, &lt;EE&gt;, &lt;FF&gt;</arg>
 </msg>
 
 <msg type="info" file="Xst" num="2679" delta="old" >Register &lt;<arg fmt="%s" index="1">AA</arg>&gt; in unit &lt;<arg fmt="%s" index="2">SEG_DISPlAY</arg>&gt; has a constant value of <arg fmt="%s" index="3">0000</arg> during circuit operation. The register is replaced by logic.
-</msg>
-
-<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">isPayment</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
 <msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">w_enable_reg</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
@@ -404,9 +377,6 @@
 </msg>
 
 <msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">SEG/FF_0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">TAXI</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DATA/isPayment_reg</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">TAXI</arg>&gt;.
 </msg>
 
 <msg type="info" file="Xst" num="2169" delta="old" >HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.

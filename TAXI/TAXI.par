@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-DESKTOP-2D1SUE6::  Thu Jun 08 21:01:00 2017
+DESKTOP-2D1SUE6::  Thu Jun 15 20:39:55 2017
 
 par -w -intstyle ise -ol high -t 1 TAXI_map.ncd TAXI.ncd TAXI.pcf 
 
@@ -44,16 +44,16 @@ Finished initial Timing Analysis.  REAL time: 2 secs
 
 Starting Placer
 Total REAL time at the beginning of Placer: 2 secs 
-Total CPU  time at the beginning of Placer: 2 secs 
+Total CPU  time at the beginning of Placer: 1 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:c4f9090d) REAL time: 4 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:c4f9090d) REAL time: 3 secs 
 
 Phase 2.7  Design Feasibility Check
-Phase 2.7  Design Feasibility Check (Checksum:c4f9090d) REAL time: 4 secs 
+Phase 2.7  Design Feasibility Check (Checksum:c4f9090d) REAL time: 3 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:c4f9090d) REAL time: 4 secs 
+Phase 3.31  Local Placement Optimization (Checksum:c4f9090d) REAL time: 3 secs 
 
 Phase 4.2  Initial Clock and IO Placement
 
@@ -86,10 +86,10 @@ WARNING:Place:1019 - A clock IOB / clock component pair have been found that are
    This constraint disables all clock placer rules related to the specified COMP.PIN. The use of this override is highly
    discouraged as it may lead to very poor timing results. It is recommended that this error condition be corrected in
    the design.
-Phase 4.2  Initial Clock and IO Placement (Checksum:3469fa09) REAL time: 7 secs 
+Phase 4.2  Initial Clock and IO Placement (Checksum:3469fa09) REAL time: 5 secs 
 
 Phase 5.36  Local Placement Optimization
-Phase 5.36  Local Placement Optimization (Checksum:3469fa09) REAL time: 7 secs 
+Phase 5.36  Local Placement Optimization (Checksum:3469fa09) REAL time: 5 secs 
 
 Phase 6.8  Global Placement
 ................
@@ -97,19 +97,19 @@ Phase 6.8  Global Placement
 ...........................................
 ........................
 .......................................
-Phase 6.8  Global Placement (Checksum:4fcc0b2a) REAL time: 11 secs 
+Phase 6.8  Global Placement (Checksum:4fcc0b2a) REAL time: 7 secs 
 
 Phase 7.5  Local Placement Optimization
-Phase 7.5  Local Placement Optimization (Checksum:4fcc0b2a) REAL time: 11 secs 
+Phase 7.5  Local Placement Optimization (Checksum:4fcc0b2a) REAL time: 7 secs 
 
 Phase 8.18  Placement Optimization
-Phase 8.18  Placement Optimization (Checksum:b8083676) REAL time: 17 secs 
+Phase 8.18  Placement Optimization (Checksum:b8083676) REAL time: 10 secs 
 
 Phase 9.5  Local Placement Optimization
-Phase 9.5  Local Placement Optimization (Checksum:b8083676) REAL time: 17 secs 
+Phase 9.5  Local Placement Optimization (Checksum:b8083676) REAL time: 10 secs 
 
-Total REAL time to Placer completion: 17 secs 
-Total CPU  time to Placer completion: 13 secs 
+Total REAL time to Placer completion: 10 secs 
+Total CPU  time to Placer completion: 9 secs 
 Writing design to file TAXI.ncd
 
 
@@ -117,25 +117,25 @@ Writing design to file TAXI.ncd
 Starting Router
 
 
-Phase  1  : 5020 unrouted;      REAL time: 18 secs 
+Phase  1  : 5020 unrouted;      REAL time: 11 secs 
 
-Phase  2  : 4781 unrouted;      REAL time: 18 secs 
+Phase  2  : 4781 unrouted;      REAL time: 11 secs 
 
-Phase  3  : 2165 unrouted;      REAL time: 18 secs 
+Phase  3  : 2165 unrouted;      REAL time: 11 secs 
 
-Phase  4  : 2217 unrouted; (Par is working to improve performance)     REAL time: 19 secs 
+Phase  4  : 2217 unrouted; (Par is working to improve performance)     REAL time: 12 secs 
 
-Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 27 secs 
+Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 18 secs 
 
 Updating file: TAXI.ncd with current fully routed design.
 
-Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 29 secs 
+Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 19 secs 
 
-Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 50 secs 
+Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 35 secs 
 
-Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 50 secs 
+Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 35 secs 
 
-Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 50 secs 
+Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 35 secs 
 WARNING:Route:455 - CLK Net:SEG/seg_reg_or0000 may have excessive skew because 
       7 CLK pins and 0 NON_CLK pins failed to route using a CLK template.
 WARNING:Route:455 - CLK Net:LCD/clk_100k may have excessive skew because 
@@ -143,8 +143,8 @@ WARNING:Route:455 - CLK Net:LCD/clk_100k may have excessive skew because
 WARNING:Route:455 - CLK Net:LCD/human_clk may have excessive skew because 
       0 CLK pins and 11 NON_CLK pins failed to route using a CLK template.
 
-Total REAL time to Router completion: 50 secs 
-Total CPU time to Router completion: 44 secs 
+Total REAL time to Router completion: 35 secs 
+Total CPU time to Router completion: 34 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -226,10 +226,10 @@ Generating Pad Report.
 
 All signals are completely routed.
 
-Total REAL time to PAR completion: 51 secs 
-Total CPU time to PAR completion: 45 secs 
+Total REAL time to PAR completion: 36 secs 
+Total CPU time to PAR completion: 34 secs 
 
-Peak Memory Usage:  311 MB
+Peak Memory Usage:  315 MB
 
 Placement: Completed - No errors found.
 Routing: Completed - No errors found.
