@@ -13,7 +13,6 @@ entity DATA_PROCESS is
             extraCharge : out std_logic_vector(1 downto 0);
 --            mileageM : out std_logic_vector(11 downto 0);
             isCall : out std_logic;
-            isPayment : out std_logic;
 				processState : out std_logic_vector(1 downto 0));
 end DATA_PROCESS;
 
@@ -26,7 +25,7 @@ architecture DATA_Behavioral of DATA_PROCESS is
     signal taxiCharge_reg, taxiChargeCnt_reg : std_logic_vector(15 downto 0);
     signal extraCharge_reg : std_logic_vector(1 downto 0);
 --    signal mileageM_reg : std_logic_vector(11 downto 0);
-    signal isCall_reg, isPayment_reg : std_logic;
+    signal isCall_reg : std_logic;
 
     signal SW1_flag_rst, SW2_flag_rst, SW3_flag_rst : std_logic;
 	 signal isCall_add1000_flag : std_logic;
@@ -38,7 +37,6 @@ begin
     extraCharge <= extraCharge_reg;
 --    mileageM <= mileageM_reg;
     isCall <= isCall_reg;
-    isPayment <= isPayment_reg;
 	 processState <= processState_reg;
 
     process(SW1, SW2, SW3, SW1_flag_rst, SW2_flag_rst, SW3_flag_rst)
@@ -127,7 +125,6 @@ begin
             
             extraCharge_reg <= "00";
             isCall_reg <= '0';
-            isPayment_reg <= '0';
 				
 				stop_check_flag <= '0';
         elsif CLK = '1' and CLK'event then
@@ -136,7 +133,6 @@ begin
                 -- stateê°€ "10"ï¿½ì„œ "00"ï¿½ë¡œ ï¿½ì–´ï¿½payment displayë¥„í•œ isPaymentï¿½set.
                 if processState_reg = "00" or processState_reg = "01" then
                     processState_reg <= processState_reg + 1;
-                    isPayment_reg <= '0';
 						  
 						  -- ´ÙÀ½ state = "10" (=Á¤Áö)
 						  if processState_reg = "01" then
@@ -144,13 +140,11 @@ begin
 						  end if;
                 elsif processState_reg = "10" then
                     processState_reg <= "00";
-                    isPayment_reg <= '1';
 						  
 						  -- ´ÙÀ½ state = "00" (=´ë±â)
 						  if stop_check_flag = '1' then
 								extraCharge_reg <= "00";
 								isCall_reg <= '0';
-								isPayment_reg <= '0';
 								
 								stop_check_flag <= '0';
 						  end if;

@@ -38,9 +38,8 @@ architecture Behavioral of TAXI is
             LCD_D : out std_logic_vector(7 downto 0);
             taxiChargeCnt : in std_logic_vector(15 downto 0);
             extraCharge : in std_logic_vector(1 downto 0);
---            mileageM : in std_logic_vector(11 downto 0);
+--          mileageM : in std_logic_vector(11 downto 0);
             isCall : in std_logic;
-				isPayment : in std_logic;
 				processState : in std_logic_vector(1 downto 0));
     end component;
 
@@ -66,9 +65,8 @@ architecture Behavioral of TAXI is
             taxiCharge : out std_logic_vector(15 downto 0);
             taxiChargeCnt : out std_logic_vector(15 downto 0);
             extraCharge : out std_logic_vector(1 downto 0);
---            mileageM : out std_logic_vector(11 downto 0);
+--          mileageM : out std_logic_vector(11 downto 0);
             isCall : out std_logic;
-				isPayment : out std_logic;
 				processState : out std_logic_vector(1 downto 0));
     end component;
 
@@ -79,16 +77,14 @@ architecture Behavioral of TAXI is
     -- taxiChargeCntÍ∞Ä 0òÎäî úÍ∞Ñ taxiCharge Ï¶ùÍ. Ï¥àÍ∏∞ ÅÌÉúêÏÑú 30000Î∂Äcount down.
     signal extraCharge : std_logic_vector (1 downto 0);
     -- 00%(="00"), 20%(="01"), 40%(="10")
---    signal mileageM : std_logic_vector (11 downto 0);
+--  signal mileageM : std_logic_vector (11 downto 0);
     -- ÏµúÎ 0x1FFF m(=8191 m)
     signal isCall : std_logic;
     -- Not Call(='0'), Call(='1')
-    signal isPayment : std_logic;
-    -- isPayment = '1'Ä 10, 11Î≤åÎ°ú πÏÑ±ÏµúÏ¢Ö ïÏÇ∞ îÎ©¥ÑÏö∞†Ìò∏¥Îã§.
 	 signal processState : std_logic_vector (1 downto 0);
 	 -- ¡÷ºÆ ≥™¡ﬂø° æ≤ººø©
 begin
-    LCD : LCD_DISPLAY port map (RESET, CLK, LCD_A, LCD_EN, LCD_D, taxiChargeCnt, extraCharge, isCall, isPayment, processState);
+    LCD : LCD_DISPLAY port map (RESET, CLK, LCD_A, LCD_EN, LCD_D, taxiChargeCnt, extraCharge, isCall, processState);
     SEG : SEG_DISPLAY port map (RESET, CLK, DIGIT, SEG_A, SEG_B, SEG_C, SEG_D, SEG_E, SEG_F, SEG_G, SEG_DP, taxiCharge);
-    DATA : DATA_PROCESS port map (RESET, CLK, SW1, SW2, SW3, taxiCharge, taxiChargeCnt, extraCharge, isCall, isPayment, processState);
+    DATA : DATA_PROCESS port map (RESET, CLK, SW1, SW2, SW3, taxiCharge, taxiChargeCnt, extraCharge, isCall, processState);
 end Behavioral;

@@ -14,7 +14,6 @@ entity LCD_DISPLAY is
             extraCharge : in std_logic_vector(1 downto 0);
 --            mileageM : in std_logic_vector(11 downto 0);
             isCall : in std_logic;
-            isPayment : in std_logic;
 				processState : in std_logic_vector(1 downto 0));
 end LCD_DISPLAY;
 
